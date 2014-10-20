@@ -1,0 +1,13 @@
+{
+  "name": "FireHorse",
+  "version": "0.0.1",
+  "authors": [
+    "Amund Øgar Meisal <amundom@ifi.uio.no>",
+    "Christian Bergum Bergersen <chrisbb@ifi.uio.no>",
+    "Jarle Fosen <jarlefo@ifi.uio.no>",
+    "Vilde Fjeldstad <vildefj@ifi.uio.no>"
+  ],
+  "dependencies": {
+    "angular": "1.3.0"
+  }
+}
