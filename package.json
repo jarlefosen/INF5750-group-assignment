@@ -1,0 +1,11 @@
+{
+  "name": "FireHorse",
+  "version": "0.0.1",
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "http-server": "^0.7.2"
+  },
+  "scripts": {
+    "start": "http-server app/www -p 8080 -c-1 -o"
+  }
+}

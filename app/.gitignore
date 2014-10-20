@@ -1,6 +1,2 @@
-# Node - NPM
-node_modules
+# Bower packages
 www/js/libs
-
-# Sublime
-*.sublime-*
