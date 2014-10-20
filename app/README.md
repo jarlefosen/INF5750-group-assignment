@@ -1,10 +1,13 @@
-#INF5750 - App
+# INF5750 - App
+
+## About
+Client web application written in Angular JS.
 
 ## Tools
 * [NPM - Node Package Manager](http://nodejs.org/)
 * Bower - Web package manager
 
-##Setup
+## Setup
 
 Install NPM (included in Nodejs).
 
