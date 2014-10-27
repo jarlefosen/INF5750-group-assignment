@@ -12,15 +12,20 @@ Client web application written in Angular JS.
 ## Code style
 
 ### Indentation
-* Javascript (IntelliJ / WebStorm)
+
+**Javascript**
+```
 Tab size: 2
 Indent: 2
 Continuous indent: 2
+```
 
-* HTML
+**HTML**
+```
 Tab size: 2
 Indent: 2
 Continuous indent: 4
+```
 
 ## Tools
 * [NPM - Node Package Manager](http://nodejs.org/)
