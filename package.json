@@ -10,6 +10,6 @@
     "http-server": "^0.7.2"
   },
   "scripts": {
-    "start": "http-server app/www -p 8080 -c-1 -o"
+    "start": "http-server www -p 8080 -c-1 -o"
   }
 }
