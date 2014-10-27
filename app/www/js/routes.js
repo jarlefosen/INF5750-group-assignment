@@ -1,6 +1,7 @@
 define([
   "app",
-  "controllers/index-controller"
+  "controllers/index-controller",
+  "controllers/navbar-controller"
 ], function(app) {
   "use strict";
 

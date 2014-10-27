@@ -1,12 +1,12 @@
 define([
   "app"
 ], function(app) {
-  app.controller("IndexController", [
+  app.controller("NavbarController", [
     "$scope",
     function($scope) {
       "use strict";
 
-      $scope.title = "Hello world";
+      $scope.message = "This is a navbar"
     }
   ])
 });
