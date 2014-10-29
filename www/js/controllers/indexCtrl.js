@@ -1,7 +1,7 @@
 define([
   "app"
 ], function(app) {
-  app.controller("IndexController", [
+  app.controller("IndexCtrl", [
     "$scope",
     function($scope) {
       "use strict";

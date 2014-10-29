@@ -1,7 +1,7 @@
 define([
   "app",
-  "controllers/index-controller",
-  "controllers/navbar-controller"
+  "controllers/indexCtrl",
+  "controllers/navbarCtrl"
 ], function(app) {
   "use strict";
 
@@ -11,7 +11,7 @@ define([
       $routeProvider
       .when("/", {
         templateUrl: "partials/index.html",
-        controller: "IndexController"
+        controller: "IndexCtrl"
       })
       .otherwise({
         redirectTo: "/"
