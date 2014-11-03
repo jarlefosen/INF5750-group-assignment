@@ -9,13 +9,16 @@ define([
     "$routeProvider",
     function($routeProvider) {
       $routeProvider
-      .when("/", {
-        templateUrl: "partials/index.html",
-        controller: "IndexCtrl"
-      })
-      .otherwise({
-        redirectTo: "/"
-      });
+        .when("/", {
+          templateUrl: "partials/index.html",
+          controller: "IndexCtrl"
+        })
+        .when("/login", {
+          templateUrl: "partials/login.html"
+        })
+        .otherwise({
+          redirectTo: "/"
+        });
     }
   ]);
 });
