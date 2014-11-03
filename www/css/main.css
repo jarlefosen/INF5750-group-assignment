@@ -1,5 +1,6 @@
-div.navbar {
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: royalblue;
+/* line 2, sass/main.scss */
+div .navbar {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: royalblue;
 }
