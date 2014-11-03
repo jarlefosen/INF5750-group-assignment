@@ -4,6 +4,9 @@ node_modules
 # Bower packages
 www/bower_components
 
+# Dist file
+firehorse.zip
+
 # Sass
 .sass-cache
 

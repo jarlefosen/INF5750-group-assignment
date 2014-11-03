@@ -1,0 +1,16 @@
+{
+  "version": "0.11",
+  "name": "FireHorse App",
+  "description": "Messaging application",
+  "launch_path": "",
+  "developer": {
+    "name": "FireHorse",
+    "url": "http://inf5750-11.uio.no/apps/firehorse"
+  },
+  "default_locale": "en",
+  "activities": {
+    "dhis": {
+      "href": "http://inf5750-11.uio.no"
+    }
+  }
+}
