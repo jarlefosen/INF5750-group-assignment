@@ -1,8 +1,8 @@
 require.config({
   paths: {
-    "angular": "libs/angular/angular",
-    "angular-resource": "libs/angular-resource/angular-resource",
-    "angular-route": "libs/angular-route/angular-route"
+    "angular": "../bower_components/angular/angular",
+    "angular-resource": "../bower_components/angular-resource/angular-resource",
+    "angular-route": "../bower_components/angular-route/angular-route"
   },
   shim: {
     "angular": { exports: "angular" },

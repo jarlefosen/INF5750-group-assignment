@@ -2,7 +2,7 @@
 node_modules
 
 # Bower packages
-www/js/libs
+www/bower_components
 
 # Sublime
 *.sublime-*
