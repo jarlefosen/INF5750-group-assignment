@@ -5,8 +5,8 @@ require.config({
     "angular-route": "../bower_components/angular-route/angular-route"
   },
   shim: {
-    "angular": { exports: "angular" },
-    "angular-route" : ["angular"],
+    "angular": {exports: "angular"},
+    "angular-route": ["angular"],
     "angular-resource": ["angular"]
   }
 });
@@ -15,7 +15,7 @@ require([
   "angular",
   "app",
   "routes"
-], function(angular, app) {
+], function (angular, app) {
   "use strict";
 
   /* Will launch on app startup */

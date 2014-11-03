@@ -1,7 +1,6 @@
-
 define(
   ["angular", "angular-route", "angular-resource"],
-  function(angular) {
+  function (angular) {
     "use strict";
 
     return angular.module("app", ["ngRoute", "ngResource"]);
