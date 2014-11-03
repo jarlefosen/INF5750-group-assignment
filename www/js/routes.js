@@ -1,7 +1,8 @@
 define([
   "app",
   "controllers/indexCtrl",
-  "controllers/navbarCtrl"
+  "controllers/navbarCtrl",
+  "controllers/loginCtrl"
 ], function(app) {
   "use strict";
 
@@ -14,7 +15,8 @@ define([
           controller: "IndexCtrl"
         })
         .when("/login", {
-          templateUrl: "partials/login.html"
+          templateUrl: "partials/login.html",
+          controller: "LoginCtrl"
         })
         .otherwise({
           redirectTo: "/"
