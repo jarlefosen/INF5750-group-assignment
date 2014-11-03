@@ -19,7 +19,7 @@ define([
             $location.url("/");
           },
           function(error) {
-            window.location = window.location;
+            window.location.reload();
           });
       };
 
