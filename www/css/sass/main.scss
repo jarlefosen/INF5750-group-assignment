@@ -1,7 +1,15 @@
+@import "partials/config";
+@import "partials/mixins";
+@import "partials/login";
+
 div{
   .navbar{
     width: 100%;
     margin-bottom: 10px;
-    background-color: royalblue;
+    background-color: $main-color;
   }
+}
+
+.body{
+  background-color: $main-color;
 }
