@@ -2,8 +2,8 @@ define([
   "app"
 ], function(app) {
   app.controller("MessageCtrl", [
-    "$scope", "$http",
-    function($scope, $http) {
+    "$scope", "$http", "$resource",
+    function($scope, $http, $resource) {
       "use strict";
 
       $http.get('mocks/messages.json')
@@ -15,6 +15,8 @@ define([
           console.log("Error! ")
         })
 
+
+      $scope.msg = "Messages:"; /* TODO Remove */
 
     }
   ])

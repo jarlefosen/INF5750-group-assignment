@@ -1,7 +1,7 @@
 <h1>Messages</h1>
 
-    {{ title }}
+    {{ msg }}
 
-    <ul ng-repeat="message in messages.messageConversations">
-      <li>{{ message.name }}</li>
+    <ul>
+      <li ng-repeat="message in messages.messageConversations">{{ message.name }}</li>
     </ul>
