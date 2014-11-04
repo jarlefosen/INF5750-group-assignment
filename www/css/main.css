@@ -34,7 +34,7 @@
   color: #fcfcfc;
 }
 /* line 37, sass/partials/_login.scss */
-.login-container form input[name="submit"] {
+.login-container form input[type="submit"] {
   background-color: #fcfcfc;
   color: #1d5288;
   font-weight: 300;

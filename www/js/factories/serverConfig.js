@@ -9,8 +9,12 @@ define([
   app.factory("ServerConfig", [
     function() {
 
+      //var base = "apps.dhis2.org/demo";
+      var base = "inf5750-11.uio.no";
+
       return {
-        host: "http://inf5750-11.uio.no"
+        host: "http://" + base,
+        host_secure: "https://" + base
       };
 
     }

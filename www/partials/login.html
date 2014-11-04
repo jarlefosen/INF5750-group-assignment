@@ -1,8 +1,13 @@
 <div class="login-container">
   <img src="img/dhis2.jpg" alt="DHIS2 logo"/>
-  <form>
+  <form ng-hide="currentUser">
     <input type="text" ng-model="username" placeholder="Username"/>
     <input type="password" ng-model="password" placeholder="Password"/>
-    <input type="submit" ng-click="login()" name="submit"/>
+    <input type="submit" ng-click="login()" value="Log in" />
+  </form>
+
+  <form ng-show="currentUser">
+    <input type="text" ng-model="currentUser" disabled />
+    <input type="submit" ng-click="logout()" value="Log out"/>
   </form>
 </div>
