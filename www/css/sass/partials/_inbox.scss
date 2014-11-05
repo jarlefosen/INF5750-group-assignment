@@ -17,13 +17,24 @@
   div{
     padding-left: 0;
     padding-right: 0;
+
+    .heading{
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 5px;
+    }
   }
 
   .sender{
     font-size: 16px;
     font-weight: 300;
-    margin: 5px 0 0 0;
+    margin: 0;
     display: inline-block;
+    white-space: nowrap;
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 20px;
   }
 
   .follow-up{
@@ -31,7 +42,6 @@
   }
 
   .unread{
-    margin-top: 5px;
     margin-bottom: 0;
     display: inline-block;
     color: red;
@@ -41,7 +51,6 @@
     font-size: 12px;
     display: inline-block;
     float: right;
-    margin-top: 5px;
     margin-bottom: 0;
     color: #9B9B9B;
   }
@@ -49,6 +58,10 @@
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 250px;
   }
   .content{
     color: #9B9B9B;
