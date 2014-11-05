@@ -83,4 +83,5 @@ variable named `ANDROID_HOME` with the value `/PATH/TO/ANDROID_SKD`
 
 `$ npm run-script android`
 
+
 Then you are good to go! The application will be installed on your connected device.
