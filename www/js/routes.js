@@ -1,8 +1,9 @@
 define([
   "app",
   "controllers/indexCtrl",
-  "controllers/messageCtrl",
-  "controllers/navbarCtrl"
+  "controllers/navbarCtrl",
+  "controllers/loginCtrl",
+  "controllers/messageCtrl"
 ], function (app) {
   "use strict";
 
@@ -13,6 +14,11 @@ define([
         .when("/", {
           templateUrl: "partials/index.html",
           controller: "IndexCtrl"
+        })
+
+        .when("/login", {
+          templateUrl: "partials/login.html",
+          controller: "LoginCtrl"
         })
 
         .when("/messages", {

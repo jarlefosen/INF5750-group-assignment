@@ -13,6 +13,8 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server www -p 8080 -c-1 -o"
-  }
+    "start": "http-server www -p 8080 -c-1 -o",
+    "zip": "cd www; zip -r ../firehorse.zip *; cd .."
+  },
+  "dependencies": {}
 }

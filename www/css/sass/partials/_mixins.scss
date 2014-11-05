@@ -1,0 +1,30 @@
+/* WebKit browsers */
+@mixin webkitPlaceholder($color) {
+  ::-webkit-input-placeholder {
+    color: $color;
+    font-weight: 300;
+  }
+}
+
+/* Mozilla Firefox 4 to 18 */
+@mixin mozPlaceholder1($color) {
+  :-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+}
+
+/* Mozilla Firefox 19+ */
+@mixin mozPlaceholder2($color) {
+  ::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer 10+ */
+@mixin msPlaceholder($color) {
+  :-ms-input-placeholder {
+    color: $color;
+  }
+}
