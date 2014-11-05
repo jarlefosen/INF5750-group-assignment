@@ -2,4 +2,35 @@
   background-color: green;
   height: 500px;
   margin-top: 90px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.inbox-message{
+  background-color: $off-white;
+  border: 2px solid #979797;
+  padding: 0 20px;
+  height: 130px;
+
+  .sender{
+    font-size: 18px;
+    font-weight: 300;
+    margin: 5px 0;
+  }
+  .subject{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+
+  }
+  .content{
+    color: #9B9B9B;
+    max-height: 60px;
+
+    text-overflow: ellipsis;
+    line-height: 20px;
+
+  }
+
+
 }
