@@ -3,20 +3,7 @@
 
 
     <div class="inbox-container container col-lg-4 col-xs-12">
-      <div class="row inbox-message">
-        <div class="col-lg-12">
-          <h6 class="sender">{{message.sender}}</h6>
-          <i ng-show="message.followUp" class="fa fa-star-o follow-up"></i>
-          <p ng-show="message.unread" class="unread">Unread!</p>
-          <p class="date">{{message.date | dateFilter}}</p>
-          <p class="subject">{{message.subject}}</p>
-          <p class="content">{{message.content}}</p>
-        </div>
-        <div class="arrow">
-
-        </div>
-
-      </div>
+      <inbox-message ng-repeat="message in messages"></inbox-message>
     </div>
 
 <nav class="navbar-fixed-bottom navigation-bottom">
