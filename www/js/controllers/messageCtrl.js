@@ -1,14 +1,14 @@
 define([
   "app",
-  "factories/messageFact"
+  "../services/messageService"
 ], function (app) {
 
   app.controller("MessageCtrl", [
-    "$scope", "Messages",
-    function ($scope, Messages) {
+    "$scope", "MessageService",
+    function ($scope, MessageService) {
       "use strict";
 
-      $scope.messages = Messages.get();
+      $scope.messages = MessageService.getAllMessages();
     }
 
   ])
