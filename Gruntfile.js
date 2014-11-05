@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-//  "use strict";
+  "use strict";
 
   grunt.initConfig({
     eslint: {
