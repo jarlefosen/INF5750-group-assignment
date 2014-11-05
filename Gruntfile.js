@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  "use strict";
+//  "use strict";
 
   grunt.initConfig({
     eslint: {
@@ -11,6 +11,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks("grunt-eslint");
 
 };
