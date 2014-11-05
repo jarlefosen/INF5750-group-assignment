@@ -1,5 +1,9 @@
 # Node - NPM
 node_modules
+npm-debug.log
+
+# Ignore JavaScript libs
+www/js/libs/*
 
 # Bower packages
 www/bower_components

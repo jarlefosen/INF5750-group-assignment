@@ -1,22 +1,20 @@
 $bg: $main-color;
 $fg: $off-white;
 
-
-.login-container{
+.login-container {
   padding-top: 150px;
   min-width: 300px;
   margin: 0 auto;
 
-
-  img{
+  img {
     max-width: 260px;
     height: auto;
     margin: 0 auto;
     display: block;
     margin-bottom: 50px;
   }
-  form{
-    input{
+  form {
+    input {
       border: none;
       border: 2px solid $fg;
       border-radius: 2px;
@@ -34,7 +32,7 @@ $fg: $off-white;
       font-size: 20px;
       color: $fg;
     }
-    input[type="submit"]{
+    input[type="submit"] {
       background-color: $fg;
       color: $bg;
       font-weight: $font-weight-primary;

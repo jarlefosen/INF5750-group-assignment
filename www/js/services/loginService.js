@@ -4,11 +4,11 @@ define([
   "angular-resource",
   "factories/serverConfig",
   "factories/base64"
-], function(app, angular) {
+], function (app, angular) {
 
   app.service("LoginService", [
     "ServerConfig", "$q", "base64", "$http",
-    function(ServerConfig, $q, base64, $http) {
+    function (ServerConfig, $q, base64, $http) {
 
       var TOKEN_KEY = "no.uio.inf5750-11.auth";
       var LOGIN_URL = "/dhis-web-commons-security/login.action?authOnly=true";
@@ -19,10 +19,10 @@ define([
         var deferred = $q.defer();
 
         $http.get(ServerConfig.host + PROFILE_URL)
-          .success(function(data) {
+          .success(function (data) {
             deferred.resolve(data);
           })
-          .error(function() {
+          .error(function () {
             deferred.reject();
           });
 
@@ -32,10 +32,10 @@ define([
       function logout() {
         var deferred = $q.defer();
         $http.get(ServerConfig.host + LOGOUT_URL)
-          .success(function(data) {
+          .success(function (data) {
             deferred.resolve(data);
           })
-          .error(function() {
+          .error(function () {
             deferred.resolve();
           });
 
@@ -54,10 +54,10 @@ define([
           url: ServerConfig.host + LOGIN_URL,
           data: $.param(content),
           headers: {
-            "Content-Type" : "application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded"
           }
         })
-          .success(function(data, status, headers) {
+          .success(function (data, status, headers) {
             console.log(headers("Login-Page"));
             /* If success we get application/json. If it fails we will get text/plain */
             if (headers("Login-Page")) {
