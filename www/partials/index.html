@@ -3,10 +3,16 @@
 
 
     <div class="inbox-container container col-lg-4 col-xs-12">
-      <div class="inbox-message">
-        <h6 class="sender">{{message.sender}}</h6>
-        <p class="subject">{{message.subject}}</p>
-        <p class="content">{{message.content}}</p>
+      <div class="row inbox-message">
+        <div class="col-lg-12">
+          <h6 class="sender">{{message.sender}}</h6>
+          <p class="date">{{message.date | dateFilter}}</p>
+          <p class="subject">{{message.subject}}</p>
+          <p class="content">{{message.content}}</p>
+        </div>
+        <div class="arrow">
+
+        </div>
 
       </div>
     </div>

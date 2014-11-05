@@ -1,5 +1,6 @@
 define([
-  "app"
+  "app",
+  "filters/dateFilter"
 ], function(app) {
   app.controller("IndexCtrl", [
     "$scope",
