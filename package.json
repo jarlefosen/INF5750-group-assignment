@@ -16,5 +16,7 @@
     "start": "http-server www -p 8080 -c-1 -o",
     "zip": "cd www; zip -r ../firehorse.zip *; cd .."
   },
-  "dependencies": {}
+  "dependencies": {
+    "cordova": "^4.0.0"
+  }
 }
