@@ -16,7 +16,10 @@
     "postinstall": "bower install; npm install -g cordova",
     "prestart": "npm install",
     "start": "http-server www -p 8080 -c-1 -o",
-    "zip": "cd www; zip -r ../firehorse.zip *; cd .."
+    "zip": "cd www; zip -r ../firehorse.zip *; cd ..",
+    "cordova-setup": "cordova plugin add org.apache.cordova.console; cordova plugin add org.apache.cordova.dialogs",
+    "preandroid": "npm run-script cordova-setup",
+    "android": "cordova run android --device"
   },
   "dependencies": {}
 }
