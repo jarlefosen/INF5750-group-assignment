@@ -89,23 +89,35 @@
   display: inline-block;
 }
 /* line 28, sass/partials/_inbox.scss */
+.inbox-message .follow-up {
+  margin: 0 5px;
+}
+/* line 32, sass/partials/_inbox.scss */
+.inbox-message .unread {
+  display: inline-block;
+  color: red;
+}
+/* line 37, sass/partials/_inbox.scss */
 .inbox-message .date {
   display: inline-block;
+  float: right;
+  margin: 5px 0;
+  color: #9B9B9B;
 }
-/* line 31, sass/partials/_inbox.scss */
+/* line 43, sass/partials/_inbox.scss */
 .inbox-message .subject {
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 5px;
 }
-/* line 36, sass/partials/_inbox.scss */
+/* line 48, sass/partials/_inbox.scss */
 .inbox-message .content {
   color: #9B9B9B;
   max-height: 60px;
   overflow-y: hidden;
   line-height: 20px;
 }
-/* line 43, sass/partials/_inbox.scss */
+/* line 55, sass/partials/_inbox.scss */
 .inbox-message .arrow {
   background-color: black;
 }
