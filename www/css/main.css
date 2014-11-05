@@ -59,14 +59,33 @@
   color: #fcfcfc;
 }
 
-/* line 6, sass/main.scss */
+/* line 1, sass/partials/_inbox.scss */
+.inbox-container {
+  background-color: green;
+  height: 500px;
+  margin-top: 90px;
+}
+
+/* line 1, sass/partials/_navbar.scss */
+.navigation-top {
+  height: 90px;
+  background-color: red;
+}
+
+/* line 6, sass/partials/_navbar.scss */
+.navigation-bottom {
+  height: 90px;
+  background-color: #FCFCFC;
+}
+
+/* line 8, sass/main.scss */
 div .navbar {
   width: 100%;
   margin-bottom: 10px;
   background-color: #1d5288;
 }
 
-/* line 13, sass/main.scss */
+/* line 15, sass/main.scss */
 .body {
   background-color: #1d5288;
 }

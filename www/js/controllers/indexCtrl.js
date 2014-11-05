@@ -7,6 +7,13 @@ define([
       "use strict";
 
       $scope.title = "Hello world";
+
+      $scope.message = {
+        sender: "Tom Ebola",
+        subject: "New outbreaks of Malaria",
+        content: "The outbreak is registered in Sierra Leone and is going viral!",
+        date: "2014-08-19T07:49:38.621+0000"
+      }
     }
   ])
 });
