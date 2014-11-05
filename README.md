@@ -48,6 +48,8 @@ written anything wrong.
 
 Just run `./link_hooks.sh` and it will do it's job!
 
+It will check javascript files that you have edited.
+
 ## Setup
 
 It is important that you have NPM intsalled before you run this app.
