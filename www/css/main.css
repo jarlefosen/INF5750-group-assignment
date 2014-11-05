@@ -66,58 +66,64 @@
   margin-top: 90px;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  border: 2px solid #979797;
 }
 
-/* line 9, sass/partials/_inbox.scss */
+/* line 10, sass/partials/_inbox.scss */
 .inbox-message {
   background-color: #fcfcfc;
-  border: 2px solid #979797;
+  border-bottom: 2px solid #979797;
   padding: 0 20px;
   margin: 0 !important;
-  height: 130px;
+  height: 115px;
 }
-/* line 16, sass/partials/_inbox.scss */
+/* line 17, sass/partials/_inbox.scss */
 .inbox-message div {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 21, sass/partials/_inbox.scss */
+/* line 22, sass/partials/_inbox.scss */
 .inbox-message .sender {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
-  margin: 5px 0;
+  margin: 5px 0 0 0;
   display: inline-block;
 }
-/* line 28, sass/partials/_inbox.scss */
+/* line 29, sass/partials/_inbox.scss */
 .inbox-message .follow-up {
-  margin: 0 5px;
+  margin: 0 5px 0 5px;
 }
-/* line 32, sass/partials/_inbox.scss */
+/* line 33, sass/partials/_inbox.scss */
 .inbox-message .unread {
+  margin-top: 5px;
+  margin-bottom: 0;
   display: inline-block;
   color: red;
 }
-/* line 37, sass/partials/_inbox.scss */
+/* line 40, sass/partials/_inbox.scss */
 .inbox-message .date {
+  font-size: 12px;
   display: inline-block;
   float: right;
-  margin: 5px 0;
+  margin-top: 5px;
+  margin-bottom: 0;
   color: #9B9B9B;
 }
-/* line 43, sass/partials/_inbox.scss */
+/* line 48, sass/partials/_inbox.scss */
 .inbox-message .subject {
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
-/* line 48, sass/partials/_inbox.scss */
+/* line 53, sass/partials/_inbox.scss */
 .inbox-message .content {
   color: #9B9B9B;
   max-height: 60px;
   overflow-y: hidden;
   line-height: 20px;
+  font-size: 12px;
 }
-/* line 55, sass/partials/_inbox.scss */
+/* line 61, sass/partials/_inbox.scss */
 .inbox-message .arrow {
   background-color: black;
 }
