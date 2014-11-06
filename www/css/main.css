@@ -4,69 +4,76 @@
 /* Internet Explorer 10+ */
 /* line 5, sass/partials/_login.scss */
 .login-container {
-  padding-top: 150px;
-  min-width: 300px;
-  margin: 0 auto;
+    padding-top: 150px;
+    min-width: 300px;
+    margin: 0 auto;
 }
+
 /* line 11, sass/partials/_login.scss */
 .login-container img {
-  max-width: 260px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 50px;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 50px;
 }
+
 /* line 19, sass/partials/_login.scss */
 .login-container form input {
-  border: none;
-  border: 2px solid #fcfcfc;
-  border-radius: 2px;
-  background-color: #1d5288;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-  margin-bottom: 20px;
-  width: 300px;
-  height: 50px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  color: #fcfcfc;
+    border: none;
+    border: 2px solid #fcfcfc;
+    border-radius: 2px;
+    background-color: #1d5288;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #fcfcfc;
 }
+
 /* line 37, sass/partials/_login.scss */
 .login-container form input[type="submit"] {
-  background-color: #fcfcfc;
-  color: #1d5288;
-  font-weight: 300;
+    background-color: #fcfcfc;
+    color: #1d5288;
+    font-weight: 300;
 }
+
 /* line 3, sass/partials/_mixins.scss */
 .login-container form ::-webkit-input-placeholder {
-  color: #fcfcfc;
-  font-weight: 300;
+    color: #fcfcfc;
+    font-weight: 300;
 }
+
 /* line 10, sass/partials/_mixins.scss */
 .login-container form :-moz-placeholder {
-  color: #fcfcfc;
-  opacity: 1;
+    color: #fcfcfc;
+    opacity: 1;
 }
+
 /* line 17, sass/partials/_mixins.scss */
 .login-container form ::-moz-placeholder {
-  color: #fcfcfc;
-  opacity: 1;
+    color: #fcfcfc;
+    opacity: 1;
 }
+
 /* line 25, sass/partials/_mixins.scss */
 .login-container form :-ms-input-placeholder {
-  color: #fcfcfc;
+    color: #fcfcfc;
 }
 
 /* line 6, sass/main.scss */
 div .navbar {
-  width: 100%;
-  margin-bottom: 10px;
-  background-color: #1d5288;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #1d5288;
 }
 
 /* line 13, sass/main.scss */
 .body {
-  background-color: #1d5288;
+    background-color: #1d5288;
 }

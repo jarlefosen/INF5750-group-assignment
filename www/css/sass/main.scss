@@ -2,14 +2,14 @@
 @import "partials/mixins";
 @import "partials/login";
 
-div{
-  .navbar{
+div {
+  .navbar {
     width: 100%;
     margin-bottom: 10px;
     background-color: $main-color;
   }
 }
 
-.body{
+.body {
   background-color: $main-color;
 }
