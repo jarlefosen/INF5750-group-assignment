@@ -10,6 +10,13 @@ $fontsize-content: 12px;
   overflow: hidden;
 }
 
+
+.message-container{
+  margin: $navbar-height 0;
+  background-color: $off-white;
+  height: 1000px;
+}
+
 .inbox-container{
   background-color: green;
   height: auto;
