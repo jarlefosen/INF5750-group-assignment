@@ -162,6 +162,23 @@
 .navigation-bottom {
   height: 50px;
   background-color: #f4f4f4;
+  border-top: 1px solid #979797;
+}
+/* line 11, sass/partials/_navbar.scss */
+.navigation-bottom .menu-element {
+  line-height: 50px;
+  font-size: 24px;
+  color: #9b9b9b;
+  padding: 8px 20px;
+}
+/* line 17, sass/partials/_navbar.scss */
+.navigation-bottom .menu-element.active {
+  color: #4a4a4a;
+  border-top: 5px solid #1d5288;
+}
+/* line 22, sass/partials/_navbar.scss */
+.navigation-bottom .menu-element:hover {
+  text-decoration: none;
 }
 
 /* line 9, sass/main.scss */
