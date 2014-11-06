@@ -3,11 +3,12 @@
  */
 define([
   "app"
-], function(app) {
+
+], function (app) {
   "use strict";
 
   app.factory("ServerConfig", [
-    function() {
+    function () {
 
       //var base = "apps.dhis2.org/demo";
       var base = "inf5750-11.uio.no";

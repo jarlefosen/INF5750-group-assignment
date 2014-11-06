@@ -1,16 +1,16 @@
 define([
   "app"
-], function(app) {
+], function (app) {
 
   app.factory("base64", [
-    function() {
+    function () {
 
       var Base64 = {
 
         _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 
 
-        encode: function(input) {
+        encode: function (input) {
           var output = "";
           var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
           var i = 0;
@@ -42,7 +42,7 @@ define([
         },
 
 
-        decode: function(input) {
+        decode: function (input) {
           var output = "";
           var chr1, chr2, chr3;
           var enc1, enc2, enc3, enc4;
@@ -78,7 +78,7 @@ define([
 
         },
 
-        _utf8_encode: function(string) {
+        _utf8_encode: function (string) {
           string = string.replace(/\r\n/g, "\n");
           var utftext = "";
 
@@ -104,7 +104,7 @@ define([
           return utftext;
         },
 
-        _utf8_decode: function(utftext) {
+        _utf8_decode: function (utftext) {
           var string = "";
           var i = 0;
           var c = c1 = c2 = 0;

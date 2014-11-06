@@ -1,10 +1,10 @@
 define([
   "app",
   "services/loginService"
-], function(app) {
+], function (app) {
   app.controller("LoginCtrl", [
     "$scope", "LoginService", "$location", "$route",
-    function($scope, LoginService, $location, $route) {
+    function ($scope, LoginService, $location, $route) {
       "use strict";
 
       $scope.username = "";
@@ -12,22 +12,22 @@ define([
 
       $scope.currentUser = "";
 
-      $scope.logout = function() {
+      $scope.logout = function () {
         LoginService.logout();
         $route.reload();
       };
 
       LoginService.getProfile().then(
-        function(profile) {
+        function (profile) {
           $scope.currentUser = profile.userCredentials.code;
         },
-        function() {
+        function () {
           $scope.currentUser = "";
         }
       );
 
 
-      $scope.login = function() {
+      $scope.login = function () {
 
         /* Login is just a stub for now */
         LoginService.login($scope.username, $scope.password)
@@ -35,7 +35,7 @@ define([
           function (data) {
             $location.url("/");
           },
-          function(error) {
+          function (error) {
             window.alert("Oups! Could not authenticate. Try again!");
             /* Not logged in */
             //window.location.reload();

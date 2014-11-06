@@ -2,13 +2,13 @@
 /* Mozilla Firefox 4 to 18 */
 /* Mozilla Firefox 19+ */
 /* Internet Explorer 10+ */
-/* line 5, sass/partials/_login.scss */
+/* line 4, sass/partials/_login.scss */
 .login-container {
   padding-top: 150px;
   min-width: 300px;
   margin: 0 auto;
 }
-/* line 11, sass/partials/_login.scss */
+/* line 9, sass/partials/_login.scss */
 .login-container img {
   max-width: 260px;
   height: auto;
@@ -16,7 +16,7 @@
   display: block;
   margin-bottom: 50px;
 }
-/* line 19, sass/partials/_login.scss */
+/* line 17, sass/partials/_login.scss */
 .login-container form input {
   border: none;
   border: 2px solid #fcfcfc;
@@ -33,7 +33,7 @@
   font-size: 20px;
   color: #fcfcfc;
 }
-/* line 37, sass/partials/_login.scss */
+/* line 35, sass/partials/_login.scss */
 .login-container form input[type="submit"] {
   background-color: #fcfcfc;
   color: #1d5288;
@@ -44,17 +44,17 @@
   color: #fcfcfc;
   font-weight: 300;
 }
-/* line 10, sass/partials/_mixins.scss */
+/* line 11, sass/partials/_mixins.scss */
 .login-container form :-moz-placeholder {
   color: #fcfcfc;
   opacity: 1;
 }
-/* line 17, sass/partials/_mixins.scss */
+/* line 19, sass/partials/_mixins.scss */
 .login-container form ::-moz-placeholder {
   color: #fcfcfc;
   opacity: 1;
 }
-/* line 25, sass/partials/_mixins.scss */
+/* line 27, sass/partials/_mixins.scss */
 .login-container form :-ms-input-placeholder {
   color: #fcfcfc;
 }
@@ -181,12 +181,12 @@
   text-decoration: none;
 }
 
-/* line 9, sass/main.scss */
+/* line 7, sass/main.scss */
 .body {
   background-color: #1d5288;
 }
 
-/* line 14, sass/main.scss */
+/* line 12, sass/main.scss */
 body, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
