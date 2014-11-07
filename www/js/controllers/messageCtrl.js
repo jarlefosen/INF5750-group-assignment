@@ -11,5 +11,5 @@ define([
       $scope.messages = MessageService.getAllMessages();
     }
 
-  ])
+  ]);
 });
