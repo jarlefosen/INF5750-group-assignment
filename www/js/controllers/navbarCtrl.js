@@ -8,5 +8,5 @@ define([
 
       $scope.message = "This is a navbar";
     }
-  ])
+  ]);
 });
