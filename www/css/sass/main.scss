@@ -1,15 +1,15 @@
 @import "partials/config";
 @import "partials/mixins";
 @import "partials/login";
-
-div {
-  .navbar {
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: $main-color;
-  }
-}
+@import "partials/inbox";
+@import "partials/navbar";
 
 .body {
   background-color: $main-color;
+}
+
+
+body, p, h1, h2, h3, h4, h5, h6{
+  font-family: $font-default;
+  font-weight: $font-weight-primary;
 }
