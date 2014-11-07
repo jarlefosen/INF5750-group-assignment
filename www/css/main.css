@@ -170,24 +170,54 @@
   height: 50px;
   background-color: #f4f4f4;
   border-top: 1px solid #979797;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 11, sass/partials/_navbar.scss */
-.navigation-bottom .menu-element {
-  line-height: 50px;
+/* line 14, sass/partials/_navbar.scss */
+.navigation-bottom ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  zoom: 1;
+  display: inline-block;
+}
+/* line 21, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element {
+  width: 140px;
+  display: inline-block;
+  line-height: 40px;
+}
+/* line 25, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element a {
+  text-decoration: none;
   font-size: 24px;
   color: #9b9b9b;
-  padding: 8px 20px;
 }
-/* line 17, sass/partials/_navbar.scss */
-.navigation-bottom .menu-element.active {
-  color: #4a4a4a;
+/* line 30, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active {
   border-top: 5px solid #1d5288;
 }
-/* line 22, sass/partials/_navbar.scss */
-.navigation-bottom .menu-element:hover {
-  text-decoration: none;
+/* line 32, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active a {
+  color: #4a4a4a;
 }
 
+@media (max-width: 992px) {
+  /* line 44, sass/partials/_navbar.scss */
+  .navigation-bottom ul {
+    display: block;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    zoom: 1;
+  }
+  /* line 51, sass/partials/_navbar.scss */
+  .navigation-bottom ul .menu-element {
+    width: 30%;
+    display: inline-block;
+  }
+}
 /* line 7, sass/main.scss */
 .body {
   background-color: #1d5288;

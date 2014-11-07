@@ -7,21 +7,53 @@
   height: $navbar-height;
   background-color: $light-grey;
   border-top: 1px solid $grey;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
-  .menu-element{
-    line-height: $navbar-height;
-    font-size: 24px;
-    color: $color-font-nav-bot;
-    padding: 8px 20px;
+  ul{
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    zoom: 1;
+    display: inline-block;
 
-    &.active{
-      color: $color-font-nav-bot-active;
-      border-top: 5px solid $main-color;
+    .menu-element{
+      width: 140px;
+      display: inline-block;
+      line-height: $navbar-height - 10;
+      a{
+        text-decoration: none;
+        font-size: 24px;
+        color: $color-font-nav-bot;
+      }
+      &.active{
+        border-top: 5px solid $main-color;
+        a{
+          color: $color-font-nav-bot-active;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: $screen-md) {
+  .navigation-bottom{
+
+    ul{
+      display: block;
+      list-style-type: none;
+      text-align: center;
+      padding: 0;
+      zoom: 1;
+
+      .menu-element{
+        width: 30%;
+        display: inline-block;
+      }
     }
 
-    &:hover{
-      text-decoration: none;
-    }
   }
 
 }
