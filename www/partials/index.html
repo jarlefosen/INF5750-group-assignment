@@ -1,9 +1,13 @@
-<h1>{{title}}</h1>
-<input type="text" data-ng-model="title">
+<nav class="navbar-fixed-top navigation-top">
+</nav>
 
+    <div class="inbox-container container col-lg-3 col-md-3 col-xs-12">
+      <inbox-message ng-repeat="message in messages"></inbox-message>
+    </div>
 
-<div>{{bull.hurrdur}}</div>
+<nav class="navbar-fixed-bottom navigation-bottom">
+  <a class="menu-element active" href="#">Inbox</a>
+  <a class="menu-element" href="#">Follow Up</a>
+  <a class="menu-element" href="#">Unread</a>
+</nav>
 
-<div class="buttonBox">
-  Button
-</div>

@@ -1,0 +1,27 @@
+.navigation-top{
+  height: $navbar-height;
+  background-color: red;
+}
+
+.navigation-bottom{
+  height: $navbar-height;
+  background-color: $light-grey;
+  border-top: 1px solid $grey;
+
+  .menu-element{
+    line-height: $navbar-height;
+    font-size: 24px;
+    color: $color-font-nav-bot;
+    padding: 8px 20px;
+
+    &.active{
+      color: $color-font-nav-bot-active;
+      border-top: 5px solid $main-color;
+    }
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+}
