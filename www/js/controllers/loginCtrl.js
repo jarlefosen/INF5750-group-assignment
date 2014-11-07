@@ -2,10 +2,10 @@ define([
   "app",
   "services/loginService"
 ], function (app) {
+  "use strict";
   app.controller("LoginCtrl", [
     "$scope", "LoginService", "$location", "$route",
     function ($scope, LoginService, $location, $route) {
-      "use strict";
 
       $scope.username = "";
       $scope.password = "";

@@ -3,11 +3,11 @@ define([
   "filters/dateFilter",
   "directives/inboxMessage"
 ], function(app) {
+  "use strict";
 
   app.controller("IndexCtrl", [
     "$scope",
     function ($scope) {
-      "use strict";
 
       $scope.title = "Hello world";
 
