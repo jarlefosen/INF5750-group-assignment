@@ -38,6 +38,8 @@ To run it you have to set up the project first (see below).
 
 Then run `grunt eslint`
 
+This might fail if grunt is not installed globally. `npm install -g grunt grunt-cli` will fix this.
+
 If you only want to see linting for the files you were working on, try
 setting up the commit hook below.
 
