@@ -11,7 +11,7 @@ define([
   app.factory("Messages", [
     "ServerConfig", "$resource",
     function (ServerConfig, $resource) {
-      return $resource(ServerConfig.host + "/api/messageConversations.json");
+      return $resource(ServerConfig.host + "/api/messageConversations/:messageId", {messageId: "@id"});
     }
   ]);
 

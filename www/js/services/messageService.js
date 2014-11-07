@@ -9,15 +9,20 @@ define([
 
   app.service("MessageService", [
     "Messages",
-    function(Messages) {
+    function (Messages) {
       "use strict";
 
       function getAllMessages() {
         return Messages.get();
       }
 
+      function getMessage(id) {
+        return Messages.get({messageId: id});
+      }
+
       return {
-        getAllMessages: getAllMessages
+        getAllMessages: getAllMessages,
+        getMessage: getMessage
       }
     }
   ])
