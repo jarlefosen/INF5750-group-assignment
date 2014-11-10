@@ -12,6 +12,7 @@
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-eslint": "^2.0.0",
+    "grunt-shell": "^1.1.1",
     "http-server": "^0.7.2",
     "karma": "^0.12.24",
     "requirejs": "^2.1.14"
@@ -20,10 +21,7 @@
     "postinstall": "bower install",
     "prestart": "npm install",
     "start": "http-server www -p 8080 -c-1 -o",
-    "zip": "cd www; zip -r ../firehorse.zip *; cd ..",
-    "cordova-setup": "cordova plugin add org.apache.cordova.console; cordova plugin add org.apache.cordova.dialogs",
-    "preandroid": "npm run-script cordova-setup",
-    "android": "cordova run android --device"
+    "zip": "cd www; zip -r ../firehorse.zip *; cd .."
   },
   "dependencies": {}
 }
