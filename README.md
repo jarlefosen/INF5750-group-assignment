@@ -68,3 +68,41 @@ There exists a script in package.json that installs all bower dependencies
 when you either start the app or installs npm dependencies.
 
 **Remember** to run `$ npm install` when package.json and/or bower.json is updated.
+
+## Run in browser
+
+To run the project in the browser, just start `$ npm start` and all
+dependencies will be installed.
+
+**Note** That any calls from the browser to the server most likely will be blocked due to CORS security.
+
+## Android
+
+The project can run on android. **If you are on a mac, please install XCode
+and agree to the terms before proceeding**
+
+[Download the Android SKD](http://developer.android.com/sdk/installing/index.html)
+
+Install the newest platform image available.
+
+Add ANDROID_HOME to path.
+
+```
+export ANDROID_HOME="/PATH/TO/ANDROID_SDK"
+```
+
+Use Grunt to set up project and deploy.
+
+`$ grunt cordova` Will install plugins and platforms
+
+`$ grunt android` Will deploy the application to your connected android phone.
+
+`$ grunt android-emulator` if you want to use an emulator
+
+## IOS
+
+`$ grunt cordova` Will install plugins and platforms
+
+`$ grunt ios` Will deploy the application to your connected android phone.
+
+`$ grunt ios-emulator` if you want to use an emulator

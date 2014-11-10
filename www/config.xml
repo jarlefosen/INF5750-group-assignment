@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="no.uio.inf5750-11" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>FireHorse</name>
+  <description>
+    A messaging application for DHIS2.
+  </description>
+  <author email="mail@example.com" href="http://dhis2.org">
+    FireHorse Team
+  </author>
+  <content src="index.html" />
+  <access origin="*" />
+</widget>
