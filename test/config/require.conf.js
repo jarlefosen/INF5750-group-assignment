@@ -1,4 +1,4 @@
-/* eslint nomen: false */
+/* eslint no-underscore-dangle: 0 */
 
 var tests = [];
 for (var file in window.__karma__.files) {
