@@ -7,6 +7,7 @@ module.exports = function(grunt) {
         command: function() {
           return [
             "cordova plugin add org.apache.cordova.console",
+            "cordova plugin add org.apache.cordova.dialogs",
             "cordova platform add android",
             "cordova platform add ios"
           ].join(";");
