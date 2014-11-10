@@ -22,8 +22,8 @@ require.config({
 
   shim: {
     "angular": { exports: "angular" },
-    "angular-route" : { deps: ["angular"], exports: "route" },
-    "angular-resource" : { deps: ["angular"], exports: "resource" },
+    "angular-route": { deps: ["angular"], exports: "route" },
+    "angular-resource": { deps: ["angular"], exports: "resource" },
     "angular-mocks": { deps: ["angular"], exports: "mocks" }
   },
 
