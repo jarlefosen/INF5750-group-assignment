@@ -1,9 +1,6 @@
 <h1>Messages</h1>
 
-  {{ testMessage }}
-  {{ msg }}
-
-
-  <ul>
-    <li ng-repeat="message in messages.messageConversations">{{ message.name }}</li>
-  </ul>
+<ul>
+  <li ng-repeat="message in messages.messageConversations"><a href="#/messages/{{ message.id }}">{{ message.name }}</a>
+  </li>
+</ul>

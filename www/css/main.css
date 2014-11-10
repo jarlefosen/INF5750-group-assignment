@@ -2,78 +2,229 @@
 /* Mozilla Firefox 4 to 18 */
 /* Mozilla Firefox 19+ */
 /* Internet Explorer 10+ */
-/* line 5, sass/partials/_login.scss */
+/* line 4, sass/partials/_login.scss */
 .login-container {
-    padding-top: 150px;
-    min-width: 300px;
-    margin: 0 auto;
+  padding-top: 150px;
+  min-width: 300px;
+  margin: 0 auto;
 }
-
-/* line 11, sass/partials/_login.scss */
+/* line 9, sass/partials/_login.scss */
 .login-container img {
-    max-width: 260px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 50px;
+  max-width: 260px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 50px;
 }
-
-/* line 19, sass/partials/_login.scss */
+/* line 17, sass/partials/_login.scss */
 .login-container form input {
-    border: none;
-    border: 2px solid #fcfcfc;
-    border-radius: 2px;
-    background-color: #1d5288;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 300px;
-    height: 50px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    color: #fcfcfc;
+  border: none;
+  border: 2px solid #fcfcfc;
+  border-radius: 2px;
+  background-color: #1d5288;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #fcfcfc;
 }
-
-/* line 37, sass/partials/_login.scss */
+/* line 35, sass/partials/_login.scss */
 .login-container form input[type="submit"] {
-    background-color: #fcfcfc;
-    color: #1d5288;
-    font-weight: 300;
+  background-color: #fcfcfc;
+  color: #1d5288;
+  font-weight: 300;
 }
-
 /* line 3, sass/partials/_mixins.scss */
 .login-container form ::-webkit-input-placeholder {
-    color: #fcfcfc;
-    font-weight: 300;
+  color: #fcfcfc;
+  font-weight: 300;
 }
-
-/* line 10, sass/partials/_mixins.scss */
+/* line 11, sass/partials/_mixins.scss */
 .login-container form :-moz-placeholder {
-    color: #fcfcfc;
-    opacity: 1;
+  color: #fcfcfc;
+  opacity: 1;
 }
-
-/* line 17, sass/partials/_mixins.scss */
+/* line 19, sass/partials/_mixins.scss */
 .login-container form ::-moz-placeholder {
-    color: #fcfcfc;
-    opacity: 1;
+  color: #fcfcfc;
+  opacity: 1;
 }
-
-/* line 25, sass/partials/_mixins.scss */
+/* line 27, sass/partials/_mixins.scss */
 .login-container form :-ms-input-placeholder {
-    color: #fcfcfc;
+  color: #fcfcfc;
 }
 
-/* line 6, sass/main.scss */
-div .navbar {
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: #1d5288;
+/* line 14, sass/partials/_inbox.scss */
+.message-container {
+  margin: 50px 0;
+  background-color: #fcfcfc;
+  height: 1000px;
 }
 
-/* line 13, sass/main.scss */
+/* line 20, sass/partials/_inbox.scss */
+.inbox-container {
+  background-color: green;
+  height: auto;
+  margin: 50px 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-right: 2px solid #979797;
+}
+
+/* line 30, sass/partials/_inbox.scss */
+.inbox-message {
+  background-color: #fcfcfc;
+  border-bottom: 2px solid #979797;
+  padding: 0 20px;
+  margin: 0 !important;
+  height: 100px;
+}
+/* line 37, sass/partials/_inbox.scss */
+.inbox-message:last-of-type {
+  border-bottom: none;
+}
+/* line 41, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 9px;
+}
+/* line 46, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading {
+  margin: 0 0 2px 0;
+}
+/* line 49, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .sender {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+  display: inline-block;
+  max-width: 40%;
+  line-height: 20px;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 60, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .follow-up {
+  margin-left: 5px;
+  float: left;
+  line-height: 20px;
+}
+/* line 66, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .unread {
+  margin-bottom: 0;
+  margin-left: 5px;
+  display: inline-block;
+  color: red;
+  float: left;
+  line-height: 20px;
+  font-size: 12px;
+}
+/* line 76, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .date {
+  font-size: 10px;
+  display: inline-block;
+  float: right;
+  margin-bottom: 0;
+  color: #9B9B9B;
+}
+/* line 85, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .subject {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 3px;
+  max-width: 250px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 93, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .content {
+  color: #9B9B9B;
+  max-height: 40px;
+  overflow-y: hidden;
+  line-height: 20px;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+/* line 102, sass/partials/_inbox.scss */
+.inbox-message .arrow {
+  background-color: black;
+}
+
+/* line 1, sass/partials/_navbar.scss */
+.navigation-top {
+  height: 50px;
+  background-color: red;
+}
+
+/* line 6, sass/partials/_navbar.scss */
+.navigation-bottom {
+  height: 50px;
+  background-color: #f4f4f4;
+  border-top: 1px solid #979797;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 14, sass/partials/_navbar.scss */
+.navigation-bottom ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  zoom: 1;
+  display: inline-block;
+}
+/* line 21, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element {
+  width: 140px;
+  display: inline-block;
+  line-height: 40px;
+}
+/* line 25, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #9b9b9b;
+}
+/* line 30, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active {
+  border-top: 5px solid #1d5288;
+}
+/* line 32, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active a {
+  color: #4a4a4a;
+}
+
+@media (max-width: 992px) {
+  /* line 44, sass/partials/_navbar.scss */
+  .navigation-bottom ul {
+    display: block;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    zoom: 1;
+  }
+  /* line 51, sass/partials/_navbar.scss */
+  .navigation-bottom ul .menu-element {
+    width: 30%;
+    display: inline-block;
+  }
+}
+/* line 7, sass/main.scss */
 .body {
-    background-color: #1d5288;
+  background-color: #1d5288;
+}
+
+/* line 12, sass/main.scss */
+body, p, h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 }

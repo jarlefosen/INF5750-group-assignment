@@ -3,7 +3,8 @@ define([
   "controllers/indexCtrl",
   "controllers/navbarCtrl",
   "controllers/loginCtrl",
-  "controllers/messageCtrl"
+  "controllers/messageCtrl",
+  "controllers/messageDetailCtrl"
 ], function (app) {
   "use strict";
 
@@ -24,6 +25,11 @@ define([
         .when("/messages", {
           templateUrl: "partials/messages.html",
           controller: "MessageCtrl"
+        })
+
+        .when("/messages/:messageId", {
+          templateUrl: "partials/messageDetail.html",
+          controller: "MessageDetailCtrl"
         })
 
         .otherwise({

@@ -17,7 +17,7 @@
     "requirejs": "^2.1.14"
   },
   "scripts": {
-    "postinstall": "bower install; npm install -g grunt grunt-cli cordova",
+    "postinstall": "bower install",
     "prestart": "npm install",
     "start": "http-server www -p 8080 -c-1 -o",
     "zip": "cd www; zip -r ../firehorse.zip *; cd ..",

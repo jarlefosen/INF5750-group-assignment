@@ -1,0 +1,105 @@
+$fontsize-sender: 14px;
+$fontsize-unread: 12px;
+$fontsize-date: 10px;
+$fontsize-subject: 12px;
+$fontsize-content: 12px;
+
+@mixin preventOverflow(){
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+.message-container{
+  margin: $navbar-height 0;
+  background-color: $off-white;
+  height: 1000px;
+}
+
+.inbox-container{
+  background-color: green;
+  height: auto;
+  margin: $navbar-height 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-right: 2px solid $grey;
+
+}
+
+.inbox-message{
+  background-color: $off-white;
+  border-bottom: 2px solid $grey;
+  padding: 0 20px;
+  margin: 0 !important;
+  height: 100px;
+
+  &:last-of-type{
+    border-bottom: none;
+  }
+
+  .inbox-message-container{
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 9px;
+
+    .heading{
+      margin: 0 0 2px 0;
+
+      .sender{
+        font-size: $fontsize-sender;
+        font-weight: 300;
+        margin: 0;
+        display: inline-block;
+        max-width: 40%;
+        line-height: 20px;
+        float: left;
+        @include preventOverflow;
+      }
+
+      .follow-up{
+        margin-left: 5px;
+        float: left;
+        line-height: 20px;
+      }
+
+      .unread{
+        margin-bottom: 0;
+        margin-left: 5px;
+        display: inline-block;
+        color: red;
+        float: left;
+        line-height: 20px;
+        font-size: $fontsize-unread;
+      }
+
+      .date{
+        font-size: $fontsize-date;
+        display: inline-block;
+        float: right;
+        margin-bottom: 0;
+        color: #9B9B9B;
+      }
+    }
+
+    .subject{
+      font-size: $fontsize-subject;
+      font-weight: 400;
+      margin-bottom: 3px;
+      max-width: 250px;
+
+      @include preventOverflow;
+    }
+    .content{
+      color: #9B9B9B;
+      max-height: 40px;
+      overflow-y: hidden;
+      line-height: 20px;
+      font-size: $fontsize-content;
+      margin-bottom: 0;
+    }
+  }
+  .arrow{
+    background-color: $black;
+  }
+}

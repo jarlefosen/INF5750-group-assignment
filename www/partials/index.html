@@ -1,9 +1,24 @@
-<h1>{{title}}</h1>
-<input type="text" data-ng-model="title">
+<nav class="navbar-fixed-top navigation-top">
+</nav>
 
+    <div class="inbox-container container col-lg-3 col-md-3 col-xs-12">
+      <inbox-message data-ng-repeat="message in messages"></inbox-message>
+    </div>
+    <div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
+      <h1>Message content container</h1>
+    </div>
 
-<div>{{bull.hurrdur}}</div>
+<nav class="navbar-fixed-bottom navigation-bottom">
+  <ul>
+    <li class="menu-element active">
+      <a href="#">Inbox</a>
+    </li>
+    <li class="menu-element">
+      <a href="#">Follow Up</a>
+    </li>
+    <li class="menu-element">
+      <a href="#">Unread</a>
+    </li>
+  </ul>
+</nav>
 
-<div class="buttonBox">
-  Button
-</div>
