@@ -76,7 +76,7 @@ dependencies will be installed.
 
 **Note** That any calls from the browser to the server most likely will be blocked due to CORS security.
 
-## Android
+## Run on Android
 
 The project can run on android. **If you are on a mac, please install XCode
 and agree to the terms before proceeding**
@@ -99,7 +99,9 @@ Use Grunt to set up project and deploy.
 
 `$ grunt android-emulator` if you want to use an emulator
 
-## IOS
+## Run on IOS
+
+Use Grunt to set up project and deploy.
 
 `$ grunt cordova` Will install plugins and platforms
 
