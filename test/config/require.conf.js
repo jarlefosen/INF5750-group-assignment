@@ -1,3 +1,5 @@
+/* eslint nomen: false */
+
 var tests = [];
 for (var file in window.__karma__.files) {
   if (window.__karma__.files.hasOwnProperty(file)) {
@@ -19,10 +21,10 @@ require.config({
   baseUrl: "/base/www/js",
 
   shim: {
-    "angular":          { exports: "angular" },
-    "angular-route" :   { deps: ["angular"], exports: "route" },
-    "angular-resource": { deps: ["angular"], exports: "resource" },
-    "angular-mocks":    { deps: ["angular"], exports: "mocks" }
+    "angular": { exports: "angular" },
+    "angular-route" : { deps: ["angular"], exports: "route" },
+    "angular-resource" : { deps: ["angular"], exports: "resource" },
+    "angular-mocks": { deps: ["angular"], exports: "mocks" }
   },
 
   deps: tests,
@@ -30,4 +32,3 @@ require.config({
   callback: window.__karma__.start
 
 });
-
