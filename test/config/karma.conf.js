@@ -1,26 +1,25 @@
-// Karma configuration
-// Generated on Sat Nov 08 2014 16:18:58 GMT+0100 (CET)
-
 module.exports = function(config) {
+  "use strict";
+
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '../../',
+    basePath: "../../",
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ["jasmine", "requirejs"],
 
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'www/js/*.js', included: false},
-      {pattern: 'www/js/**/*.js', included: false},
-      {pattern: 'www/bower_components/**/*.js', included: false},
-      {pattern: 'test/unit/**/*.spec.js', included: false},
+      {pattern: "www/js/*.js", included: false},
+      {pattern: "www/js/**/*.js", included: false},
+      {pattern: "www/bower_components/**/*.js", included: false},
+      {pattern: "test/unit/**/*.spec.js", included: false},
 
-      'test/config/require.conf.js'
+      "test/config/require.conf.js"
     ],
 
 
@@ -31,9 +30,9 @@ module.exports = function(config) {
     ],
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
+    // possible values: "dots", "progress"
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ["progress"],
 
     plugins: [
       "karma-jasmine",
