@@ -85,23 +85,24 @@ and agree to the terms before proceeding**
 
 Install the newest platform image available.
 
-**LINUX / OSX**
-
-Open your `.bash_profile` or `.bashrc` file and enter the following
+Add ANDROID_HOME to path.
 
 ```
 export ANDROID_HOME="/PATH/TO/ANDROID_SDK"
 ```
 
-**WINDOWS**
+Use Grunt to set up project and deploy.
 
-Open your environmental variables in system settings and enter a new
-variable named `ANDROID_HOME` with the value `/PATH/TO/ANDROID_SKD`
+`$ grunt cordova` Will install plugins and platforms
 
-**Run the project on Android**
+`$ grunt android` Will deploy the application to your connected android phone.
 
-`$ cordova platform add android`
+`$ grunt android-emulator` if you want to use an emulator
 
-`$ npm run-script android`
+## IOS
 
-Then you are good to go! The application will be installed on your connected device.
+`$ grunt cordova` Will install plugins and platforms
+
+`$ grunt ios` Will deploy the application to your connected android phone.
+
+`$ grunt ios-emulator` if you want to use an emulator
