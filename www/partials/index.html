@@ -1,41 +1,7 @@
-<nav class="navbar-fixed-top navigation-top">
-  <ul>
-    <li class="menu-element new-message-btn">
-      <a href="#">
-        <i class="fa fa-plus fa-lg"></i>
-        New message
-      </a>
-    </li>
-    <li class="menu-element edit-btn hidden-lg hidden-md">
-      <a href="#">
-        <i class="fa fa-cogs fa-lg"></i>
-        Edit
-      </a>
-    </li>
-    <li class="menu-element logo-container visible-lg visible-md">
-      <img class="dhis-logo img-responsive" src="img/dhis2.png" alt="DHIS2 logo"/>
-    </li>
-  </ul>
-</nav>
-
-    <div class="inbox-container container col-lg-3 col-md-3 col-xs-12">
-      <inbox-message data-ng-repeat="message in messages"></inbox-message>
-    </div>
-    <div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
-      <h1>Message content container</h1>
-    </div>
-
-<nav class="navbar-fixed-bottom navigation-bottom">
-  <ul>
-    <li class="menu-element active">
-      <a href="#">Inbox</a>
-    </li>
-    <li class="menu-element">
-      <a href="#">Follow Up</a>
-    </li>
-    <li class="menu-element">
-      <a href="#">Unread</a>
-    </li>
-  </ul>
-</nav>
+<div class="inbox-container container col-lg-3 col-md-3 col-xs-12">
+  <inbox-message data-ng-repeat="message in messages"></inbox-message>
+</div>
+<div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
+  <h1>Message content container</h1>
+</div>
 
