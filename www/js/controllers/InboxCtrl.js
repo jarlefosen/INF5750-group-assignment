@@ -8,13 +8,13 @@ define([
 ], function (app) {
   "use strict";
 
-  app.controller("MessageCtrl", [
+  app.controller("InboxCtrl", [
     "$scope", "MessageService",
     function ($scope, MessageService) {
 
       $scope.messages2 = MessageService.getAllMessages();
 
-      $scope.messages1 =
+      $scope.messages =
         [
           {
             sender: "Tom Ebola",
