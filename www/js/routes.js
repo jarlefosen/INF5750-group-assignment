@@ -12,11 +12,6 @@ define([
     "$routeProvider",
     function ($routeProvider) {
       $routeProvider
-        .when("/", {
-          templateUrl: "partials/index.html",
-          controller: "IndexCtrl"
-        })
-
         .when("/login", {
           templateUrl: "partials/login.html",
           controller: "LoginCtrl"
@@ -33,7 +28,7 @@ define([
         })
 
         .otherwise({
-          redirectTo: "/"
+          redirectTo: "/messages"
         });
     }
   ]);
