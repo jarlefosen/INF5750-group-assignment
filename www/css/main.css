@@ -162,10 +162,57 @@
 /* line 1, sass/partials/_navbar.scss */
 .navigation-top {
   height: 50px;
-  background-color: red;
+  background-color: #1d5288;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+/* line 9, sass/partials/_navbar.scss */
+.navigation-top ul {
+  margin-bottom: 0;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  zoom: 1;
+}
+/* line 16, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element {
+  width: auto;
+  display: inline-block;
+  line-height: 49px;
+}
+/* line 21, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.new-message-btn {
+  float: left;
+  margin-left: 20px;
+}
+/* line 25, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.edit-btn {
+  float: right;
+  margin-right: 20px;
+}
+/* line 30, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container {
+  float: right;
+  margin-right: 20px;
+}
+/* line 33, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container .dhis-logo {
+  height: 50px;
+}
+/* line 37, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fcfcfc;
+}
+/* line 38, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a .fa {
+  margin-right: 5px;
 }
 
-/* line 6, sass/partials/_navbar.scss */
+/* line 49, sass/partials/_navbar.scss */
 .navigation-bottom {
   height: 50px;
   background-color: #f4f4f4;
@@ -174,7 +221,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* line 14, sass/partials/_navbar.scss */
+/* line 57, sass/partials/_navbar.scss */
 .navigation-bottom ul {
   list-style-type: none;
   text-align: center;
@@ -182,40 +229,35 @@
   zoom: 1;
   display: inline-block;
 }
-/* line 21, sass/partials/_navbar.scss */
+/* line 64, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element {
   width: 140px;
   display: inline-block;
   line-height: 40px;
 }
-/* line 25, sass/partials/_navbar.scss */
+/* line 68, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element a {
   text-decoration: none;
   font-size: 24px;
   color: #9b9b9b;
 }
-/* line 30, sass/partials/_navbar.scss */
+/* line 73, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element.active {
   border-top: 5px solid #1d5288;
 }
-/* line 32, sass/partials/_navbar.scss */
+/* line 75, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element.active a {
   color: #4a4a4a;
 }
 
 @media (max-width: 992px) {
-  /* line 44, sass/partials/_navbar.scss */
+  /* line 86, sass/partials/_navbar.scss */
   .navigation-bottom ul {
     display: block;
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    zoom: 1;
   }
-  /* line 51, sass/partials/_navbar.scss */
+  /* line 88, sass/partials/_navbar.scss */
   .navigation-bottom ul .menu-element {
     width: 30%;
-    display: inline-block;
   }
 }
 /* line 7, sass/main.scss */

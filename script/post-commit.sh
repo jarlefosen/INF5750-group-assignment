@@ -13,13 +13,6 @@ if [ $? -eq 0 ]; then
             echo "Linting failed! Please consider fixing the above-mentioned issues."
         fi
     else
-        echo "Run npm install in ./app to automatically lint javascripts!"
+        echo "Run npm install to automatically lint javascripts!"
     fi
-fi
-
-html_files_to_lint=$(echo $changed_files | grep .html)
-
-if [ $? -eq 0 ]; then
-    echo $html_files_to_lint | xargs grep --color=always -n -P '(?<!data-)ng-'
-    echo "Some occurrences of ng attributes without \`data-\` prefix was found. Please consider fixing the above-mentioned issues."
 fi
