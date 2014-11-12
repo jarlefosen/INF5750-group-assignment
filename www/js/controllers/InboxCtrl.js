@@ -11,92 +11,79 @@ define([
   app.controller("InboxCtrl", [
     "$scope", "MessageService",
     function ($scope, MessageService) {
+      var dump = [
+        {
+          "lastUpdated": "2014-11-10T13:38:41.783+0000",
+          "followUp": true,
+          "id": "J4OMgKb01sO",
+          "read": false,
+          "subject": "Ebola outbreak",
+          "lastSender": {
+            "name": "Amund Meisal"
+          },
+          "messages": [
+            {
+              "id": "FWPWCIQ3eJb",
+              "name": "New Ebola outbreak in Sierra Leone! Help help!"
+            }
+          ]
+        },
+        {
+          "lastUpdated": "2014-11-10T13:38:41.783+0000",
+          "followUp": false,
+          "id": "J4OMgKb01sO",
+          "read": true,
+          "subject": "Ebola outbreak",
+          "lastSender": {
+            "name": "Amund Meisal"
+          },
+          "messages": [
+            {
+              "id": "FWPWCIQ3eJb",
+              "name": "New Ebola outbreak in Sierra Leone! Help help!"
+            }
+          ]
+        },
+        {
+          "lastUpdated": "2014-11-10T13:38:41.783+0000",
+          "followUp": false,
+          "id": "J4OMgKb01sO",
+          "read": false,
+          "subject": "Ebola outbreak",
+          "lastSender": {
+            "name": "Amund Meisal"
+          },
+          "messages": [
+            {
+              "id": "FWPWCIQ3eJb",
+              "name": "New Ebola outbreak in Sierra Leone! Help help!"
+            }
+          ]
+        }
+      ];
+      $scope.allMessages = [];
 
-      $scope.messages2 = MessageService.getAllMessages();
 
-      $scope.messages =
-        [
-          {
-            sender: "Tom Ebola",
-            subject: "New outbreaks of Malaria",
-            content: "The outbreak is registered in Sierra Leone and is going viral! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: true
-          },
-          {
-            sender: "Amund M.",
-            subject: "Diare på IFI",
-            content: "Utbruddet startet etter besk smak på kotelettene fra SIO kantina! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: false
-          },
-          {
-            sender: "Kåre Conradi",
-            subject: "Takk for hjelpen!",
-            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: false,
-            followUp: false
-          },
-          {
-            sender: "Maria Magdalena Jucovich Menarita",
-            subject: "Business proposal with long subject line! Too long in fact",
-            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: false,
-            followUp: true
-          },
-          {
-            sender: "Jens Stoltenberg",
-            subject: "Diare på IFI",
-            content: "Utbruddet startet etter besk smak på kotelettene fra SIO kantina! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: false
-          },
-          {
-            sender: "Jens Stoltenberg",
-            subject: "Diare på IFI",
-            content: "Utbruddet startet etter besk smak på kotelettene fra SIO kantina! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: false
-          },
-          {
-            sender: "Jens Stoltenberg",
-            subject: "Diare på IFI",
-            content: "Utbruddet startet etter besk smak på kotelettene fra SIO kantina! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: false
-          },
-          {
-            sender: "Jens Stoltenberg",
-            subject: "Diare på IFI",
-            content: "Utbruddet startet etter besk smak på kotelettene fra SIO kantina! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: false
-          },
-          {
-            sender: "Jens Stoltenberg",
-            subject: "Diare på IFI",
-            content: "Utbruddet startet etter besk smak på kotelettene fra SIO kantina! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: false
-          },
-          {
-            sender: "Jens Stoltenberg",
-            subject: "Diare på IFI",
-            content: "Utbruddet startet etter besk smak på kotelettene fra SIO kantina! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi incidunt maiores nesciunt obcaecati, quae. Eaque inventore recusandae sit sunt.",
-            date: "2014-08-19T07:49:38.621+0000",
-            unread: true,
-            followUp: false
-          }
-        ]
+
+      MessageService.getAllMessages().then(
+        function(msgs){
+          $scope.messageList = msgs;
+
+          angular.forEach(msgs.messageConversations, function(value, index){
+
+            MessageService.getMessage(value.id).then(
+              function(data){
+                $scope.allMessages.push(data);
+              }, function(){
+                console.log("Fant ikke melding :/");
+              }
+            );
+
+          });
+        }, function(){
+          $scope.messageList = "";
+        }
+      );
     }
 
   ]);
