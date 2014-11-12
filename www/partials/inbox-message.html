@@ -4,7 +4,7 @@
       <p class="sender">{{message.lastSender.name}}</p>
       <i ng-show="message.followUp" class="fa fa-star-o follow-up"></i>
       <p ng-hide="message.read" class="unread">Unread!</p>
-      <p class="date">{{message.lastUpdated | dateFilter}}</p>
+      <p class="date">{{message.lastMessage | dateFilter}}</p>
     </div>
     <p class="subject">{{message.subject}}</p>
     <p class="content">{{message.messages[0].name}}</p>
