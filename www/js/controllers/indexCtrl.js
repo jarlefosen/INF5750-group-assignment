@@ -1,7 +1,9 @@
 define([
   "app",
   "filters/dateFilter",
-  "directives/inboxMessage"
+  "directives/inboxMessage",
+  "directives/navbarTop",
+  "directives/navbarBottom"
 ], function(app) {
   "use strict";
 

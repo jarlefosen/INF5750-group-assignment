@@ -14,10 +14,15 @@
 </head>
 <body class="body">
 
-<!-- <div ng-include="'partials/navbar.html'" ng-controller="NavbarCtrl"></div> -->
+<!-- <div ng-include="'partials/navbarTop.html'" ng-controller="NavbarCtrl"></div> -->
+
+
+<navbar-top></navbar-top>
 
 <!-- routes.js will change which partial is shown inside this div -->
 <div data-ng-view></div>
+
+<navbar-bottom></navbar-bottom>
 
 <!-- main.js is the core element which starts the angular app -->
 <script data-main="js/main.js" src="bower_components/requirejs/require.js"></script>
