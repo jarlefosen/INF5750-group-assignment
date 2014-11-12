@@ -2,15 +2,14 @@ define([
   "app",
   "angular",
   "angular-resource",
-  "factories/serverConfig",
-  "factories/base64"
-], function (app, angular) {
+  "factories/serverConfig"
+], function (app) {
+  "use strict";
 
   app.service("LoginService", [
-    "ServerConfig", "$q", "base64", "$http",
-    function (ServerConfig, $q, base64, $http) {
+    "ServerConfig", "$q", "$http",
+    function (ServerConfig, $q, $http) {
 
-      var TOKEN_KEY = "no.uio.inf5750-11.auth";
       var LOGIN_URL = "/dhis-web-commons-security/login.action?authOnly=true";
       var LOGOUT_URL = "/dhis-web-commons-security/logout.action";
       var PROFILE_URL = "/api/me.json";
@@ -45,8 +44,8 @@ define([
       function login(username, password) {
         var deferred = $q.defer();
         var content = {
-          j_username: username,
-          j_password: password
+          "j_username": username,
+          "j_password": password
         };
 
         $http({
@@ -58,7 +57,6 @@ define([
           }
         })
           .success(function (data, status, headers) {
-            console.log(headers("Login-Page"));
             /* If success we get application/json. If it fails we will get text/plain */
             if (headers("Login-Page")) {
               deferred.reject(data);
@@ -77,7 +75,7 @@ define([
         login: login,
         logout: logout,
         getProfile: getProfile
-      }
+      };
     }
   ]);
 });
