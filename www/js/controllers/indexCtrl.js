@@ -95,7 +95,7 @@ define([
             unread: true,
             followUp: false
           }
-        ]
+        ];
     }
   ]);
 });
