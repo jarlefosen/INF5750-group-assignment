@@ -1,6 +1,49 @@
 .navigation-top{
   height: $navbar-height;
-  background-color: red;
+  background-color: $main-color;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+
+  ul{
+    margin-bottom: 0;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    zoom: 1;
+
+    .menu-element{
+      width: auto;
+      display: inline-block;
+      line-height: $navbar-height - 1;
+
+      &.new-message-btn{
+        float: left;
+        margin-left: 20px;
+      }
+      &.edit-btn{
+        float: right;
+        margin-right: 20px;
+      }
+
+      &.logo-container{
+        float: right;
+        margin-right: 20px;
+        .dhis-logo{
+          height: 50px;
+        }
+      }
+      a{
+        .fa{
+          margin-right: 5px;
+        }
+        text-decoration: none;
+        font-size: 18px;
+        color: $color-font-nav-top;
+      }
+    }
+  }
 }
 
 .navigation-bottom{
@@ -40,20 +83,11 @@
 
 @media (max-width: $screen-md) {
   .navigation-bottom{
-
     ul{
       display: block;
-      list-style-type: none;
-      text-align: center;
-      padding: 0;
-      zoom: 1;
-
       .menu-element{
         width: 30%;
-        display: inline-block;
       }
     }
-
   }
-
 }
