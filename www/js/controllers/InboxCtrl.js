@@ -14,7 +14,7 @@ define([
 
       $scope.messages2 = MessageService.getAllMessages();
 
-      $scope.messages =
+      $scope.messages1 =
         [
           {
             sender: "Tom Ebola",
