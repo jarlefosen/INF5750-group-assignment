@@ -14,8 +14,7 @@ define([
       var base = "inf5750-11.uio.no";
 
       return {
-        host: "http://" + base,
-        host_secure: "https://" + base
+        host: "http://" + base
       };
 
     }

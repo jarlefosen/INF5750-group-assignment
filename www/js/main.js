@@ -25,7 +25,7 @@ require([
   }
 
   /* If running on Cordova, wait for device ready to bootstrap */
-  if (!!window.cordova) {
+  if (window.cordova) {
     document.addEventListener("deviceready", bootstrap, false);
   } else {
     bootstrap();

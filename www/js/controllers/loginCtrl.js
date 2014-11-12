@@ -1,8 +1,11 @@
+/* eslint no-alert: 0 */
+
 define([
   "app",
   "services/loginService"
 ], function (app) {
   "use strict";
+
   app.controller("LoginCtrl", [
     "$scope", "LoginService", "$location", "$route",
     function ($scope, LoginService, $location, $route) {
@@ -32,13 +35,13 @@ define([
         /* Login is just a stub for now */
         LoginService.login($scope.username, $scope.password)
           .then(
-          function (data) {
+          function () {
+            /* Login success - redirect to main page */
             $location.url("/");
           },
-          function (error) {
+          function () {
+            /* Login failed - Alert notification */
             window.alert("Oups! Could not authenticate. Try again!");
-            /* Not logged in */
-            //window.location.reload();
           });
       };
 

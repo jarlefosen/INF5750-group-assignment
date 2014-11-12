@@ -1,11 +1,13 @@
 define([
   "app"
 ], function(app) {
+  "use strict";
+
   app.directive("navbarTop", function(){
     return {
-      restrict: 'E',
+      restrict: "E",
       replace: true,
-      templateUrl: 'partials/navbarTop.html'
-    }
+      templateUrl: "partials/navbarTop.html"
+    };
   });
 });

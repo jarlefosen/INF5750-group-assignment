@@ -6,6 +6,7 @@ define([
   "use strict";
 
   app.service("MessageService", [
+
     "ServerConfig", "$q", "$http",
     function (ServerConfig, $q, $http) {
 
@@ -41,7 +42,7 @@ define([
       return {
         getAllMessages: getAllMessages,
         getMessage: getMessage
-      }
+      };
     }
-  ])
+  ]);
 });
