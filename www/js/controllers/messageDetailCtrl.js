@@ -5,14 +5,11 @@ define([
   "app",
   "../services/messageService"
 ], function (app) {
-
+  "use strict";
   app.controller("MessageDetailCtrl", [
     "$scope", "$routeParams", "MessageService",
     function ($scope, $routeParams, MessageService) {
-      "use strict";
-
-      $scope.hei = "hei";
       $scope.message = MessageService.getMessage($routeParams.messageId);
     }
-  ])
+  ]);
 });
