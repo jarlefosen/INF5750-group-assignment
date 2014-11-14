@@ -84,10 +84,11 @@ define([
 
       $scope.delMessage = function(messageId){
         MessageService.delMessage(messageId).then(
-          function(response){
+          function(){
+            // Should update list of messages in inbox.
           }
         );
-      }
+      };
     }
 
   ]);
