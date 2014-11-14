@@ -1,6 +1,7 @@
 define([
   "app",
-  "../services/messageService",
+  "services/messageService",
+  "services/loginService",
   "filters/dateFilter",
   "directives/inboxMessage",
   "directives/navbarTop",
@@ -9,9 +10,14 @@ define([
   "use strict";
 
   app.controller("InboxCtrl", [
-    "$scope", "MessageService",
-    function ($scope, MessageService) {
+    "$scope", "MessageService", "LoginService",
+    function ($scope, MessageService, LoginService) {
       $scope.allMessages = [];
+      LoginService.getProfile().then(
+        function(profile){
+          $scope.user_profile = profile;
+        }
+      );
 
       MessageService.getAllMessages().then(
         function(msgs){
@@ -19,13 +25,11 @@ define([
 
             MessageService.getMessage(value.id).then(
               function(data){
-                $scope.allMessages.push(data);
-              }, function(){
-              }
+                $scope.allMessages.push(updateObj(data));
+              }, function(error){}
             );
           });
-        }, function(){
-          $scope.messageList = "";
+        }, function(error){
         }
       );
 
@@ -37,6 +41,17 @@ define([
         );
       };
 
+
+      function updateObj(data){
+        angular.forEach(data.userMessages, function(value){
+          if(value.user.id === $scope.user_profile.id){
+            console.log("YEYE");
+            data.isRead = value.read;
+            data.isStarred = value.followUp;
+          }
+        });
+        return data;
+      };
     }
   ]);
 });
