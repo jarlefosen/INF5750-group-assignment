@@ -68,13 +68,12 @@ define([
         function(msgs){
           $scope.messageList = msgs;
 
-          angular.forEach(msgs.messageConversations, function(value, index){
+          angular.forEach(msgs.messageConversations, function(value){
 
             MessageService.getMessage(value.id).then(
               function(data){
                 $scope.allMessages.push(data);
               }, function(){
-                console.log("Fant ikke melding :/");
               }
             );
           });

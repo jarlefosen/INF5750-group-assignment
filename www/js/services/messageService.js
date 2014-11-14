@@ -16,7 +16,7 @@ define([
         var deferred = $q.defer();
 
         $http.get(ServerConfig.host + MESSAGES_BASE_URL)
-          .success(function(data) {
+          .success(function(data){
             deferred.resolve(data);
           })
           .error(function(){
@@ -30,10 +30,10 @@ define([
         var deferred = $q.defer();
 
         $http.get(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
-          .success(function(data) {
+          .success(function(data){
             deferred.resolve(data);
           })
-          .error(function() {
+          .error(function(){
             deferred.reject();
           });
         return deferred.promise;
