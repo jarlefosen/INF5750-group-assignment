@@ -15,7 +15,7 @@ define([
       $scope.allMessages = [];
       LoginService.getProfile().then(
         function(profile){
-          $scope.user_profile = profile;
+          $scope.userProfile = profile;
         }
       );
 
@@ -26,11 +26,10 @@ define([
             MessageService.getMessage(value.id).then(
               function(data){
                 $scope.allMessages.push(updateObj(data));
-              }, function(error){}
+              }, function(){}
             );
           });
-        }, function(error){
-        }
+        }, function(){}
       );
 
       $scope.delMessage = function(messageId){
@@ -44,14 +43,13 @@ define([
 
       function updateObj(data){
         angular.forEach(data.userMessages, function(value){
-          if(value.user.id === $scope.user_profile.id){
-            console.log("YEYE");
+          if(value.user.id === $scope.userProfile.id){
             data.isRead = value.read;
             data.isStarred = value.followUp;
           }
         });
         return data;
-      };
+      }
     }
   ]);
 });
