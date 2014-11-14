@@ -11,11 +11,12 @@ define([
     function (ServerConfig, $q, $http) {
 
       var MESSAGES_BASE_URL = "/api/messageConversations";
+      var MY_INBOX_URL = "/api/me/inbox";
 
       function getAllMessages() {
         var deferred = $q.defer();
 
-        $http.get(ServerConfig.host + MESSAGES_BASE_URL)
+        $http.get(ServerConfig.host + MY_INBOX_URL)
           .success(function(data){
             deferred.resolve(data);
           })
@@ -39,7 +40,7 @@ define([
         return deferred.promise;
       }
 
-      function delMessage(messageId) {
+      function deleteMessage(messageId) {
         var deferred = $q.defer();
 
         $http.delete(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
@@ -55,7 +56,7 @@ define([
       return {
         getAllMessages: getAllMessages,
         getMessage: getMessage,
-        delMessage: delMessage
+        deleteMessage: deleteMessage
       };
     }
   ]);
