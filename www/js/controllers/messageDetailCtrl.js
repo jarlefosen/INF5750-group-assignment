@@ -6,12 +6,9 @@ define([
   "services/messageService"
 ], function (app) {
   "use strict";
-
   app.controller("MessageDetailCtrl", [
     "$scope", "$routeParams", "MessageService",
     function ($scope, $routeParams, MessageService) {
-
-      $scope.hei = "hei";
       $scope.message = MessageService.getMessage($routeParams.messageId);
     }
   ]);

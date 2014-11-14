@@ -1,8 +1,7 @@
 define([
   "app"
-], function(app) {
+], function(app){
   "use strict";
-
   app.directive("inboxMessage", function(){
     return {
       restrict: "E",

@@ -6,8 +6,8 @@ define([
   "use strict";
 
   app.service("MessageService", [
-
     "ServerConfig", "$q", "$http",
+
     function (ServerConfig, $q, $http) {
 
       var MESSAGES_BASE_URL = "/api/messageConversations";
@@ -39,9 +39,24 @@ define([
         return deferred.promise;
       }
 
+      function delMessage(messageId) {
+        var deferred = $q.defer();
+
+        $http.delete(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
+          .success(function(data){
+            console.log("YEY!" + data);
+          })
+          .error(function(){
+
+          });
+        return deferred.promise;
+        //Messages.delete({messageId: messageId});
+      }
+
       return {
         getAllMessages: getAllMessages,
-        getMessage: getMessage
+        getMessage: getMessage,
+        delMessage: delMessage
       };
     }
   ]);
