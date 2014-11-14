@@ -4,6 +4,7 @@ define([
   "controllers/navbarCtrl",
   "controllers/loginCtrl",
   "controllers/InboxCtrl",
+  "controllers/userCtrl",
   "controllers/messageDetailCtrl"
 ], function (app) {
   "use strict";
@@ -25,6 +26,10 @@ define([
         .when("/messages/:messageId", {
           templateUrl: "partials/messageDetail.html",
           controller: "MessageDetailCtrl"
+        })
+        .when("/users", {
+          templateUrl: "partials/users.html",
+          controller: "UserCtrl"
         })
 
         .otherwise({
