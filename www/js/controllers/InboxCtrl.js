@@ -81,6 +81,13 @@ define([
           $scope.messageList = "";
         }
       );
+
+      $scope.delMessage = function(messageId){
+        MessageService.delMessage(messageId).then(
+          function(response){
+          }
+        );
+      }
     }
 
   ]);

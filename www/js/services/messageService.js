@@ -44,13 +44,12 @@ define([
 
         $http.delete(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
           .success(function(data){
-            console.log("YEY!" + data);
+            deferred.resolve(data);
           })
           .error(function(){
-
+            deferred.reject();
           });
         return deferred.promise;
-        //Messages.delete({messageId: messageId});
       }
 
       return {
