@@ -61,9 +61,8 @@ define([
           ]
         }
       ];
+
       $scope.allMessages = [];
-
-
 
       MessageService.getAllMessages().then(
         function(msgs){
@@ -78,7 +77,6 @@ define([
                 console.log("Fant ikke melding :/");
               }
             );
-
           });
         }, function(){
           $scope.messageList = "";
