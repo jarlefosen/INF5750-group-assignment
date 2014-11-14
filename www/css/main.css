@@ -61,22 +61,24 @@
 
 /* line 14, sass/partials/_inbox.scss */
 .message-container {
-  margin: 50px 0;
+  margin: 8vh 0;
   background-color: #fcfcfc;
-  height: 1000px;
+  height: 84vh;
+  overflow: auto;
 }
 
-/* line 20, sass/partials/_inbox.scss */
+/* line 21, sass/partials/_inbox.scss */
 .inbox-container {
-  background-color: green;
-  height: auto;
-  margin: 50px 0;
+  background-color: #fcfcfc;
+  height: 84vh;
+  margin: 8vh 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-right: 2px solid #979797;
+  overflow: auto;
 }
 
-/* line 30, sass/partials/_inbox.scss */
+/* line 32, sass/partials/_inbox.scss */
 .inbox-message {
   background-color: #fcfcfc;
   border-bottom: 2px solid #979797;
@@ -84,21 +86,21 @@
   margin: 0 !important;
   height: 100px;
 }
-/* line 37, sass/partials/_inbox.scss */
+/* line 39, sass/partials/_inbox.scss */
 .inbox-message:last-of-type {
   border-bottom: none;
 }
-/* line 41, sass/partials/_inbox.scss */
+/* line 43, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container {
   padding-left: 0;
   padding-right: 0;
   margin-top: 9px;
 }
-/* line 46, sass/partials/_inbox.scss */
+/* line 48, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading {
   margin: 0 0 2px 0;
 }
-/* line 49, sass/partials/_inbox.scss */
+/* line 51, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .sender {
   font-size: 14px;
   font-weight: 300;
@@ -111,13 +113,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 60, sass/partials/_inbox.scss */
+/* line 62, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .follow-up {
   margin-left: 5px;
   float: left;
   line-height: 20px;
 }
-/* line 66, sass/partials/_inbox.scss */
+/* line 68, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .unread {
   margin-bottom: 0;
   margin-left: 5px;
@@ -127,7 +129,7 @@
   line-height: 20px;
   font-size: 12px;
 }
-/* line 76, sass/partials/_inbox.scss */
+/* line 78, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .date {
   font-size: 10px;
   display: inline-block;
@@ -135,7 +137,7 @@
   margin-bottom: 0;
   color: #9B9B9B;
 }
-/* line 85, sass/partials/_inbox.scss */
+/* line 87, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .subject {
   font-size: 12px;
   font-weight: 400;
@@ -145,7 +147,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 93, sass/partials/_inbox.scss */
+/* line 95, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .content {
   color: #9B9B9B;
   max-height: 40px;
@@ -154,14 +156,14 @@
   font-size: 12px;
   margin-bottom: 0;
 }
-/* line 102, sass/partials/_inbox.scss */
+/* line 104, sass/partials/_inbox.scss */
 .inbox-message .arrow {
   background-color: black;
 }
 
 /* line 1, sass/partials/_navbar.scss */
 .navigation-top {
-  height: 50px;
+  height: 8vh;
   background-color: #1d5288;
   width: 100%;
   margin-left: auto;
@@ -180,7 +182,7 @@
 .navigation-top ul .menu-element {
   width: auto;
   display: inline-block;
-  line-height: 49px;
+  line-height: 8vh;
 }
 /* line 21, sass/partials/_navbar.scss */
 .navigation-top ul .menu-element.new-message-btn {
@@ -199,7 +201,7 @@
 }
 /* line 33, sass/partials/_navbar.scss */
 .navigation-top ul .menu-element.logo-container .dhis-logo {
-  height: 50px;
+  height: 8vh;
 }
 /* line 37, sass/partials/_navbar.scss */
 .navigation-top ul .menu-element a {
@@ -214,7 +216,7 @@
 
 /* line 49, sass/partials/_navbar.scss */
 .navigation-bottom {
-  height: 50px;
+  height: 8vh;
   background-color: #f4f4f4;
   border-top: 1px solid #979797;
   width: 100%;
@@ -233,7 +235,7 @@
 .navigation-bottom ul .menu-element {
   width: 140px;
   display: inline-block;
-  line-height: 40px;
+  line-height: 6vh;
 }
 /* line 68, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element a {
@@ -243,7 +245,7 @@
 }
 /* line 73, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element.active {
-  border-top: 5px solid #1d5288;
+  border-top: 1vh solid #1d5288;
 }
 /* line 75, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element.active a {
@@ -251,11 +253,11 @@
 }
 
 @media (max-width: 992px) {
-  /* line 86, sass/partials/_navbar.scss */
+  /* line 85, sass/partials/_navbar.scss */
   .navigation-bottom ul {
     display: block;
   }
-  /* line 88, sass/partials/_navbar.scss */
+  /* line 87, sass/partials/_navbar.scss */
   .navigation-bottom ul .menu-element {
     width: 30%;
   }

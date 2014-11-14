@@ -14,16 +14,18 @@ $fontsize-content: 12px;
 .message-container{
   margin: $navbar-height 0;
   background-color: $off-white;
-  height: 1000px;
+  height: $content-height;
+  overflow: auto;
 }
 
 .inbox-container{
-  background-color: green;
-  height: auto;
+  background-color: $off-white;
+  height: $content-height;
   margin: $navbar-height 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-right: 2px solid $grey;
+  overflow: auto;
 
 }
 

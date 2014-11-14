@@ -27,6 +27,8 @@ $color-font-nav-bot: $grayish;
 $color-font-nav-top: $off-white;
 
 
-$navbar-height: 50px;
+$navbar-height: 8vh;
+$content-height: 100vh - ($navbar-height * 2);
+
 
 
