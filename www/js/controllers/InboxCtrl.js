@@ -13,6 +13,13 @@ define([
     "$scope", "MessageService", "LoginService",
     function ($scope, MessageService, LoginService) {
       $scope.allMessages = [];
+      $scope.orderProp = "lastMessage";
+      $scope.filterProp = {};
+
+      $scope.setFilter = function(value){
+        $scope.filterProp = value;
+      };
+
       LoginService.getProfile().then(
         function(profile){
           $scope.userProfile = profile;
@@ -29,6 +36,7 @@ define([
               }, function(){}
             );
           });
+          $scope.setFilter({});
         }, function(){}
       );
 
