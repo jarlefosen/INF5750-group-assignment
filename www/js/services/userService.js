@@ -73,7 +73,7 @@ define([
         var deferred = $q.defer();
 
         if (isFetchingUsers) {
-          deferred.reject();
+          deferred.resolve(getListFromCache());
         } else {
           isFetchingUsers = true;
 
@@ -98,36 +98,14 @@ define([
       }
 
       function isCacheValid() {
-        var cache_time = angular.fromJson(localStorage.getItem(CACHE_TIMESTAMP_KEY));
+        var cacheTime = angular.fromJson(localStorage.getItem(CACHE_TIMESTAMP_KEY));
         var ttl = CACHE_TTL * 1000; // from seconds to milliseconds
 
-        if (!cache_time) {
+        if (!cacheTime) {
           return false;
         }
 
-        return cache_time + ttl > new Date().getTime();
-      }
-
-      function getUserById(id) {
-        if (!isCacheValid()) {
-          fetchUserList();
-        }
-
-        return getObjectFromCache()[id];
-      }
-
-      function searchUser(query) {
-        if (!isCacheValid()) {
-          fetchUserList();
-        }
-
-        query = query.toLowerCase();
-        var userList = getListFromCache();
-        var resultList = userList.filter(function(element) {
-          return element.name.toLowerCase().indexOf(query) !== -1;
-        });
-
-        return resultList;
+        return cacheTime + ttl > new Date().getTime();
       }
 
       function getUsers() {
@@ -145,6 +123,37 @@ define([
         } else {
           deferred.resolve(getListFromCache());
         }
+
+        return deferred.promise;
+      }
+
+      function getUserById(id) {
+        var deferred = $q.defer();
+
+        getUsers().then(
+          function() {
+            deferred.resolve(getObjectFromCache()[id]);
+          },
+          function() {
+            deferred.resolve(getObjectFromCache()[id]);
+          }
+        );
+
+        return deferred.promise;
+      }
+
+      function searchUser(query) {
+        var deferred = $q.defer();
+        query = query.toLowerCase();
+
+        getUsers().then(
+          function(userList) {
+            var resultList = userList.filter(function(element) {
+              return element.name.toLowerCase().indexOf(query) !== -1;
+            });
+            deferred.resolve(resultList);
+          }
+        );
 
         return deferred.promise;
       }

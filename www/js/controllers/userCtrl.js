@@ -2,6 +2,7 @@ define([
   "app",
   "services/userService"
 ], function(app) {
+  "use strict";
 
   app.controller("UserCtrl", [
     "$scope", "UserService",
@@ -11,17 +12,23 @@ define([
       $scope.query = "";
 
       $scope.search = function() {
-        $scope.users = UserService.search($scope.query);
+        UserService.search($scope.query).then(
+          function(data) {
+            $scope.users = data;
+          }
+        );
       };
 
       $scope.byId = function() {
-        var list = [];
-        var user = UserService.getUser($scope.query);
-        if (user !== undefined) {
-          list.push(user);
-        }
-
-        $scope.users = list;
+        UserService.getUser($scope.query).then(
+          function(data) {
+            var list = [];
+            if (data !== undefined) {
+              list.push(data);
+            }
+            $scope.users = list;
+          }
+        );
       };
 
 
