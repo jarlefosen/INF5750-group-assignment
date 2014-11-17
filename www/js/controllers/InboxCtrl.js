@@ -1,7 +1,6 @@
 define([
   "app",
   "services/messageService",
-  "services/loginService",
   "filters/dateFilter",
   "directives/inboxMessage",
   "directives/navbarTop",
@@ -10,46 +9,79 @@ define([
   "use strict";
 
   app.controller("InboxCtrl", [
-    "$scope", "MessageService", "LoginService",
-    function ($scope, MessageService, LoginService) {
-      $scope.allMessages = [];
-      LoginService.getProfile().then(
-        function(profile){
-          $scope.userProfile = profile;
+    "$scope", "MessageService",
+    function ($scope, MessageService) {
+      var dump = [
+        {
+          "lastUpdated": "2014-11-10T13:38:41.783+0000",
+          "followUp": true,
+          "id": "J4OMgKb01sO",
+          "read": false,
+          "subject": "Ebola outbreak",
+          "lastSender": {
+            "name": "Amund Meisal"
+          },
+          "messages": [
+            {
+              "id": "FWPWCIQ3eJb",
+              "name": "New Ebola outbreak in Sierra Leone! Help help!"
+            }
+          ]
+        },
+        {
+          "lastUpdated": "2014-11-10T13:38:41.783+0000",
+          "followUp": false,
+          "id": "J4OMgKb01sO",
+          "read": true,
+          "subject": "Ebola outbreak",
+          "lastSender": {
+            "name": "Amund Meisal"
+          },
+          "messages": [
+            {
+              "id": "FWPWCIQ3eJb",
+              "name": "New Ebola outbreak in Sierra Leone! Help help!"
+            }
+          ]
+        },
+        {
+          "lastUpdated": "2014-11-10T13:38:41.783+0000",
+          "followUp": false,
+          "id": "J4OMgKb01sO",
+          "read": false,
+          "subject": "Ebola outbreak",
+          "lastSender": {
+            "name": "Amund Meisal"
+          },
+          "messages": [
+            {
+              "id": "FWPWCIQ3eJb",
+              "name": "New Ebola outbreak in Sierra Leone! Help help!"
+            }
+          ]
         }
-      );
+      ];
+
+      $scope.allMessages = [];
 
       MessageService.getAllMessages().then(
         function(msgs){
+          $scope.messageList = msgs;
+
           angular.forEach(msgs.messageConversations, function(value){
 
             MessageService.getMessage(value.id).then(
               function(data){
-                $scope.allMessages.push(updateObj(data));
-              }, function(){}
+                $scope.allMessages.push(data);
+              }, function(){
+              }
             );
           });
-        }, function(){}
+        }, function(){
+          $scope.messageList = "";
+        }
       );
-
-      $scope.delMessage = function(messageId){
-        MessageService.delMessage(messageId).then(
-          function(){
-            // Should update list of messages in inbox.
-          }
-        );
-      };
-
-
-      function updateObj(data){
-        angular.forEach(data.userMessages, function(value){
-          if(value.user.id === $scope.userProfile.id){
-            data.isRead = value.read;
-            data.isStarred = value.followUp;
-          }
-        });
-        return data;
-      }
     }
+
   ]);
 });
