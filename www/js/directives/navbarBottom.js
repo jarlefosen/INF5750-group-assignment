@@ -8,13 +8,13 @@ define([
       restrict: "E",
       replace: true,
       templateUrl: "partials/navbarBottom.html",
-      scope: {
+      scope: {
         setfilter: "@"
       },
       link: function(scope, element, attrs){
         scope.setFilter = function(val){
           scope.$parent.setFilter(val);
-        }
+        };
       }
     };
   });
