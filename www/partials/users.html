@@ -1,0 +1,10 @@
+<div class="message-container ">
+
+  <input type="text" ng-model="query">
+  <input type="submit" value="Søk (Navn)" ng-click="search()">
+  <input type="submit" value="Finn (ID)" ng-click="byId()">
+
+  <div ng-repeat="user in users">
+    <pre>{{user.name}}<br/>({{user.id}})</pre>
+  </div>
+</div>
