@@ -9,8 +9,8 @@ define([
   "use strict";
 
   app.config([
-    "$routeProvider",
-    function ($routeProvider) {
+    "$routeProvider", "$httpProvider",
+    function ($routeProvider, $httpProvider) {
       $routeProvider
         .when("/login", {
           templateUrl: "partials/login.html",
@@ -30,6 +30,32 @@ define([
         .otherwise({
           redirectTo: "/messages"
         });
+
+      var loginInterceptor = [
+        "$q", "$location",
+        function ($q, $location) {
+
+          function success(response) {
+            if (response.headers("Login-Page")) {
+              $location.url("/login");
+              location.reload();
+              return $q.reject(response);
+            }
+
+            return response;
+          }
+
+          function error(response) {
+            return response;
+          }
+
+          return function (promise) {
+            return promise.then(success, error);
+          };
+        }];
+
+      $httpProvider.responseInterceptors.push(loginInterceptor);
+
     }
   ]);
 });
