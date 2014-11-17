@@ -1,6 +1,6 @@
 define([
   "app",
-  "../services/messageService",
+  "services/messageService",
   "filters/dateFilter",
   "directives/inboxMessage",
   "directives/navbarTop",
