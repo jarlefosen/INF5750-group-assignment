@@ -1,3 +1,5 @@
+/* eslint no-console: 0 */
+
 define([
   "app",
   "angular",
@@ -64,8 +66,14 @@ define([
 
         /* If cache model is updated, save to cache */
         if (isUpdated) {
-          localStorage.setItem(CACHE_KEY, angular.toJson(users));
-          localStorage.setItem(CACHE_TIMESTAMP_KEY, angular.toJson(new Date()));
+          try {
+            localStorage.setItem(CACHE_KEY, angular.toJson(users));
+            localStorage.setItem(CACHE_TIMESTAMP_KEY, angular.toJson(new Date()));
+          } catch (e) {
+            console.log("Could not store users in localStorage. Probably full.");
+            console.log(e);
+          }
+
         }
       }
 
