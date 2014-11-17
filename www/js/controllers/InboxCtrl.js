@@ -13,6 +13,13 @@ define([
     "$scope", "MessageService", "LoginService",
     function ($scope, MessageService, LoginService) {
       $scope.allMessages = [];
+      $scope.orderProp = "lastMessage";
+      $scope.filterProp = {};
+
+      $scope.setFilter = function(value){
+        $scope.filterProp = value;
+      };
+
       LoginService.getProfile().then(
         function(profile){
           $scope.userProfile = profile;
@@ -30,22 +37,9 @@ define([
 
       MessageService.getAllMessages().then(
         function(msgs) {
-
           $scope.allMessages = msgs;
           getMessageContent($scope.allMessages);
-          /*
-           angular.forEach(msgs.messageConversations, function(value){
-
-           MessageService.getMessage(value.id).then(
-           function(data){
-           $scope.allMessages.push(updateObj(data));
-           }, function(){}
-           );
-           });
-           }, function(){}
-           */
-        }
-      );
+        });
 
       $scope.delMessage = function(messageId){
         MessageService.delMessage(messageId).then(

@@ -7,7 +7,15 @@ define([
     return {
       restrict: "E",
       replace: true,
-      templateUrl: "partials/navbarBottom.html"
+      templateUrl: "partials/navbarBottom.html",
+      scope: {
+        setfilter: "@"
+      },
+      link: function(scope, element, attrs){
+        scope.setFilter = function(val){
+          scope.$parent.setFilter(val);
+        };
+      }
     };
   });
 });
