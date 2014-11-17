@@ -74,10 +74,6 @@ define([
           org_receivers.push(l);
         });
 
-        console.log("user_list = " + user_list);
-        console.log("group_list = " + group_list);
-        console.log("unit_list = " + org_list);
-
         var message = {
           subject: subject,
           text: text,
@@ -88,10 +84,10 @@ define([
 
         $http.post(ServerConfig.host + MESSAGES_BASE_URL, message)
           .success(function (data) {
-            console.log("POST message");
+            console.log("POST message"); //TODO Maybe remove??
           })
           .error(function () {
-            console.log("Error POSTing:(");
+            console.log("Error POSTing new message");
           });
         return deferred.promise;
       }
