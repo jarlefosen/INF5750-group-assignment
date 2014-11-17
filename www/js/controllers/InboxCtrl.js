@@ -19,17 +19,32 @@ define([
         }
       );
 
-      MessageService.getAllMessages().then(
-        function(msgs){
-          angular.forEach(msgs.messageConversations, function(value){
+      function getMessageContent(messages) {
+        messages.forEach(function(element) {
+          MessageService.getMessage(element.id)
+            .then(function(conversation) {
+              element.messages = conversation.messages;
+            });
+        });
+      }
 
-            MessageService.getMessage(value.id).then(
-              function(data){
-                $scope.allMessages.push(updateObj(data));
-              }, function(){}
-            );
-          });
-        }, function(){}
+      MessageService.getAllMessages().then(
+        function(msgs) {
+
+          $scope.allMessages = msgs;
+          getMessageContent($scope.allMessages);
+          /*
+           angular.forEach(msgs.messageConversations, function(value){
+
+           MessageService.getMessage(value.id).then(
+           function(data){
+           $scope.allMessages.push(updateObj(data));
+           }, function(){}
+           );
+           });
+           }, function(){}
+           */
+        }
       );
 
       $scope.delMessage = function(messageId){
@@ -39,17 +54,6 @@ define([
           }
         );
       };
-
-
-      function updateObj(data){
-        angular.forEach(data.userMessages, function(value){
-          if(value.user.id === $scope.userProfile.id){
-            data.isRead = value.read;
-            data.isStarred = value.followUp;
-          }
-        });
-        return data;
-      }
     }
   ]);
 });
