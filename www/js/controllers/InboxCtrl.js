@@ -28,7 +28,7 @@ define([
 
       function getMessageContent(messages) {
         messages.forEach(function(element) {
-          MessageService.getMessage(element.id)
+          MessageService.getMessage(element.id, element.lastUpdated)
             .then(function(conversation) {
               element.messages = conversation.messages;
             });
