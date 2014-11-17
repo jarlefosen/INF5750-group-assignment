@@ -144,9 +144,9 @@ define([
 
       function getConversation(id, lastUpdated) {
         var deferred = $q.defer();
-        var cached = getConversationFromCache(id);
+        var cached = getConversationFromCache(id) || {};
 
-        if (lastUpdated && lastUpdated === cached.lastUpdated) {
+        if (lastUpdated !== undefined && lastUpdated === cached.lastUpdated) {
           deferred.resolve(cached);
           return deferred.promise;
         }
