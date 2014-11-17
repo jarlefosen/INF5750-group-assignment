@@ -1,3 +1,5 @@
+/* eslint no-console: 0 */
+
 define([
   "app",
   "angular",
@@ -21,6 +23,14 @@ define([
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
 
+      function clearCache() {
+        try {
+          localStorage.removeItem(INBOX_LIST_CACHE_KEY);
+          localStorage.removeItem(MESSAGE_CACHE_KEY);
+        } catch(e) {
+          console.log("Failed to clear cache in Message Service");
+        }
+      }
 
       function shouldStoreElement(entry) {
         if (entry === undefined || entry.lastUpdated === undefined) {
@@ -31,6 +41,58 @@ define([
         var nowDate = new Date().getTime();
 
         return nowDate - cacheTTL < entryDate;
+      }
+
+      function getConversationObjectFromCache() {
+        return angular.fromJson(localStorage.getItem(MESSAGE_CACHE_KEY)) || {};
+      }
+
+      function getConversationFromCache(id) {
+        var conversationsObject = getConversationObjectFromCache();
+        return conversationsObject[id];
+      }
+
+      function saveConversation(conversation) {
+        if (!shouldStoreElement(conversation)) {
+          return;
+        }
+
+        var obj = getConversationObjectFromCache();
+        obj[conversation.id] = conversation;
+
+        try {
+          localStorage.setItem(MESSAGE_CACHE_KEY, angular.toJson(obj));
+        } catch (e) {
+          console.log("Could not store message conversation to localStorage. Probably full.");
+          console.log(e);
+        }
+
+      }
+
+      function deleteConversationFromCache(id) {
+        var obj = getConversationObjectFromCache();
+        delete obj[id];
+        try {
+          localStorage.setItem(MESSAGE_CACHE_KEY, angular.toJson(obj));
+        } catch(e) {
+          console.log("Could not perform localStorage operation. Memory might be full.");
+          console.log(e);
+        }
+      }
+
+      function getInboxListFromCache() {
+        return angular.fromJson(localStorage.getItem(INBOX_LIST_CACHE_KEY)) || [];
+      }
+
+      function getInboxEntryFromCache(id) {
+        var list = getInboxListFromCache();
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].id === id) {
+            return list[i];
+          }
+        }
+
+        return {};
       }
 
       /* Will remove any threads 30 days or older since last activity */
@@ -70,51 +132,6 @@ define([
           console.log(e);
         }
 
-      }
-
-      function getInboxListFromCache() {
-        return angular.fromJson(localStorage.getItem(INBOX_LIST_CACHE_KEY)) || [];
-      }
-
-      function getInboxEntryFromCache(id) {
-        var list = getInboxListFromCache();
-        for (var i = 0; i < list.length; i++) {
-          if (list[i].id === id)
-            return list[i];
-        }
-
-        return {};
-      }
-
-      function saveConversation(conversation) {
-        if (!shouldStoreElement(conversation)) {
-          return;
-        }
-
-        var obj = getConversationObjectFromCache();
-        obj[conversation.id] = conversation;
-
-        try {
-          localStorage.setItem(MESSAGE_CACHE_KEY, angular.toJson(obj));
-        } catch (e) {
-          console.log("Could not store message conversation to localStorage. Probably full.");
-          console.log(e);
-        }
-
-      }
-
-      function deleteConversationFromCache(id) {
-        var obj = getConversationObjectFromCache();
-        delete obj[id];
-      }
-
-      function getConversationObjectFromCache() {
-        return angular.fromJson(localStorage.getItem(MESSAGE_CACHE_KEY)) || {};
-      }
-
-      function getConversationFromCache(id) {
-        var conversationsObject = getConversationObjectFromCache();
-        return conversationsObject[id];
       }
 
       function convertConverstion(conversation) {
@@ -197,7 +214,8 @@ define([
       return {
         getAllMessages: getInbox,
         getMessage: getConversation,
-        deleteMessage: deleteConversation
+        deleteMessage: deleteConversation,
+        clearCache: clearCache()
       };
     }
   ]);
