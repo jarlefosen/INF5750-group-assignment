@@ -33,7 +33,7 @@ $fontsize-content: 12px;
   }
 
   &.active{
-    background-color: red;
+    border-right: 5px solid $main-color;
   }
 
   .inbox-message-container{

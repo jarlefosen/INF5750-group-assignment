@@ -84,7 +84,7 @@
 }
 /* line 35, sass/partials/_inbox.scss */
 .inbox-message.active {
-  background-color: red;
+  border-right: 5px solid #1d5288;
 }
 /* line 39, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container {
