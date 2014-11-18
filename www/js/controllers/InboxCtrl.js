@@ -13,6 +13,7 @@ define([
     "$scope", "MessageService", "LoginService",
     function ($scope, MessageService, LoginService) {
       $scope.allMessages = [];
+      $scope.currentMessage = {};
       $scope.orderProp = "lastMessage";
       $scope.filterProp = {};
 
@@ -47,6 +48,10 @@ define([
           }
         );
       };
+
+      $scope.setCurrentMessage = function(message){
+        $scope.currentMessage = message;
+      }
 
 
       function updateObj(data){
