@@ -4,7 +4,7 @@ define([
   "use strict";
   app.filter("dateFilter", ["$filter", function($filter){
     return function(isoDate){
-      return $filter("date")(isoDate, "dd.MM.yy");
+      return $filter("date")(isoDate, "yyyy-MM-dd");
     };
   }]);
 });

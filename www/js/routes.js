@@ -1,7 +1,5 @@
 define([
   "app",
-  "controllers/indexCtrl",
-  "controllers/navbarCtrl",
   "controllers/loginCtrl",
   "controllers/InboxCtrl",
   "controllers/userCtrl",
