@@ -11,10 +11,16 @@ define([
       scope: {
         setfilter: "@"
       },
-      link: function(scope, element, attrs){
-        scope.setFilter = function(val){
-          scope.$parent.setFilter(val);
+      link: function($scope, element, attrs){
+        $scope.activeTab = 1;
+
+        $scope.setFilter = function(val){
+          $scope.$parent.setFilter(val);
         };
+
+        $scope.setAsActive = function(val){
+          $scope.activeTab = val;
+        }
       }
     };
   });
