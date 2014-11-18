@@ -4,7 +4,22 @@
   <inbox-message data-ng-repeat="message in allMessages|filter:filterProp|orderBy:orderProp:reverse=true"></inbox-message>
 </div>
 <div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
-  <h1>Message content container</h1>
+  <div class="to-and-from-container">
+    <p>From: {{currentMessage.lastSender.name}}</p>
+    <p>To: <span data-ng-repeat="obj in currentMessage.userMessages">
+    {{obj.user.name}},
+  </span></p>
+  </div>
+
+  <h3>{{currentMessage.subject}}</h3>
+  <p>{{currentMessage.lastMessage | dateFilter}}</p>
+
+
+  <div class="single-message-container" data-ng-repeat="msg in currentMessage.messages">
+    <p>{{msg.name}}</p>
+  </div>
+
+  <p>{{currentMessage.messages[0].name}}</p>
 </div>
 
 <navbar-bottom setfilter="setFilter()"></navbar-bottom>
