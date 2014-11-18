@@ -51,7 +51,7 @@ define([
 
       $scope.setCurrentMessage = function(message){
         $scope.currentMessage = message;
-      }
+      };
 
 
       function updateObj(data){

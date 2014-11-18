@@ -20,7 +20,7 @@ define([
 
         $scope.setAsActive = function(val){
           $scope.activeTab = val;
-        }
+        };
       }
     };
   });
