@@ -3,6 +3,7 @@
 <div class="inbox-container container col-lg-3 col-md-3 col-xs-12">
   <inbox-message data-ng-repeat="message in allMessages|filter:filterProp|orderBy:orderProp:reverse=true"></inbox-message>
 </div>
+
 <div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
   <div class="to-and-from-container">
     <p>From: {{currentMessage.lastSender.name}}</p>
@@ -16,10 +17,12 @@
 
 
   <div class="single-message-container" data-ng-repeat="msg in currentMessage.messages">
-    <p>{{msg.name}}</p>
+    <div class="header">
+      <h6 class="sender">Tom Wakiki</h6>
+      <h6 class="timestamp">2014-11-17</h6>
+    </div>
+    <p class="message">The offline feature only requires you to be online for a minute in the morning when you open your computer. After that you can continue to enter data in the data entry module even if Internet connectivity is lost for as long as you want. The system will notify you when Internet connectivity is back, and allow you to upload your data to the online server.</p>
   </div>
-
-  <p>{{currentMessage.messages[0].name}}</p>
 </div>
 
 <navbar-bottom setfilter="setFilter()"></navbar-bottom>

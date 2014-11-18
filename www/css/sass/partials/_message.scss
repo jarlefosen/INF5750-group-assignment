@@ -7,7 +7,28 @@
 
   .to-and-from-container{
     display: inline-block;
+  }
 
+  .single-message-container{
+    border-bottom: 2px solid $grayish;
+    margin: 20px 0;
+
+    .header{
+      .sender{
+        display: inline-block;
+        font-weight: 600;
+
+        &:after{
+          content: ' - ';
+        }
+      }
+      .timestamp{
+        display: inline-block;
+        font-weight: 600;
+      }
+      .message{
+      }
+    }
   }
 }
 

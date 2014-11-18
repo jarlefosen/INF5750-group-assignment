@@ -34,6 +34,7 @@ $fontsize-content: 12px;
 
   &.active{
     border-right: 5px solid $main-color;
+    padding-right: 15px;
   }
 
   .inbox-message-container{
