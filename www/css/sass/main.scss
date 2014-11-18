@@ -3,6 +3,7 @@
 @import "partials/login";
 @import "partials/inbox";
 @import "partials/navbar";
+@import "partials/message";
 
 .body {
   background-color: $main-color;
@@ -11,5 +12,12 @@
 
 body, p, h1, h2, h3, h4, h5, h6{
   font-family: $font-default;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: $font-weight-heading;
+}
+
+body,p{
   font-weight: $font-weight-primary;
 }

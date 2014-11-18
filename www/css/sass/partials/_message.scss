@@ -1,0 +1,13 @@
+.message-container{
+  margin: $navbar-height 0;
+  background-color: $off-white;
+  height: $content-height;
+  overflow: auto;
+  padding-top: 20px;
+
+  .to-and-from-container{
+    display: inline-block;
+
+  }
+}
+
