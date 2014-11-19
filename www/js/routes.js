@@ -4,6 +4,7 @@ define([
   "controllers/InboxCtrl",
   "controllers/userCtrl",
   "controllers/userGroupCtrl",
+  "controllers/orgUnitCtrl",
   "controllers/messageDetailCtrl",
   "controllers/newMessageCtrl"
 ], function (app) {
@@ -40,6 +41,11 @@ define([
         .when("/groups", {
           templateUrl: "partials/groups.html",
           controller: "UserGroupCtrl"
+        })
+
+        .when("/orgUnits", {
+          templateUrl: "partials/orgUnits.html",
+          controller: "OrgUnitCtrl"
         })
 
         .otherwise({
