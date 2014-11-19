@@ -14,9 +14,10 @@
 </head>
 <body class="body">
 
-<!-- <div ng-include="'partials/navbarTop.html'" ng-controller="NavbarCtrl"></div> -->
-
-
+<div ui-view></div>
+<!-- We'll also add some navigation: -->
+<a ui-sref="state1">State 1</a>
+<a ui-sref="state2">State 2</a>
 <!-- routes.js will change which partial is shown inside this div -->
 <div data-ng-view></div>
 
