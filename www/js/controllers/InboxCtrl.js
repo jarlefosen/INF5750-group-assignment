@@ -5,7 +5,8 @@ define([
   "filters/dateFilter",
   "directives/inboxMessage",
   "directives/navbarTop",
-  "directives/navbarBottom"
+  "directives/navbarBottom",
+  "directives/messageDetail"
 ], function (app) {
   "use strict";
 
@@ -39,6 +40,8 @@ define([
               element.userMessages = conversation.userMessages;
             });
         });
+        // Setting default active message
+        $scope.setCurrentMessage(messages[0]);
       }
 
       MessageService.getAllMessages().then(

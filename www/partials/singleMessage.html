@@ -1,0 +1,17 @@
+<div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
+  <div class="to-and-from-container">
+    <p class="from-tag">From: <span>{{currentMessage.lastSenderFirstname}} {{currentMessage.lastSenderSurname}}</span></p>
+    <p class="to-tag">To: <span data-ng-repeat="obj in currentMessage.userMessages">{{obj.user.name}}</span></p>
+  </div>
+
+  <h3>{{currentMessage.subject}}</h3>
+
+
+  <div class="single-message-container col-lg-12 col-md-12" data-ng-repeat="msg in currentMessage.messages">
+    <div class="header">
+      <h6 class="sender">{{msg.sender.name}}</h6>
+      <h6 class="timestamp">{{msg.created | dateFilterDetail}}</h6>
+    </div>
+    <p class="message col-lg-12 col-md-12">{{msg.name}}</p>
+  </div>
+</div>
