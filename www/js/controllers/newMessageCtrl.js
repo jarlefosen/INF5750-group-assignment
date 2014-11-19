@@ -5,20 +5,23 @@ define([
   "app",
   "services/messageService",
   "services/userService",
-  "services/groupService"
+  "services/groupService",
+  "services/orgUnitService"
 ], function (app) {
   "use strict";
   app.controller("NewMessageCtrl", [
-    "$scope", "$routeParams", "MessageService", "UserService", "GroupService",
-    function ($scope, $routeParams, MessageService, UserService, GroupService) {
+    "$scope", "$routeParams", "MessageService", "UserService", "GroupService", "OrgUnitService",
+    function ($scope, $routeParams, MessageService, UserService, GroupService, OrgUnitService) {
 
-      $scope.userRecipients = []; //Should contain receivers id.
+      $scope.userRecipients = [];
       $scope.groupRecipients = [];
+      $scope.orgUnitRecipients = [];
       $scope.subject = "";
       $scope.text = "";
 
       $scope.sendMessage = function () {
-        MessageService.newMessage($scope.subject, $scope.text, $scope.userRecipients, $scope.groupRecipients);
+        console.log("Org unit = " + $scope.orgUnitRecipients);
+        MessageService.newMessage($scope.subject, $scope.text, $scope.userRecipients, $scope.groupRecipients, $scope.orgUnitRecipients);
       };
 
       UserService.getUsers()
@@ -29,6 +32,11 @@ define([
       GroupService.getUserGroups()
         .then(function (groups) {
           $scope.allGroups = groups;
+        });
+
+      OrgUnitService.getOrgUnits()
+        .then(function (orgUnits) {
+          $scope.allOrgUnits = orgUnits;
         });
     }
   ]);

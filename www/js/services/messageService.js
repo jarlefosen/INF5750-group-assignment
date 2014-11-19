@@ -237,7 +237,7 @@ define([
         var orgList = [];
         angular.forEach(orgReceivers, function (entry) {
           var l = {id: entry};
-          orgReceivers.push(l);
+          orgList.push(l);
         });
 
         var message = {
@@ -250,10 +250,10 @@ define([
 
         $http.post(ServerConfig.host + MESSAGES_BASE_URL, message)
           .success(function (data) {
-
+            console.log("Message POSTed!");
           })
           .error(function () {
-
+            console.log("Error POSTing message!" + message.toString());
           });
         return deferred.promise;
       }
