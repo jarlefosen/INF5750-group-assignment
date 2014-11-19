@@ -3,7 +3,8 @@ define([
   "controllers/loginCtrl",
   "controllers/InboxCtrl",
   "controllers/userCtrl",
-  "controllers/messageDetailCtrl"
+  "controllers/messageDetailCtrl",
+  "controllers/newMessageCtrl"
 ], function (app) {
   "use strict";
 
@@ -19,6 +20,11 @@ define([
         .when("/messages", {
           templateUrl: "partials/messages.html",
           controller: "InboxCtrl"
+        })
+
+        .when("/messages/new", {
+          templateUrl: "partials/newMessage.html",
+          controller: "NewMessageCtrl"
         })
 
         .when("/messages/:messageId", {

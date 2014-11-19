@@ -213,8 +213,47 @@ define([
             deleteConversationFromCache(messageId);
             deferred.resolve(data);
           })
-          .error(function(){
-            deferred.reject();
+          .error(function () {
+
+          });
+        return deferred.promise;
+      }
+
+      function newMessage(subject, text, userReceivers, groupReceivers, orgReceivers) {
+        var deferred = $q.defer();
+
+        var userList = [];
+        angular.forEach(userReceivers, function (entry) {
+          var l = {id: entry};
+          userList.push(l);
+        });
+
+        var groupList = [];
+        angular.forEach(groupReceivers, function (entry) {
+          var l = {id: entry};
+          groupList.push(l);
+        });
+
+        var orgList = [];
+        angular.forEach(orgReceivers, function (entry) {
+          var l = {id: entry};
+          orgReceivers.push(l);
+        });
+
+        var message = {
+          subject: subject,
+          text: text,
+          users: userList,
+          userGroups: groupList,
+          organisationUnits: orgList
+        };
+
+        $http.post(ServerConfig.host + MESSAGES_BASE_URL, message)
+          .success(function (data) {
+
+          })
+          .error(function () {
+
           });
         return deferred.promise;
       }
@@ -223,7 +262,8 @@ define([
         getAllMessages: getInbox,
         getMessage: getConversation,
         deleteMessage: deleteConversation,
-        clearCache: clearCache()
+        clearCache: clearCache(),
+        newMessage: newMessage
       };
     }
   ]);

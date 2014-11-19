@@ -12,6 +12,7 @@ define([
   app.controller("InboxCtrl", [
     "$scope", "MessageService", "LoginService",
     function ($scope, MessageService, LoginService) {
+
       $scope.allMessages = [];
       $scope.currentMessage = {};
       $scope.orderProp = "lastMessage";
@@ -55,5 +56,6 @@ define([
         );
       };
     }
+
   ]);
 });
