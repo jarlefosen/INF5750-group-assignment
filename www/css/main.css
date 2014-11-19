@@ -312,31 +312,35 @@
   border-bottom: 2px solid #9b9b9b;
   margin: 20px 0 0 0;
 }
-/* line 38, sass/partials/_message.scss */
+/* line 35, sass/partials/_message.scss */
+.message-container .single-message-container:last-child {
+  border-bottom: none;
+}
+/* line 42, sass/partials/_message.scss */
 .message-container .single-message-container .header .sender {
   display: inline-block;
   font-weight: 600;
   color: #9b9b9b;
 }
-/* line 43, sass/partials/_message.scss */
+/* line 47, sass/partials/_message.scss */
 .message-container .single-message-container .header .sender:after {
   content: ' ';
 }
-/* line 47, sass/partials/_message.scss */
+/* line 51, sass/partials/_message.scss */
 .message-container .single-message-container .header .timestamp {
   display: inline-block;
   font-weight: 600;
   color: #9b9b9b;
 }
-/* line 52, sass/partials/_message.scss */
+/* line 56, sass/partials/_message.scss */
 .message-container .single-message-container .header .timestamp:before {
   content: '(';
 }
-/* line 55, sass/partials/_message.scss */
+/* line 59, sass/partials/_message.scss */
 .message-container .single-message-container .header .timestamp:after {
   content: ')';
 }
-/* line 60, sass/partials/_message.scss */
+/* line 64, sass/partials/_message.scss */
 .message-container .single-message-container .message {
   padding-left: 10px;
   word-wrap: break-word;
