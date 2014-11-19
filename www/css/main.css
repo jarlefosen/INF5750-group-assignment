@@ -283,24 +283,64 @@
 .message-container .to-and-from-container {
   display: inline-block;
 }
+/* line 10, sass/partials/_message.scss */
+.message-container .to-and-from-container .from-tag {
+  font-weight: 600;
+}
 /* line 12, sass/partials/_message.scss */
-.message-container .single-message-container {
-  border-bottom: 2px solid #9b9b9b;
-  margin: 20px 0;
+.message-container .to-and-from-container .from-tag span {
+  font-weight: 300;
 }
 /* line 17, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag {
+  font-weight: 600;
+}
+/* line 19, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span {
+  font-weight: 300;
+}
+/* line 21, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span:after {
+  content: ', ';
+}
+/* line 25, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span:last-child:after {
+  content: '';
+}
+/* line 33, sass/partials/_message.scss */
+.message-container .single-message-container {
+  border-bottom: 2px solid #9b9b9b;
+  margin: 20px 0 0 0;
+}
+/* line 38, sass/partials/_message.scss */
 .message-container .single-message-container .header .sender {
   display: inline-block;
   font-weight: 600;
+  color: #9b9b9b;
 }
-/* line 21, sass/partials/_message.scss */
+/* line 43, sass/partials/_message.scss */
 .message-container .single-message-container .header .sender:after {
-  content: ' - ';
+  content: ' ';
 }
-/* line 25, sass/partials/_message.scss */
+/* line 47, sass/partials/_message.scss */
 .message-container .single-message-container .header .timestamp {
   display: inline-block;
   font-weight: 600;
+  color: #9b9b9b;
+}
+/* line 52, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp:before {
+  content: '(';
+}
+/* line 55, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp:after {
+  content: ')';
+}
+/* line 60, sass/partials/_message.scss */
+.message-container .single-message-container .message {
+  padding-left: 10px;
+  word-wrap: break-word;
+  margin-bottom: 20px;
 }
 
 /* line 8, sass/main.scss */

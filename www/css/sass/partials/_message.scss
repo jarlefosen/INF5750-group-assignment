@@ -7,27 +7,60 @@
 
   .to-and-from-container{
     display: inline-block;
+    .from-tag{
+      font-weight: 600;
+      span{
+        font-weight: 300;
+      }
+    }
+
+    .to-tag{
+      font-weight: 600;
+      span{
+        font-weight: 300;
+        &:after{
+          content: ', ';
+        }
+        &:last-child{
+          &:after{
+            content: '';
+          }
+        }
+      }
+    }
   }
 
   .single-message-container{
     border-bottom: 2px solid $grayish;
-    margin: 20px 0;
+    margin: 20px 0 0 0;
 
     .header{
       .sender{
         display: inline-block;
         font-weight: 600;
+        color: $grayish;
 
         &:after{
-          content: ' - ';
+          content: ' ';
         }
       }
       .timestamp{
         display: inline-block;
         font-weight: 600;
+        color: $grayish;
+
+        &:before{
+          content: '(';
+        }
+        &:after{
+          content: ')';
+        }
       }
-      .message{
-      }
+    }
+    .message{
+      padding-left: 10px;
+      word-wrap: break-word;
+      margin-bottom: 20px;
     }
   }
 }
