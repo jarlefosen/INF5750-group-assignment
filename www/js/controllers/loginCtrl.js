@@ -44,7 +44,6 @@ define([
             window.alert("Oups! Could not authenticate. Try again!");
           });
       };
-
     }
   ]);
 });

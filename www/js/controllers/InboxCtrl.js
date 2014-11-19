@@ -40,6 +40,11 @@ define([
         );
       };
 
+      $scope.setFollowUp = function(message){
+
+        message.followUp = !message.followUp;
+        MessageService.setFollowUp(message);
+      }
 
       function updateObj(data){
         angular.forEach(data.userMessages, function(value){

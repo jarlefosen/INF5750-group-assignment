@@ -2,7 +2,7 @@
   <div class="inbox-message-container col-lg-12">
     <div class="heading row">
       <p class="sender">{{message.lastSender.name}}</p>
-      <i ng-show="message.isStarred" class="fa fa-star-o follow-up"></i>
+      <i ng-click="setFollowUp(message)" class="fa fa-star-o fa-2x follow-up"></i>
       <p ng-hide="message.isRead" class="unread">Unread!</p>
       <p class="date">{{message.lastMessage | dateFilter}}</p>
     </div>
