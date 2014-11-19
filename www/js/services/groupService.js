@@ -41,7 +41,7 @@ define([
       }
 
       function saveToCache(list) {
-        if (list == undefined || !Array.isArray(list)) {
+        if (list === undefined || !Array.isArray(list)) {
           return;
         }
 
@@ -50,7 +50,7 @@ define([
         var isUpdated = false;
 
         list.forEach(function (element) {
-          if (userGroups[element.id] == undefined) {
+          if (userGroups[element.id] === undefined) {
             isUpdated = true;
           }
 
