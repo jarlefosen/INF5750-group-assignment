@@ -36,6 +36,7 @@ define([
           MessageService.getMessage(element.id, element.lastUpdated)
             .then(function(conversation) {
               element.messages = conversation.messages;
+              element.userMessages = conversation.userMessages;
             });
         });
       }

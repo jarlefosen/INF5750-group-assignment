@@ -6,7 +6,7 @@
 
 <div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
   <div class="to-and-from-container">
-    <p>From: {{currentMessage.lastSender.name}}</p>
+    <p>From: {{currentMessage.lastSenderFirstname}} {{currentMessage.lastSenderSurname}}</p>
     <p>To: <span data-ng-repeat="obj in currentMessage.userMessages">
     {{obj.user.name}},
   </span></p>
@@ -18,10 +18,10 @@
 
   <div class="single-message-container" data-ng-repeat="msg in currentMessage.messages">
     <div class="header">
-      <h6 class="sender">Tom Wakiki</h6>
-      <h6 class="timestamp">2014-11-17</h6>
+      <h6 class="sender">{{msg.sender.name}}</h6>
+      <h6 class="timestamp">{{msg.created | dateFilter}}</h6>
     </div>
-    <p class="message">The offline feature only requires you to be online for a minute in the morning when you open your computer. After that you can continue to enter data in the data entry module even if Internet connectivity is lost for as long as you want. The system will notify you when Internet connectivity is back, and allow you to upload your data to the online server.</p>
+    <p class="message">{{msg.name}}</p>
   </div>
 </div>
 

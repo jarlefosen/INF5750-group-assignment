@@ -141,6 +141,7 @@ define([
         conv.messages = conversation.messages;
         conv.lastSender = conversation.lastSender;
         conv.lastUpdated = conversation.lastUpdated;
+        conv.userMessages = conversation.userMessages;
         return conv;
       }
 
