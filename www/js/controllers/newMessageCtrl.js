@@ -11,13 +11,12 @@ define([
     "$scope", "$routeParams", "MessageService", "UserService",
     function ($scope, $routeParams, MessageService, UserService) {
 
-      $scope.user_recipients = []; //Should contain receivers id.
+      $scope.userRecipients = []; //Should contain receivers id.
       $scope.subject = "";
       $scope.text = "";
 
       $scope.sendMessage = function () {
-        console.log("receivers: " + $scope.user_recipients.toString()); //TODO Remove
-        MessageService.newMessage($scope.subject, $scope.text, $scope.user_recipients);
+        MessageService.newMessage($scope.subject, $scope.text, $scope.userRecipients);
       };
 
       UserService.getUsers()
@@ -26,5 +25,5 @@ define([
         });
 
     }
-  ])
+  ]);
 });

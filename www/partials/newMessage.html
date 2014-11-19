@@ -14,13 +14,13 @@
   <h5>Receivers</h5>
 
   <ul>
-    <li ng-repeat="user in user_recipients">{{ user }}</li>
+    <li ng-repeat="user in userRecipients">{{ user }}</li>
   </ul>
 
   <hr/>
   <div>
     <ul>
-      <li ng-repeat="user in allUsers" ng-click="user_recipients.push(user.id)">{{ user.name }}</li>
+      <li ng-repeat="user in allUsers" ng-click="userRecipients.push(user.id)">{{ user.name }}</li>
     </ul>
   </div>
 
