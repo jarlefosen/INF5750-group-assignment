@@ -21,6 +21,10 @@ define([
         $scope.filterProp = value;
       };
 
+      $scope.setCurrentMessage = function(message){
+        $scope.currentMessage = message;
+      };
+
       LoginService.getProfile().then(
         function(profile){
           $scope.userProfile = profile;
@@ -48,9 +52,6 @@ define([
             // Should update list of messages in inbox.
           }
         );
-      };
-      $scope.setCurrentMessage = function(message){
-        $scope.currentMessage = message;
       };
     }
   ]);

@@ -23,6 +23,8 @@ define([
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
 
+      var DEFAULT_MESSAGE_FIELDS = ["lastUpdated,id,name,subject,lastMessage,lastSender,messages[id,name,sender,created],userMessages[user[id,name]]"];
+
       function clearCache() {
         try {
           localStorage.removeItem(INBOX_LIST_CACHE_KEY);
@@ -150,8 +152,13 @@ define([
           deferred.resolve(cached);
           return deferred.promise;
         }
+        var config = {
+          params: {
+            fields: DEFAULT_MESSAGE_FIELDS
+          }
+        };
 
-        $http.get(ServerConfig.host + MESSAGES_BASE_URL + "/" + id + ".json")
+        $http.get(ServerConfig.host + MESSAGES_BASE_URL + "/" + id + ".json", config)
           .success(function(data, status, headers) {
             if (headers["Login-Page"]) {
               deferred.resolve(cached);
