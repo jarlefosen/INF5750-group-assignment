@@ -27,7 +27,7 @@ define([
           templateUrl: "partials/messages.html",
           controller: "InboxCtrl"
         })
-        .state("new", {
+        .state("newMessage", {
           url:"/messages/new",
           templateUrl: "partials/newMessage.html",
           controller: "NewMessageCtrl"
