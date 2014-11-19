@@ -27,19 +27,20 @@ define([
         }
       );
 
-      MessageService.getAllMessages().then(
-        function(msgs){
-          angular.forEach(msgs.messageConversations, function(value){
+      function getMessageContent(messages) {
+        messages.forEach(function(element) {
+          MessageService.getMessage(element.id, element.lastUpdated)
+            .then(function(conversation) {
+              element.messages = conversation.messages;
+            });
+        });
+      }
 
-            MessageService.getMessage(value.id).then(
-              function(data){
-                $scope.allMessages.push(updateObj(data));
-              }, function(){}
-            );
-          });
-          $scope.setFilter({});
-        }, function(){}
-      );
+      MessageService.getAllMessages().then(
+        function(msgs) {
+          $scope.allMessages = msgs;
+          getMessageContent($scope.allMessages);
+        });
 
       $scope.delMessage = function(messageId){
         MessageService.delMessage(messageId).then(
@@ -48,21 +49,6 @@ define([
           }
         );
       };
-
-      $scope.setCurrentMessage = function(message){
-        $scope.currentMessage = message;
-      };
-
-
-      function updateObj(data){
-        angular.forEach(data.userMessages, function(value){
-          if(value.user.id === $scope.userProfile.id){
-            data.isRead = value.read;
-            data.isStarred = value.followUp;
-          }
-        });
-        return data;
-      }
     }
   ]);
 });
