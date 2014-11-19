@@ -16,7 +16,7 @@ define([
       $scope.text = "";
 
       $scope.sendMessage = function () {
-        console.log("receivers: " + $scope.user_recipients.toString());
+        console.log("receivers: " + $scope.user_recipients.toString()); //TODO Remove
         MessageService.newMessage($scope.subject, $scope.text, $scope.user_recipients);
       };
 
