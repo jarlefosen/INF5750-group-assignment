@@ -7,9 +7,13 @@ define([
 ], function (app) {
   "use strict";
   app.controller("MessageDetailCtrl", [
-    "$scope", "$routeParams", "MessageService",
-    function ($scope, $routeParams, MessageService) {
-      $scope.message = MessageService.getMessage($routeParams.messageId);
+    "$scope", "$stateParams", "MessageService",
+    function ($scope, $stateParams, MessageService) {
+      $scope.test = $stateParams.messageId;
+      MessageService.getMessage($stateParams.messageId)
+        .then(function(message){
+          $scope.message = message;
+        });
     }
   ]);
 });
