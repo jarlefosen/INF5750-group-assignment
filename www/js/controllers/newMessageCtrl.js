@@ -20,7 +20,6 @@ define([
       $scope.text = "";
 
       $scope.sendMessage = function () {
-        console.log("Org unit = " + $scope.orgUnitRecipients);
         MessageService.newMessage($scope.subject, $scope.text, $scope.userRecipients, $scope.groupRecipients, $scope.orgUnitRecipients);
       };
 

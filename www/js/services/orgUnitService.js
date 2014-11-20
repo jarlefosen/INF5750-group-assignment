@@ -12,7 +12,7 @@ define([
   app.service("OrgUnitService", [
     "$q", "ServerConfig", "$http",
     function ($q, ServerConfig, $http) {
-      var ORGUNIT_URL = "/api/organisationUnits.json";
+      var ORGUNIT_URL = "/api/organisationUnits.json?paging=false";
       var CACHE_KEY = "no.uio.inf5750-11.orgUnit";
       var CACHE_TIMESTAMP_KEY = "no.uio.inf5750-11.orgUnit.timestamp";
 
