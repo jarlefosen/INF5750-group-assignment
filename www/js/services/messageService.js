@@ -17,7 +17,7 @@ define([
       /* Stores an object with all conversations (unsorted) */
       var MESSAGE_CACHE_KEY = "no.uio.inf5750-11.messages";
 
-      var MESSAGES_BASE_URL = "/api/messageConversations";
+      var MESSAGES_BASE_URL = "/api/messageConversations.json";
       var MY_INBOX_URL = "/api/me/inbox";
 
       var cacheDays = 30;
@@ -237,7 +237,7 @@ define([
         var orgList = [];
         angular.forEach(orgReceivers, function (entry) {
           var l = {id: entry};
-          orgReceivers.push(l);
+          orgList.push(l);
         });
 
         var message = {
@@ -250,10 +250,10 @@ define([
 
         $http.post(ServerConfig.host + MESSAGES_BASE_URL, message)
           .success(function (data) {
-
+            console.log("Message POSTed!");
           })
           .error(function () {
-
+            console.log("Error POSTing message!" + message.toString());
           });
         return deferred.promise;
       }

@@ -12,7 +12,7 @@ define([
   app.service("OrgUnitService", [
     "$q", "ServerConfig", "$http",
     function ($q, ServerConfig, $http) {
-      var ORGUNIT_URL = "/api/organisationUnitGroups.json";
+      var ORGUNIT_URL = "/api/organisationUnits.json?paging=false";
       var CACHE_KEY = "no.uio.inf5750-11.orgUnit";
       var CACHE_TIMESTAMP_KEY = "no.uio.inf5750-11.orgUnit.timestamp";
 
@@ -82,7 +82,7 @@ define([
           }).success(function (data, status, headers) {
             /* If server response is OK (not login-page), pipe result to cache */
             if (!headers["Login-Page"]) {
-              saveToCache(data.organisationUnitGroups);
+              saveToCache(data.organisationUnits);
             }
             deferred.resolve(getListFromCache());
           });

@@ -25,6 +25,12 @@
     <li ng-repeat="group in groupRecipients">{{ group }}</li>
   </ul>
 
+  <h5>Organization Unit Receivers</h5>
+
+  <ul>
+    <li ng-repeat="orgUnit in orgUnitRecipients">{{ orgUnit }}</li>
+  </ul>
+
   <hr/>
   <div>
     <h3>Users</h3>
@@ -40,9 +46,12 @@
     </ul>
   </div>
 
-
-
-
+  <div>
+    <h3>Organization Units</h3>
+    <ul>
+      <li ng-repeat="orgUnit in allOrgUnits" ng-click="orgUnitRecipients.push(orgUnit.id)">{{ orgUnit.name }}</li>
+    </ul>
+  </div>
 
 </div>
 

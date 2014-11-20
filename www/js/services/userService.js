@@ -11,7 +11,7 @@ define([
   app.service("UserService", [
     "$q", "ServerConfig", "$http",
     function($q, ServerConfig, $http) {
-      var USER_URL = "/api/users.json";
+      var USER_URL = "/api/users.json?paging=false";
       var CACHE_KEY = "no.uio.inf5750-11.users";
       var CACHE_TIMESTAMP_KEY = "no.uio.inf5750-11.users.timestamp";
 
