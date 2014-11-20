@@ -3,6 +3,8 @@ define([
   "controllers/loginCtrl",
   "controllers/InboxCtrl",
   "controllers/userCtrl",
+  "controllers/userGroupCtrl",
+  "controllers/orgUnitCtrl",
   "controllers/messageDetailCtrl",
   "controllers/newMessageCtrl"
 ], function (app) {
@@ -41,6 +43,16 @@ define([
           url: "/users",
           templateUrl: "partials/users.html",
           controller: "UserCtrl"
+        })
+        .state("groups", {
+          url: "/groups",
+          templateUrl: "partials/groups.html",
+          controller: "UserGroupCtrl"
+        })
+        .state("orgUnits", {
+          url: "/orgUnits",
+          templateUrl: "partials/orgUnits.html",
+          controller: "OrgUnitCtrl"
         });
     }
   ]);

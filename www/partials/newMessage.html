@@ -13,18 +13,36 @@
   </div>
   <button ng-click="sendMessage()">Send message</button>
 
-  <h5>Receivers</h5>
+  <h5>User Receivers</h5>
 
   <ul>
     <li ng-repeat="user in userRecipients">{{ user }}</li>
   </ul>
 
+  <h5>Group Receivers</h5>
+
+  <ul>
+    <li ng-repeat="group in groupRecipients">{{ group }}</li>
+  </ul>
+
   <hr/>
   <div>
+    <h3>Users</h3>
     <ul>
       <li ng-repeat="user in allUsers" ng-click="userRecipients.push(user.id)">{{ user.name }}</li>
     </ul>
   </div>
+
+  <div>
+    <h3>Groups</h3>
+    <ul>
+      <li ng-repeat="group in allGroups" ng-click="groupRecipients.push(group.id)">{{ group.name }}</li>
+    </ul>
+  </div>
+
+
+
+
 
 </div>
 
