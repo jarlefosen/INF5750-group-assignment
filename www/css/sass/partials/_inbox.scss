@@ -113,13 +113,28 @@ $fontsize-content: 12px;
     }
   }
 
-  // IKKE FERDIG
-  .delBtn{
-    width: 100px;
+  .off-canvas-element{
+    width: 200px;
     height: 100px;
-    background-color: red;
     position: absolute;
-    left: -100px;
+    left: -200px;
+    .del-btn{
+      position: absolute;
+      right: 0;
+      height: inherit;
+      width: 50%;
+
+      background-color: red;
+      border-bottom: 2px solid lighten(#FF0000, 20%);
+    }
+    .follow-up-btn{
+      position: absolute;
+      left: 0;
+      height: inherit;
+      width: 50%;
+      background-color: orange;
+      border-bottom: 2px solid lighten(#FFA500, 20%);
+    }
   }
 }
 
@@ -135,7 +150,7 @@ $fontsize-content: 12px;
     -moz-transition:transform .2s ease-in-out;
     -o-transition:transform .2s ease-in-out;
     transition:transform .2s ease-in-out;
-    transform: translateX(100px);
+    transform: translateX(200px);
   }
 }
 
