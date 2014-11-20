@@ -32,7 +32,7 @@
 
   .single-message-container{
     border-bottom: 2px solid $grayish;
-    &:last-child{
+    &.last{
       border-bottom: none;
     }
 
@@ -65,6 +65,22 @@
       padding-left: 10px;
       word-wrap: break-word;
       margin-bottom: 20px;
+    }
+  }
+
+  .reply-container{
+    padding: 0;
+
+    h6{
+
+
+    }
+
+    #reply-form{
+      margin-bottom: 20px;
+      #reply-box{
+        width: 100%;
+      }
     }
   }
 }

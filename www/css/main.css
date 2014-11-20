@@ -67,10 +67,11 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-right: 2px solid #979797;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-/* line 24, sass/partials/_inbox.scss */
+/* line 25, sass/partials/_inbox.scss */
 .inbox-message {
   background-color: #fcfcfc;
   border-bottom: 2px solid #979797;
@@ -78,26 +79,30 @@
   margin: 0 !important;
   height: 100px;
 }
-/* line 31, sass/partials/_inbox.scss */
+/* line 32, sass/partials/_inbox.scss */
+.inbox-message:hover {
+  cursor: pointer;
+}
+/* line 36, sass/partials/_inbox.scss */
 .inbox-message:last-of-type {
   border-bottom: none;
 }
-/* line 35, sass/partials/_inbox.scss */
+/* line 40, sass/partials/_inbox.scss */
 .inbox-message.active {
   border-right: 5px solid #1d5288;
   padding-right: 15px;
 }
-/* line 40, sass/partials/_inbox.scss */
+/* line 45, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container {
   padding-left: 0;
   padding-right: 0;
   margin-top: 9px;
 }
-/* line 45, sass/partials/_inbox.scss */
+/* line 50, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading {
   margin: 0 0 2px 0;
 }
-/* line 48, sass/partials/_inbox.scss */
+/* line 53, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .sender {
   font-size: 14px;
   font-weight: 300;
@@ -110,13 +115,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 59, sass/partials/_inbox.scss */
+/* line 64, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .follow-up {
   margin-left: 5px;
   float: left;
   line-height: 20px;
 }
-/* line 65, sass/partials/_inbox.scss */
+/* line 70, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .unread {
   margin-bottom: 0;
   margin-left: 5px;
@@ -126,7 +131,7 @@
   line-height: 20px;
   font-size: 12px;
 }
-/* line 75, sass/partials/_inbox.scss */
+/* line 80, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .date {
   font-size: 10px;
   display: inline-block;
@@ -134,7 +139,7 @@
   margin-bottom: 0;
   color: #9B9B9B;
 }
-/* line 84, sass/partials/_inbox.scss */
+/* line 89, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .subject {
   font-size: 12px;
   font-weight: 400;
@@ -144,7 +149,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 92, sass/partials/_inbox.scss */
+/* line 97, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .content {
   color: #9B9B9B;
   max-height: 40px;
@@ -153,20 +158,50 @@
   font-size: 12px;
   margin-bottom: 0;
 }
-/* line 101, sass/partials/_inbox.scss */
+/* line 106, sass/partials/_inbox.scss */
 .inbox-message .arrow {
   text-align: center;
   padding: 0;
 }
-/* line 105, sass/partials/_inbox.scss */
+/* line 110, sass/partials/_inbox.scss */
 .inbox-message .arrow .fa {
   line-height: 100px;
   font-size: 40px;
 }
+/* line 117, sass/partials/_inbox.scss */
+.inbox-message .delBtn {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  left: -100px;
+}
+
+/* line 127, sass/partials/_inbox.scss */
+.inbox-message {
+  transform: translateX(0);
+  -webkit-transition: transform .2s ease-in-out;
+  -moz-transition: transform .2s ease-in-out;
+  -o-transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+}
+/* line 133, sass/partials/_inbox.scss */
+.inbox-message.delOpen {
+  -webkit-transition: transform .2s ease-in-out;
+  -moz-transition: transform .2s ease-in-out;
+  -o-transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transform: translateX(100px);
+}
 
 @media (max-width: 992px) {
-  /* line 114, sass/partials/_inbox.scss */
+  /* line 143, sass/partials/_inbox.scss */
   .inbox-message {
+    padding-right: 0;
+  }
+  /* line 146, sass/partials/_inbox.scss */
+  .inbox-message.active {
+    border-right: none;
     padding-right: 0;
   }
 }
@@ -313,7 +348,7 @@
   margin: 20px 0 0 0;
 }
 /* line 35, sass/partials/_message.scss */
-.message-container .single-message-container:last-child {
+.message-container .single-message-container.last {
   border-bottom: none;
 }
 /* line 42, sass/partials/_message.scss */
@@ -346,44 +381,129 @@
   word-wrap: break-word;
   margin-bottom: 20px;
 }
+/* line 71, sass/partials/_message.scss */
+.message-container .reply-container {
+  padding: 0;
+}
+/* line 79, sass/partials/_message.scss */
+.message-container .reply-container #reply-form {
+  margin-bottom: 20px;
+}
+/* line 81, sass/partials/_message.scss */
+.message-container .reply-container #reply-form #reply-box {
+  width: 100%;
+}
 
-/* line 8, sass/main.scss */
+/* line 3, sass/partials/_animate.scss */
+.inbox-message.ng-leave,
+.inbox-message.ng-enter {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  position: relative;
+  display: block;
+}
+
+/* line 13, sass/partials/_animate.scss */
+.inbox-message.ng-enter,
+.inbox-message.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+/* line 17, sass/partials/_animate.scss */
+.inbox-message.ng-leave,
+.inbox-message.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+/* line 22, sass/partials/_animate.scss */
+[ui-view].ng-leave,
+[ui-view].ng-enter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+/* line 33, sass/partials/_animate.scss */
+[ui-view].ng-enter,
+[ui-view].ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+/* line 38, sass/partials/_animate.scss */
+[ui-view].ng-leave,
+[ui-view].ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+/*
+[ui-view].ng-enter-active {
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+}
+
+[ui-view].ng-leave {
+  */
+/*padding-left: 0px;*/
+                      /*
+
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave-active {
+  */
+/*padding-left: 100px;*/
+                        /*
+
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
+}*/
+/* line 9, sass/main.scss */
 .body {
   background-color: #1d5288;
 }
 
-/* line 13, sass/main.scss */
+/* line 14, sass/main.scss */
 body, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 17, sass/main.scss */
+/* line 18, sass/main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-/* line 21, sass/main.scss */
+/* line 22, sass/main.scss */
 body, p {
   font-weight: 300;
   font-size: 12px;
 }
 
-/* line 28, sass/main.scss */
+/* line 29, sass/main.scss */
 h3 {
   font-size: 20px;
 }
 
-/* line 32, sass/main.scss */
+/* line 33, sass/main.scss */
 h4 {
   font-size: 18px;
 }
 
-/* line 36, sass/main.scss */
+/* line 37, sass/main.scss */
 h5 {
   font-size: 16px;
 }
 
-/* line 40, sass/main.scss */
+/* line 41, sass/main.scss */
 h6 {
   font-size: 14px;
 }

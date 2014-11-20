@@ -11,45 +11,48 @@ define([
   "use strict";
 
   app.config([
-    "$routeProvider",
-    function ($routeProvider) {
-      $routeProvider
-        .when("/login", {
+    "$stateProvider",
+    "$urlRouterProvider",
+    function ($stateProvider, $urlRouterProvider) {
+
+      $urlRouterProvider.otherwise("/messages");
+
+      $stateProvider
+        .state("login", {
+          url: "/login",
           templateUrl: "partials/login.html",
           controller: "LoginCtrl"
-        })
 
-        .when("/messages", {
+        })
+        .state("messages", {
+          url: "/messages",
           templateUrl: "partials/messages.html",
           controller: "InboxCtrl"
         })
-
-        .when("/messages/new", {
+        .state("newMessage", {
+          url: "/messages/new",
           templateUrl: "partials/newMessage.html",
           controller: "NewMessageCtrl"
         })
-
-        .when("/messages/:messageId", {
+        .state("message", {
+          url: "/messages/:messageId",
           templateUrl: "partials/messageDetail.html",
           controller: "MessageDetailCtrl"
         })
-        .when("/users", {
+        .state("users", {
+          url: "/users",
           templateUrl: "partials/users.html",
           controller: "UserCtrl"
         })
-
-        .when("/groups", {
+        .state("groups", {
+          url: "/groups",
           templateUrl: "partials/groups.html",
           controller: "UserGroupCtrl"
         })
-
-        .when("/orgUnits", {
-          templateUrl: "partials/orgUnits.html",
+        .state("orgUnits", {
+          url: "/orgunits",
+          templateUrl: "partials/orgunits.html",
           controller: "OrgUnitCtrl"
-        })
-
-        .otherwise({
-          redirectTo: "/messages"
         });
     }
   ]);

@@ -1,4 +1,6 @@
-<div class="row inbox-message" ng-click="setCurrentMessage(message)" ng-class="{active: currentMessage.id == message.id}">
+<div class="row inbox-message" ng-click="goToMessage(message)" ng-class="{active: currentMessage.id == message.id}">
+  <div class="delBtn">
+  </div>
   <div class="inbox-message-container col-lg-12 col-md-12 col-sm-11 col-xs-11">
     <div class="heading row">
       <p class="sender">{{message.lastSenderFirstname + " " + message.lastSenderSurname + " (" + message.messageCount + ")"}}</p>
