@@ -42,35 +42,6 @@ define([
           templateUrl: "partials/users.html",
           controller: "UserCtrl"
         });
-
-      /*$routeProvider
-        .when("/login", {
-          templateUrl: "partials/login.html",
-          controller: "LoginCtrl"
-        })
-
-        .when("/messages", {
-          templateUrl: "partials/messages.html",
-          controller: "InboxCtrl"
-        })
-
-        .when("/messages/new", {
-          templateUrl: "partials/newMessage.html",
-          controller: "NewMessageCtrl"
-        })
-
-        .when("/messages/:messageId", {
-          templateUrl: "partials/messageDetail.html",
-          controller: "MessageDetailCtrl"
-        })
-        .when("/users", {
-          templateUrl: "partials/users.html",
-          controller: "UserCtrl"
-        })
-
-        .otherwise({
-          redirectTo: "/messages"
-        });*/
     }
   ]);
 });
