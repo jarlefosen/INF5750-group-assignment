@@ -6,7 +6,8 @@ define([
   "directives/inboxMessage",
   "directives/navbarTop",
   "directives/navbarBottom",
-  "directives/messageDetail"
+  "directives/messageDetail",
+  "directives/editBtnClickHandler"
 ], function (app) {
   "use strict";
 
