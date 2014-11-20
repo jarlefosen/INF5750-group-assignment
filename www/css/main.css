@@ -2,47 +2,64 @@
 /* Mozilla Firefox 4 to 18 */
 /* Mozilla Firefox 19+ */
 /* Internet Explorer 10+ */
+/* line 4, sass/partials/_login.scss */
 .login-container {
   padding-top: 150px;
   min-width: 300px;
-  margin: 0 auto; }
-  .login-container img {
-    max-width: 260px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 50px; }
-  .login-container form input {
-    border: none;
-    border: 2px solid #fcfcfc;
-    border-radius: 2px;
-    background-color: #1d5288;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 300px;
-    height: 50px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    color: #fcfcfc; }
-  .login-container form input[type="submit"] {
-    background-color: #fcfcfc;
-    color: #1d5288;
-    font-weight: 300; }
-  .login-container form ::-webkit-input-placeholder {
-    color: #fcfcfc;
-    font-weight: 300; }
-  .login-container form :-moz-placeholder {
-    color: #fcfcfc;
-    opacity: 1; }
-  .login-container form ::-moz-placeholder {
-    color: #fcfcfc;
-    opacity: 1; }
-  .login-container form :-ms-input-placeholder {
-    color: #fcfcfc; }
+  margin: 0 auto;
+}
+/* line 9, sass/partials/_login.scss */
+.login-container img {
+  max-width: 260px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 50px;
+}
+/* line 17, sass/partials/_login.scss */
+.login-container form input {
+  border: none;
+  border: 2px solid #fcfcfc;
+  border-radius: 2px;
+  background-color: #1d5288;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #fcfcfc;
+}
+/* line 35, sass/partials/_login.scss */
+.login-container form input[type="submit"] {
+  background-color: #fcfcfc;
+  color: #1d5288;
+  font-weight: 300;
+}
+/* line 3, sass/partials/_mixins.scss */
+.login-container form ::-webkit-input-placeholder {
+  color: #fcfcfc;
+  font-weight: 300;
+}
+/* line 11, sass/partials/_mixins.scss */
+.login-container form :-moz-placeholder {
+  color: #fcfcfc;
+  opacity: 1;
+}
+/* line 19, sass/partials/_mixins.scss */
+.login-container form ::-moz-placeholder {
+  color: #fcfcfc;
+  opacity: 1;
+}
+/* line 27, sass/partials/_mixins.scss */
+.login-container form :-ms-input-placeholder {
+  color: #fcfcfc;
+}
 
+/* line 13, sass/partials/_inbox.scss */
 .inbox-container {
   background-color: #fcfcfc;
   height: 84vh;
@@ -50,189 +67,334 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-right: 2px solid #979797;
-  overflow: auto; }
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
+/* line 25, sass/partials/_inbox.scss */
 .inbox-message {
   background-color: #fcfcfc;
   border-bottom: 2px solid #979797;
   padding: 0 20px;
   margin: 0 !important;
-  height: 100px; }
-  .inbox-message:last-of-type {
-    border-bottom: none; }
-  .inbox-message.active {
-    border-right: 5px solid #1d5288;
-    padding-right: 15px; }
-  .inbox-message .inbox-message-container {
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 9px; }
-    .inbox-message .inbox-message-container .heading {
-      margin: 0 0 2px 0; }
-      .inbox-message .inbox-message-container .heading .sender {
-        font-size: 14px;
-        font-weight: 300;
-        margin: 0;
-        display: inline-block;
-        max-width: 40%;
-        line-height: 20px;
-        float: left;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden; }
-      .inbox-message .inbox-message-container .heading .follow-up {
-        margin-left: 5px;
-        float: left;
-        line-height: 20px; }
-      .inbox-message .inbox-message-container .heading .unread {
-        margin-bottom: 0;
-        margin-left: 5px;
-        display: inline-block;
-        color: red;
-        float: left;
-        line-height: 20px;
-        font-size: 12px; }
-      .inbox-message .inbox-message-container .heading .date {
-        font-size: 10px;
-        display: inline-block;
-        float: right;
-        margin-bottom: 0;
-        color: #9B9B9B; }
-    .inbox-message .inbox-message-container .subject {
-      font-size: 12px;
-      font-weight: 400;
-      margin-bottom: 3px;
-      max-width: 250px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden; }
-    .inbox-message .inbox-message-container .content {
-      color: #9B9B9B;
-      max-height: 40px;
-      overflow-y: hidden;
-      line-height: 20px;
-      font-size: 12px;
-      margin-bottom: 0; }
-  .inbox-message .arrow {
-    text-align: center;
-    padding: 0; }
-    .inbox-message .arrow .fa {
-      line-height: 100px;
-      font-size: 40px; }
+  height: 100px;
+}
+/* line 32, sass/partials/_inbox.scss */
+.inbox-message:hover {
+  cursor: pointer;
+}
+/* line 36, sass/partials/_inbox.scss */
+.inbox-message:last-of-type {
+  border-bottom: none;
+}
+/* line 40, sass/partials/_inbox.scss */
+.inbox-message.active {
+  border-right: 5px solid #1d5288;
+  padding-right: 15px;
+}
+/* line 45, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 9px;
+}
+/* line 50, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading {
+  margin: 0 0 2px 0;
+}
+/* line 53, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .sender {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+  display: inline-block;
+  max-width: 40%;
+  line-height: 20px;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 64, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .follow-up {
+  margin-left: 5px;
+  float: left;
+  line-height: 20px;
+}
+/* line 70, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .unread {
+  margin-bottom: 0;
+  margin-left: 5px;
+  display: inline-block;
+  color: red;
+  float: left;
+  line-height: 20px;
+  font-size: 12px;
+}
+/* line 80, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .date {
+  font-size: 10px;
+  display: inline-block;
+  float: right;
+  margin-bottom: 0;
+  color: #9B9B9B;
+}
+/* line 89, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .subject {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 3px;
+  max-width: 250px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 97, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .content {
+  color: #9B9B9B;
+  max-height: 40px;
+  overflow-y: hidden;
+  line-height: 20px;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+/* line 106, sass/partials/_inbox.scss */
+.inbox-message .arrow {
+  text-align: center;
+  padding: 0;
+}
+/* line 110, sass/partials/_inbox.scss */
+.inbox-message .arrow .fa {
+  line-height: 100px;
+  font-size: 40px;
+}
+/* line 117, sass/partials/_inbox.scss */
+.inbox-message .delBtn {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  left: -100px;
+}
+
+/* line 127, sass/partials/_inbox.scss */
+.inbox-message {
+  transform: translateX(0);
+  -webkit-transition: transform .2s ease-in-out;
+  -moz-transition: transform .2s ease-in-out;
+  -o-transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+}
+/* line 133, sass/partials/_inbox.scss */
+.inbox-message.delOpen {
+  -webkit-transition: transform .2s ease-in-out;
+  -moz-transition: transform .2s ease-in-out;
+  -o-transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transform: translateX(100px);
+}
 
 @media (max-width: 992px) {
+  /* line 143, sass/partials/_inbox.scss */
   .inbox-message {
-    padding-right: 0; } }
+    padding-right: 0;
+  }
+  /* line 146, sass/partials/_inbox.scss */
+  .inbox-message.active {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+/* line 1, sass/partials/_navbar.scss */
 .navigation-top {
   height: 8vh;
   background-color: #1d5288;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0; }
-  .navigation-top ul {
-    margin-bottom: 0;
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    zoom: 1; }
-    .navigation-top ul .menu-element {
-      width: auto;
-      display: inline-block;
-      line-height: 8vh; }
-      .navigation-top ul .menu-element.new-message-btn {
-        float: left;
-        margin-left: 20px; }
-      .navigation-top ul .menu-element.edit-btn {
-        float: right;
-        margin-right: 20px; }
-      .navigation-top ul .menu-element.logo-container {
-        float: right;
-        margin-right: 20px; }
-        .navigation-top ul .menu-element.logo-container .dhis-logo {
-          height: 8vh; }
-      .navigation-top ul .menu-element a {
-        text-decoration: none;
-        font-size: 18px;
-        color: #fcfcfc; }
-        .navigation-top ul .menu-element a .fa {
-          margin-right: 5px; }
+  margin-bottom: 0;
+}
+/* line 9, sass/partials/_navbar.scss */
+.navigation-top ul {
+  margin-bottom: 0;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  zoom: 1;
+}
+/* line 16, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element {
+  width: auto;
+  display: inline-block;
+  line-height: 8vh;
+}
+/* line 21, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.new-message-btn {
+  float: left;
+  margin-left: 20px;
+}
+/* line 25, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.edit-btn {
+  float: right;
+  margin-right: 20px;
+}
+/* line 30, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container {
+  float: right;
+  margin-right: 20px;
+}
+/* line 33, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container .dhis-logo {
+  height: 8vh;
+}
+/* line 37, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fcfcfc;
+}
+/* line 38, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a .fa {
+  margin-right: 5px;
+}
 
+/* line 49, sass/partials/_navbar.scss */
 .navigation-bottom {
   height: 8vh;
   background-color: #f4f4f4;
   border-top: 1px solid #979797;
   width: 100%;
   margin-left: auto;
-  margin-right: auto; }
-  .navigation-bottom ul {
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    zoom: 1;
-    display: inline-block; }
-    .navigation-bottom ul .menu-element {
-      width: 140px;
-      display: inline-block;
-      line-height: 6vh; }
-      .navigation-bottom ul .menu-element a {
-        text-decoration: none;
-        font-size: 24px;
-        color: #9b9b9b; }
-      .navigation-bottom ul .menu-element.active {
-        border-top: 1vh solid #1d5288; }
-        .navigation-bottom ul .menu-element.active a {
-          color: #4a4a4a; }
+  margin-right: auto;
+}
+/* line 57, sass/partials/_navbar.scss */
+.navigation-bottom ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  zoom: 1;
+  display: inline-block;
+}
+/* line 64, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element {
+  width: 140px;
+  display: inline-block;
+  line-height: 6vh;
+}
+/* line 68, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #9b9b9b;
+}
+/* line 73, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active {
+  border-top: 1vh solid #1d5288;
+}
+/* line 75, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active a {
+  color: #4a4a4a;
+}
 
 @media (max-width: 992px) {
+  /* line 85, sass/partials/_navbar.scss */
   .navigation-bottom ul {
-    display: block; }
-    .navigation-bottom ul .menu-element {
-      width: 30%; } }
+    display: block;
+  }
+  /* line 87, sass/partials/_navbar.scss */
+  .navigation-bottom ul .menu-element {
+    width: 30%;
+  }
+}
+/* line 1, sass/partials/_message.scss */
 .message-container {
   margin: 8vh 0;
   background-color: #fcfcfc;
   height: 84vh;
   overflow: auto;
-  padding-top: 20px; }
-  .message-container .to-and-from-container {
-    display: inline-block; }
-    .message-container .to-and-from-container .from-tag {
-      font-weight: 600; }
-      .message-container .to-and-from-container .from-tag span {
-        font-weight: 300; }
-    .message-container .to-and-from-container .to-tag {
-      font-weight: 600; }
-      .message-container .to-and-from-container .to-tag span {
-        font-weight: 300; }
-        .message-container .to-and-from-container .to-tag span:after {
-          content: ', '; }
-        .message-container .to-and-from-container .to-tag span:last-child:after {
-          content: ''; }
-  .message-container .single-message-container {
-    border-bottom: 2px solid #9b9b9b;
-    margin: 20px 0 0 0; }
-    .message-container .single-message-container:last-child {
-      border-bottom: none; }
-    .message-container .single-message-container .header .sender {
-      display: inline-block;
-      font-weight: 600;
-      color: #9b9b9b; }
-      .message-container .single-message-container .header .sender:after {
-        content: ' '; }
-    .message-container .single-message-container .header .timestamp {
-      display: inline-block;
-      font-weight: 600;
-      color: #9b9b9b; }
-      .message-container .single-message-container .header .timestamp:before {
-        content: '('; }
-      .message-container .single-message-container .header .timestamp:after {
-        content: ')'; }
-    .message-container .single-message-container .message {
-      padding-left: 10px;
-      word-wrap: break-word;
-      margin-bottom: 20px; }
+  padding-top: 20px;
+}
+/* line 8, sass/partials/_message.scss */
+.message-container .to-and-from-container {
+  display: inline-block;
+}
+/* line 10, sass/partials/_message.scss */
+.message-container .to-and-from-container .from-tag {
+  font-weight: 600;
+}
+/* line 12, sass/partials/_message.scss */
+.message-container .to-and-from-container .from-tag span {
+  font-weight: 300;
+}
+/* line 17, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag {
+  font-weight: 600;
+}
+/* line 19, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span {
+  font-weight: 300;
+}
+/* line 21, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span:after {
+  content: ', ';
+}
+/* line 25, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span:last-child:after {
+  content: '';
+}
+/* line 33, sass/partials/_message.scss */
+.message-container .single-message-container {
+  border-bottom: 2px solid #9b9b9b;
+  margin: 20px 0 0 0;
+}
+/* line 35, sass/partials/_message.scss */
+.message-container .single-message-container.last {
+  border-bottom: none;
+}
+/* line 42, sass/partials/_message.scss */
+.message-container .single-message-container .header .sender {
+  display: inline-block;
+  font-weight: 600;
+  color: #9b9b9b;
+}
+/* line 47, sass/partials/_message.scss */
+.message-container .single-message-container .header .sender:after {
+  content: ' ';
+}
+/* line 51, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp {
+  display: inline-block;
+  font-weight: 600;
+  color: #9b9b9b;
+}
+/* line 56, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp:before {
+  content: '(';
+}
+/* line 59, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp:after {
+  content: ')';
+}
+/* line 64, sass/partials/_message.scss */
+.message-container .single-message-container .message {
+  padding-left: 10px;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+/* line 71, sass/partials/_message.scss */
+.message-container .reply-container {
+  padding: 0;
+}
+/* line 79, sass/partials/_message.scss */
+.message-container .reply-container #reply-form {
+  margin-bottom: 20px;
+}
+/* line 81, sass/partials/_message.scss */
+.message-container .reply-container #reply-form #reply-box {
+  width: 100%;
+}
 
+/* line 3, sass/partials/_animate.scss */
 .inbox-message.ng-leave,
 .inbox-message.ng-enter {
   -webkit-transition: all .2s ease-in-out;
@@ -240,16 +402,22 @@
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   position: relative;
-  display: block; }
+  display: block;
+}
 
+/* line 13, sass/partials/_animate.scss */
 .inbox-message.ng-enter,
 .inbox-message.ng-leave.ng-leave-active {
-  opacity: 0; }
+  opacity: 0;
+}
 
+/* line 17, sass/partials/_animate.scss */
 .inbox-message.ng-leave,
 .inbox-message.ng-enter.ng-enter-active {
-  opacity: 1; }
+  opacity: 1;
+}
 
+/* line 22, sass/partials/_animate.scss */
 [ui-view].ng-leave,
 [ui-view].ng-enter {
   position: absolute;
@@ -258,15 +426,20 @@
   -webkit-transition: all .5s ease-in-out;
   -moz-transition: all .5s ease-in-out;
   -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out; }
+  transition: all .5s ease-in-out;
+}
 
+/* line 33, sass/partials/_animate.scss */
 [ui-view].ng-enter,
 [ui-view].ng-leave.ng-leave-active {
-  opacity: 0; }
+  opacity: 0;
+}
 
+/* line 38, sass/partials/_animate.scss */
 [ui-view].ng-leave,
 [ui-view].ng-enter.ng-enter-active {
-  opacity: 1; }
+  opacity: 1;
+}
 
 /*
 [ui-view].ng-enter-active {
@@ -294,29 +467,43 @@
   -moz-transform:translate3d(100px, 0, 0);
   transform:translate3d(100px, 0, 0);
 }*/
+/* line 9, sass/main.scss */
 .body {
-  background-color: #1d5288; }
+  background-color: #1d5288;
+}
 
+/* line 14, sass/main.scss */
 body, p, h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
+/* line 18, sass/main.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400; }
+  font-weight: 400;
+}
 
+/* line 22, sass/main.scss */
 body, p {
   font-weight: 300;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
+/* line 29, sass/main.scss */
 h3 {
-  font-size: 20px; }
+  font-size: 20px;
+}
 
+/* line 33, sass/main.scss */
 h4 {
-  font-size: 18px; }
+  font-size: 18px;
+}
 
+/* line 37, sass/main.scss */
 h5 {
-  font-size: 16px; }
+  font-size: 16px;
+}
 
+/* line 41, sass/main.scss */
 h6 {
-  font-size: 14px; }
-
-/*# sourceMappingURL=main.css.map */
+  font-size: 14px;
+}

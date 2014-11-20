@@ -17,7 +17,8 @@ $fontsize-content: 12px;
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-right: 2px solid $grey;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
 }
 
@@ -27,6 +28,10 @@ $fontsize-content: 12px;
   padding: 0 20px;
   margin: 0 !important;
   height: 100px;
+
+  &:hover{
+    cursor: pointer;
+  }
 
   &:last-of-type{
     border-bottom: none;
@@ -107,11 +112,40 @@ $fontsize-content: 12px;
       font-size: 40px;
     }
   }
+
+  // IKKE FERDIG
+  .delBtn{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    left: -100px;
+  }
 }
 
+// IKKE FERDIG
+.inbox-message{
+  transform: translateX(0);
+  -webkit-transition:transform .2s ease-in-out;
+  -moz-transition:transform .2s ease-in-out;
+  -o-transition:transform .2s ease-in-out;
+  transition:transform .2s ease-in-out;
+  &.delOpen{
+    -webkit-transition:transform .2s ease-in-out;
+    -moz-transition:transform .2s ease-in-out;
+    -o-transition:transform .2s ease-in-out;
+    transition:transform .2s ease-in-out;
+    transform: translateX(100px);
+  }
+}
 
 @media (max-width: $screen-md) {
   .inbox-message{
     padding-right: 0;
+
+    &.active{
+      border-right: none;
+      padding-right: 0;
+    }
   }
 }
