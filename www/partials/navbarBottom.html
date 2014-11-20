@@ -4,10 +4,10 @@
       <a href ng-click="setFilter({}); setAsActive(1)">Inbox</a>
     </li>
     <li class="menu-element" ng-class="{active: activeTab == 2}">
-      <a href ng-click="setFilter({isStarred:true}); setAsActive(2)">Follow Up</a>
+      <a href ng-click="setFilter({followUp:true}); setAsActive(2)">Follow Up</a>
     </li>
     <li class="menu-element" ng-class="{active: activeTab == 3}">
-      <a href ng-click="setFilter({isRead:false}); setAsActive(3)">Unread</a>
+      <a href ng-click="setFilter({read:false}); setAsActive(3)">Unread</a>
     </li>
   </ul>
 </nav>
