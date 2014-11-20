@@ -50,8 +50,8 @@ define([
           controller: "UserGroupCtrl"
         })
         .state("orgUnits", {
-          url: "/orgUnits",
-          templateUrl: "partials/orgUnits.html",
+          url: "/orgunits",
+          templateUrl: "partials/orgunits.html",
           controller: "OrgUnitCtrl"
         });
     }
