@@ -26,13 +26,9 @@ define([
 
       $scope.goToMessage = function(message){
         if($window.innerWidth >= 992){
-          console.log("Fullscreen: setter currentMessage");
-          console.log($window.innerWidth);
           $scope.currentMessage = message;
         }else{
-          console.log("Mobile: Gå til /id");
-          $location.path('/messages/' + message.id);
-          console.log($window.innerWidth);
+          $location.path("/messages/" + message.id);
         }
       };
 

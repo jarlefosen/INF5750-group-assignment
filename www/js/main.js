@@ -12,7 +12,7 @@ require.config({
     "angular-resource": ["angular"],
     "angular-animate": ["angular"],
     "angular-ui-router": {
-      deps: ['angular']
+      deps: ["angular"]
     }
   }
 });

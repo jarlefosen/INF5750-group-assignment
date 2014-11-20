@@ -1,11 +1,11 @@
 <navbar-top></navbar-top>
 
-<div class="wrapper">
-  <div ui-view class="inbox-container container col-lg-3 col-md-3 col-xs-12">
-    <inbox-message data-ng-repeat="message in allMessages|filter:filterProp|orderBy:orderProp:reverse=true"></inbox-message>
-  </div>
 
-  <message-detail></message-detail>
+<div ui-view class="inbox-container container col-lg-3 col-md-3 col-xs-12">
+  <inbox-message data-ng-repeat="message in allMessages|filter:filterProp|orderBy:orderProp:reverse=true"></inbox-message>
 </div>
+
+<message-detail></message-detail>
+
 
 <navbar-bottom setfilter="setFilter()"></navbar-bottom>
