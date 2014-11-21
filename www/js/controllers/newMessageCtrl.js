@@ -12,6 +12,12 @@ define([
   app.controller("NewMessageCtrl", [
     "$scope", "$routeParams", "MessageService", "UserService", "GroupService", "OrgUnitService",
     function ($scope, $routeParams, MessageService, UserService, GroupService, OrgUnitService) {
+      $scope.NAV_TOP = {
+        goToState: "messages",
+        displayName: "Back",
+        icon: "fa-angle-left",
+        showEdit: false
+      };
 
       $scope.userRecipients = [];
       $scope.groupRecipients = [];
