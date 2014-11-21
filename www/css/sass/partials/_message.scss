@@ -5,15 +5,26 @@
   overflow: auto;
   padding-top: 20px;
 
+  &.singleView{
+    margin-top: $navbar-height;
+    margin-bottom: 0;
+    height: $content-height + $navbar-height;
+
+    .reply-btn{
+      margin: 20px auto;
+    }
+  }
+
   .to-and-from-container{
     display: inline-block;
+    float: left;
+    margin-bottom: 20px;
     .from-tag{
       font-weight: 600;
       span{
         font-weight: 300;
       }
     }
-
     .to-tag{
       font-weight: 600;
       span{
@@ -28,6 +39,10 @@
         }
       }
     }
+  }
+
+  .message-subject{
+    clear: both;
   }
 
   .single-message-container{
@@ -80,6 +95,19 @@
       margin-bottom: 20px;
       #reply-box{
         width: 100%;
+      }
+      .reply-btn{
+        border: 2px solid $main-color;
+        border-radius: 2px;
+        background-color: $main-color;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: $off-white;
+
+        width: 300px;
+        height: 50px;
       }
     }
   }

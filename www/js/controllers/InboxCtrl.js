@@ -14,6 +14,12 @@ define([
   app.controller("InboxCtrl", [
     "$scope", "$window", "$location", "MessageService", "LoginService",
     function ($scope, $window, $location, MessageService, LoginService) {
+      $scope.NAV_TOP = {
+        goToState: "newMessage",
+        displayName: "New message",
+        icon: "fa-plus",
+        showEdit: true
+      };
 
       $scope.allMessages = [];
       $scope.currentMessage = {};

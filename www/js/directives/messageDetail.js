@@ -6,7 +6,10 @@ define([
     return {
       restrict: "E",
       replace: true,
-      templateUrl: "partials/singleMessage.html"
+      templateUrl: "partials/singleMessage.html",
+      scope: {
+        message: '=message'
+      }
     };
   });
 });
