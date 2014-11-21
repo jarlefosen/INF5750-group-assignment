@@ -8,7 +8,14 @@ define([
       replace: true,
       templateUrl: "partials/singleMessage.html",
       scope: {
-        message: "=message"
+        message: "=message",
+        setFollowUp: "@"
+      },
+      link: function(scope, elem, attrs){
+        scope.setFollowUp = function(message){
+          scope.$parent.setFollowUp(message);
+        }
+
       }
     };
   });
