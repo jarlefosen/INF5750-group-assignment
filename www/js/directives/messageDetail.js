@@ -8,7 +8,7 @@ define([
       replace: true,
       templateUrl: "partials/singleMessage.html",
       scope: {
-        message: '=message'
+        message: "=message"
       }
     };
   });

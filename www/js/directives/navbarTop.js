@@ -13,10 +13,10 @@ define([
       },
       link: function(scope, elem, attrs){
         scope.setClass = function(){
-          if(scope.settings.showEdit == false){
+          if(scope.settings.showEdit === false){
             return "hidden";
           }
-        }
+        };
       }
     };
   });
