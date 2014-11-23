@@ -65,6 +65,9 @@ You should run it with Grunt.
 
 **IF** the validation stops showing errors, try deleting `validation-report.json` and `validation-status.json`
 
+`$ grunt html-angular-validation` checks for errors in angular partials.
+
+
 ## Linting
 
 The project includes Javascript Linting (eslinting).
