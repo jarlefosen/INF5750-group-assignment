@@ -59,7 +59,5 @@ module.exports = function(grunt) {
   grunt.registerTask("test", ["karma:test"]);
   grunt.registerTask("test:fast", ["karma:fast"]);
   grunt.registerTask("validation", ["html-validation","css-validation"]);
-  //grunt.registerTask("validate-html", ["html-validation"]);
-  //grunt.registerTask("validate-css", ["css-validation"]);
 
 };
