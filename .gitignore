@@ -8,6 +8,10 @@ www/js/libs/*
 # Bower packages
 www/bower_components
 
+# W3C Validation reports
+validation-report.json
+validation-status.json
+
 # Dist file
 firehorse.zip
 
