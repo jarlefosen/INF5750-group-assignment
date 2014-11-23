@@ -1,14 +1,21 @@
-<div class="row inbox-message">
-  <div class="inbox-message-container col-lg-12">
+<div class="row inbox-message" ng-click="goToMessage(message)" ng-class="{active: currentMessage.id == message.id}">
+  <div class="off-canvas-element">
+    <div class="del-btn">
+    </div>
+    <div class="follow-up-btn"></div>
+  </div>
+
+  <div class="inbox-message-container col-lg-12 col-md-12 col-sm-11 col-xs-11">
     <div class="heading row">
-      <p class="sender">{{message.sender}}</p>
+      <p class="sender">{{message.lastSenderFirstname + " " + message.lastSenderSurname + " (" + message.messageCount + ")"}}</p>
       <i ng-show="message.followUp" class="fa fa-star-o follow-up"></i>
-      <p ng-show="message.unread" class="unread">Unread!</p>
-      <p class="date">{{message.date | dateFilter}}</p>
+      <p ng-hide="message.read" class="unread">Unread!</p>
+      <p class="date">{{message.lastMessage | dateFilter}}</p>
     </div>
     <p class="subject">{{message.subject}}</p>
-    <p class="content">{{message.content}}</p>
+    <p class="content">{{message.messages[0].name}}</p>
   </div>
-  <div class="arrow">
+  <div class="arrow hidden-lg hidden-md col-sm-1 col-xs-1">
+    <i class="fa fa-angle-right"></i>
   </div>
 </div>

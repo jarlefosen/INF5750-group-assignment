@@ -5,24 +5,18 @@
   <meta name="viewport"
         content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
   <title>FireHorse</title>
-  <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
   <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"/>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css"/>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
-<body class="body">
-
-<!-- <div ng-include="'partials/navbarTop.html'" ng-controller="NavbarCtrl"></div> -->
-
-
-<navbar-top></navbar-top>
-
+<body class="body" ui-view>
 <!-- routes.js will change which partial is shown inside this div -->
 <div data-ng-view></div>
 
-<navbar-bottom></navbar-bottom>
+
 
 <!-- main.js is the core element which starts the angular app -->
 <script data-main="js/main.js" src="bower_components/requirejs/require.js"></script>

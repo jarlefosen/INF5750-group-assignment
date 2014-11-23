@@ -1,6 +1,9 @@
+/* eslint no-underscore-dangle: 0 camelcase: 0 */
+
 define([
   "app"
 ], function (app) {
+  "use strict";
 
   app.factory("base64", [
     function () {
@@ -63,10 +66,10 @@ define([
 
             output = output + String.fromCharCode(chr1);
 
-            if (enc3 != 64) {
+            if (enc3 !== 64) {
               output = output + String.fromCharCode(chr2);
             }
-            if (enc4 != 64) {
+            if (enc4 !== 64) {
               output = output + String.fromCharCode(chr3);
             }
 

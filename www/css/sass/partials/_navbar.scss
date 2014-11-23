@@ -16,7 +16,7 @@
     .menu-element{
       width: auto;
       display: inline-block;
-      line-height: $navbar-height - 1;
+      line-height: $navbar-height;
 
       &.new-message-btn{
         float: left;
@@ -31,7 +31,7 @@
         float: right;
         margin-right: 20px;
         .dhis-logo{
-          height: 50px;
+          height: $navbar-height;
         }
       }
       a{
@@ -64,21 +64,20 @@
     .menu-element{
       width: 140px;
       display: inline-block;
-      line-height: $navbar-height - 10;
+      line-height: $navbar-height - 2vh;
       a{
         text-decoration: none;
         font-size: 24px;
         color: $color-font-nav-bot;
       }
       &.active{
-        border-top: 5px solid $main-color;
+        border-top: 1vh solid $main-color;
         a{
           color: $color-font-nav-bot-active;
         }
       }
     }
   }
-
 }
 
 @media (max-width: $screen-md) {

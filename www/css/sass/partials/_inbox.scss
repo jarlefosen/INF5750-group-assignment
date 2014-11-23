@@ -10,20 +10,15 @@ $fontsize-content: 12px;
   overflow: hidden;
 }
 
-
-.message-container{
-  margin: $navbar-height 0;
-  background-color: $off-white;
-  height: 1000px;
-}
-
 .inbox-container{
-  background-color: green;
-  height: auto;
+  background-color: $off-white;
+  height: $content-height;
   margin: $navbar-height 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-right: 2px solid $grey;
+  overflow-y: auto;
+  overflow-x: hidden;
 
 }
 
@@ -34,8 +29,17 @@ $fontsize-content: 12px;
   margin: 0 !important;
   height: 100px;
 
+  &:hover{
+    cursor: pointer;
+  }
+
   &:last-of-type{
     border-bottom: none;
+  }
+
+  &.active{
+    border-right: 5px solid $main-color;
+    padding-right: 15px;
   }
 
   .inbox-message-container{
@@ -100,6 +104,63 @@ $fontsize-content: 12px;
     }
   }
   .arrow{
-    background-color: $black;
+    text-align: center;
+    padding: 0;
+
+    .fa{
+      line-height: 100px;
+      font-size: 40px;
+    }
+  }
+
+  .off-canvas-element{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: -200px;
+    .del-btn{
+      position: absolute;
+      right: 0;
+      height: inherit;
+      width: 50%;
+
+      background-color: red;
+      border-bottom: 2px solid lighten(#FF0000, 20%);
+    }
+    .follow-up-btn{
+      position: absolute;
+      left: 0;
+      height: inherit;
+      width: 50%;
+      background-color: orange;
+      border-bottom: 2px solid lighten(#FFA500, 20%);
+    }
+  }
+}
+
+// IKKE FERDIG
+.inbox-message{
+  transform: translateX(0);
+  -webkit-transition:transform .2s ease-in-out;
+  -moz-transition:transform .2s ease-in-out;
+  -o-transition:transform .2s ease-in-out;
+  transition:transform .2s ease-in-out;
+  &.delOpen{
+    -webkit-transition:transform .2s ease-in-out;
+    -moz-transition:transform .2s ease-in-out;
+    -o-transition:transform .2s ease-in-out;
+    transition:transform .2s ease-in-out;
+    transform: translateX(200px);
+  }
+}
+
+@media (max-width: $screen-md) {
+  .inbox-message{
+    padding-right: 0;
+
+    &.active{
+      border-right: none;
+      padding-right: 0;
+    }
   }
 }

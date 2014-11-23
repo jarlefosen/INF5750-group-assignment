@@ -1,0 +1,12 @@
+<div class="message-container ">
+
+  <h1>Usergroups</h1>
+
+  <input type="text" ng-model="query">
+  <input type="submit" value="Søk (Navn)" ng-click="search()">
+  <input type="submit" value="Finn (ID)" ng-click="byId()">
+
+  <div ng-repeat="group in groups">
+    <pre>{{ group.name }}<br/>({{ group.id }})</pre>
+  </div>
+</div>

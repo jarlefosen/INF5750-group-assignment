@@ -4,6 +4,7 @@ define([
   "app",
   "controllers/loginCtrl"
 ], function(angular) {
+  "use strict";
 
   var inject = angular.mock.inject;
 
@@ -19,11 +20,11 @@ define([
     beforeEach(angular.mock.module(function($provide) {
       LoginService = {
         login: function(){
-          return {then: function(){}}
+          return {then: function(){}};
         },
         logout: function () {},
         getProfile: function () {
-          return {then: function(){}}
+          return {then: function(){}};
         }
       };
 
@@ -53,7 +54,7 @@ define([
           "$scope": $scope
         });
 
-        spyOn(LoginService, 'login').and.returnValue({then: function(){}});
+        spyOn(LoginService, "login").and.returnValue({then: function(){}});
         $scope.login();
 
         expect(LoginService.login).toHaveBeenCalled();
@@ -74,6 +75,6 @@ define([
       }));
     });
 
-  })
+  });
 
 });

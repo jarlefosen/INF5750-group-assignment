@@ -1,0 +1,115 @@
+.message-container{
+  margin: $navbar-height 0;
+  background-color: $off-white;
+  height: $content-height;
+  overflow: auto;
+  padding-top: 20px;
+
+  &.singleView{
+    margin-top: $navbar-height;
+    margin-bottom: 0;
+    height: $content-height + $navbar-height;
+
+    .reply-btn{
+      margin: 20px auto;
+    }
+  }
+
+  .to-and-from-container{
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    .from-tag{
+      font-weight: 600;
+      span{
+        font-weight: 300;
+      }
+    }
+    .to-tag{
+      font-weight: 600;
+      span{
+        font-weight: 300;
+        &:after{
+          content: ', ';
+        }
+        &:last-child{
+          &:after{
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  .message-subject{
+    clear: both;
+  }
+
+  .single-message-container{
+    border-bottom: 2px solid $grayish;
+    &.last{
+      border-bottom: none;
+    }
+
+    margin: 20px 0 0 0;
+
+    .header{
+      .sender{
+        display: inline-block;
+        font-weight: 600;
+        color: $grayish;
+
+        &:after{
+          content: ' ';
+        }
+      }
+      .timestamp{
+        display: inline-block;
+        font-weight: 600;
+        color: $grayish;
+
+        &:before{
+          content: '(';
+        }
+        &:after{
+          content: ')';
+        }
+      }
+    }
+    .message{
+      padding-left: 10px;
+      word-wrap: break-word;
+      margin-bottom: 20px;
+    }
+  }
+
+  .reply-container{
+    padding: 0;
+
+    h6{
+
+
+    }
+
+    #reply-form{
+      margin-bottom: 20px;
+      #reply-box{
+        width: 100%;
+      }
+      .reply-btn{
+        border: 2px solid $main-color;
+        border-radius: 2px;
+        background-color: $main-color;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: $off-white;
+
+        width: 300px;
+        height: 50px;
+      }
+    }
+  }
+}
+
