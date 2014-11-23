@@ -11,6 +11,7 @@ www/bower_components
 # W3C Validation reports
 validation-report.json
 validation-status.json
+html-angular-validate-report.json
 
 # Dist file
 firehorse.zip

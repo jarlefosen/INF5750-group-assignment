@@ -49,15 +49,39 @@ module.exports = function(grunt) {
       files: {
         src: ['www/css/*.css']
       }
+    },
+    htmlangular: {
+      options: {
+        tmplext: 'html',
+        customtags: [
+          // <message-detail ></message-detail> is a custom tag
+          'message-detail'
+        ],
+        customattrs: [
+          //<div message-id="123"></div> -> message-id would be a custom attribute
+        ],
+        relaxerror: [
+          'The frameborder attribute on the iframe element is obsolete. Use CSS instead.'
+        ],
+        reportpath: 'html-angular-validate-report.json'
+      },
+      files: {
+        src: [
+          'www/partials/*.html'
+        ]
+      }
     }
   });
 
   grunt.loadNpmTasks("grunt-eslint");
   grunt.loadNpmTasks("grunt-karma");
   grunt.loadNpmTasks('grunt-w3c-validation');
+  grunt.loadNpmTasks('grunt-html-angular-validate');
 
   grunt.registerTask("test", ["karma:test"]);
   grunt.registerTask("test:fast", ["karma:fast"]);
   grunt.registerTask("validation", ["html-validation","css-validation"]);
+  grunt.registerTask("html-angular-validation", ["htmlangular"]);
+
 
 };
