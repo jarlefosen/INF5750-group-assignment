@@ -51,6 +51,19 @@ when you either start the app or installs npm dependencies.
 
 **Remember** to run `$ npm install` when package.json and/or bower.json is updated.
 
+## W3C Validation
+
+We have included W3C validation for both CSS and HTML.
+
+You should run it with Grunt.
+
+`$ grunt validation` will check both CSS and HTML.
+
+`$ grunt html-validation` checks only HTML
+
+`$ grunt css-validation` checks only CSS
+
+**IF** the validation stops showing errors, try deleting `validation-report.json` and `validation-status.json`
 
 ## Linting
 
