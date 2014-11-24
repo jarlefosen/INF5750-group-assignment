@@ -4,8 +4,7 @@
 define([
   "app",
   "services/messageService",
-  "directives/navbarTop",
-  "directives/replyMessage"
+  "directives/navbarTop"
 ], function (app) {
   "use strict";
   app.controller("MessageDetailCtrl", [
