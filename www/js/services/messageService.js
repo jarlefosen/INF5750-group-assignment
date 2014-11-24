@@ -260,12 +260,40 @@ define([
         return deferred.promise;
       }
 
+      function reply(id, body) {
+        var deferred = $q.defer();
+
+
+        if (!body) {
+          deferred.reject({message: "Body must be a string."});
+          return deferred.promise;
+        }
+
+        var options = {
+          headers: {
+            "Content-Type": "text/plain"
+          }
+        };
+
+        $http.post(MESSAGES_BASE_URL + "/" + id + ".json", body, options)
+          .success(function() {
+            deferred.resolve();
+          })
+          .error(function() {
+            deferred.reject();
+          });
+
+        return deferred.promise;
+      }
+
       return {
         getAllMessages: getInbox,
         getMessage: getConversation,
+        getMessageFromCache: getConversationFromCache,
         deleteMessage: deleteConversation,
         clearCache: clearCache(),
-        newMessage: newMessage
+        newMessage: newMessage,
+        reply: reply
       };
     }
   ]);
