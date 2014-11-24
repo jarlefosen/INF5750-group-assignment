@@ -69,7 +69,7 @@ define([
               return el.id !== message.id;
             });
             var delIndex = $scope.allMessages.indexOf(message);
-            var newIndex = delIndex > 0 ? delIndex-1: delIndex+1;
+            var newIndex = delIndex > 0 ? delIndex - 1 : delIndex + 1;
             $scope.currentMessage = $scope.allMessages[newIndex];
           }
         );
@@ -80,7 +80,7 @@ define([
 
         message.followUp = !message.followUp;
         MessageService.setFollowUp(message);
-      }
+      };
 
       $scope.followUpStatus = function(message) {
 
@@ -91,7 +91,7 @@ define([
 
           return "";
         }
-      }
+      };
     }
 
   ]);
