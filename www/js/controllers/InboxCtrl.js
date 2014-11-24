@@ -76,6 +76,13 @@ define([
 
       };
 
+      $scope.setUnread = function(message) {
+        MessageService.setUnread(message.id)
+          .then(function() {
+            message.read = false;
+          });
+      };
+
       $scope.setFollowUp = function(message){
 
         message.followUp = !message.followUp;
