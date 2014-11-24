@@ -12,11 +12,10 @@
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
-<body class="body" data-ui-view>
+<body class="body">
 <!-- routes.js will change which partial is shown inside this div -->
-<div data-ng-view></div>
-
-
+<!--<div data-ng-view></div>-->
+<div ui-view></div>
 
 <!-- main.js is the core element which starts the angular app -->
 <script data-main="js/main.js" src="bower_components/requirejs/require.js"></script>
