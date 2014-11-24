@@ -3,7 +3,7 @@
     <div class="heading row">
       <p class="sender">{{message.lastSenderFirstname + " " + message.lastSenderSurname + " (" + message.messageCount + ")"}}</p>
 
-      <i ng-click="setFollowUp(message)" class="fa fa-star-o" ng-class="followUpStatus(message)"></i>
+      <i ng-show="message.isStarred" class="fa fa-star-o" ng-class="followUpStatus(message)"></i>
       <p ng-hide="message.read" class="unread">Unread!</p>
       <p class="date">{{message.lastMessage | dateFilter}}</p>
     </div>
