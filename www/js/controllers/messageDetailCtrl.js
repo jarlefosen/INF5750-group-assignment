@@ -3,13 +3,23 @@
  */
 define([
   "app",
-  "services/messageService"
+  "services/messageService",
+  "directives/navbarTop"
 ], function (app) {
   "use strict";
   app.controller("MessageDetailCtrl", [
-    "$scope", "$routeParams", "MessageService",
-    function ($scope, $routeParams, MessageService) {
-      $scope.message = MessageService.getMessage($routeParams.messageId);
+    "$scope", "$stateParams", "MessageService",
+    function ($scope, $stateParams, MessageService) {
+      $scope.NAV_TOP = {
+        goToState: "messages",
+        displayName: "Back",
+        icon: "fa-angle-left",
+        showEdit: false
+      };
+      MessageService.getMessage($stateParams.messageId)
+        .then(function(message){
+          $scope.message = message;
+        });
     }
   ]);
 });

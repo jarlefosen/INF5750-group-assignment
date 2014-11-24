@@ -1,17 +1,31 @@
-<div class="message-container col-lg-9 col-md-9 hidden-xs hidden-sm">
+<div class="message-container col-lg-9 col-md-9">
   <div class="to-and-from-container">
-    <p class="from-tag">From: <span>{{currentMessage.lastSenderFirstname}} {{currentMessage.lastSenderSurname}}</span></p>
-    <p class="to-tag">To: <span data-ng-repeat="obj in currentMessage.userMessages">{{obj.user.name}}</span></p>
+    <p class="from-tag">From: <span>{{message.lastSenderFirstname}} {{message.lastSenderSurname}}</span></p>
+    <p class="to-tag">To: <span data-ng-repeat="obj in message.userMessages">{{obj.user.name}}</span></p>
+  </div>
+  <div class="button-container">
+    <button ng-click="setFollowUp(message)">Follow up</button>
+    <button>Delete</button>
   </div>
 
-  <h3>{{currentMessage.subject}}</h3>
+  <h3 class="message-subject">{{message.subject}}</h3>
 
 
-  <div class="single-message-container col-lg-12 col-md-12" data-ng-repeat="msg in currentMessage.messages">
+  <div class="single-message-container col-lg-12 col-md-12" data-ng-repeat="msg in message.messages" ng-class="{'last':$last}">
     <div class="header">
       <h6 class="sender">{{msg.sender.name}}</h6>
       <h6 class="timestamp">{{msg.created | dateFilterDetail}}</h6>
     </div>
     <p class="message col-lg-12 col-md-12">{{msg.name}}</p>
+  </div>
+
+  <div class="reply-container col-lg-12 col-md-12">
+    <h5>Reply:</h5>
+
+    <form action="#" method="POST" id="reply-form">
+      <textarea name="reply-message" id="reply-box" cols="30" rows="10"></textarea>
+      <button class="reply-btn btn btn-primary">Reply</button>
+    </form>
+
   </div>
 </div>

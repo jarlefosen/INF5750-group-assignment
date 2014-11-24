@@ -23,7 +23,7 @@ define([
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
 
-      var DEFAULT_MESSAGE_FIELDS = ["lastUpdated,id,name,subject,lastMessage,lastSender,messages[id,name,sender,created],userMessages[user[id,name]]"];
+      var DEFAULT_MESSAGE_FIELDS = "lastUpdated,id,name,subject,lastMessage,lastSender,messages[id,name,sender,created],userMessages[user[id,name]]";
 
       function clearCache() {
         try {
@@ -237,7 +237,7 @@ define([
         var orgList = [];
         angular.forEach(orgReceivers, function (entry) {
           var l = {id: entry};
-          orgReceivers.push(l);
+          orgList.push(l);
         });
 
         var message = {
@@ -250,10 +250,10 @@ define([
 
         $http.post(ServerConfig.host + MESSAGES_BASE_URL, message)
           .success(function (data) {
-
+            console.log("Message POSTed!");
           })
           .error(function () {
-
+            console.log("Error POSTing message!" + message.toString());
           });
         return deferred.promise;
       }

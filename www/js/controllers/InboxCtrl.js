@@ -6,13 +6,20 @@ define([
   "directives/inboxMessage",
   "directives/navbarTop",
   "directives/navbarBottom",
-  "directives/messageDetail"
+  "directives/messageDetail",
+  "directives/editBtnClickHandler"
 ], function (app) {
   "use strict";
 
   app.controller("InboxCtrl", [
-    "$scope", "MessageService", "LoginService",
-    function ($scope, MessageService, LoginService) {
+    "$scope", "$window", "$location", "MessageService", "LoginService",
+    function ($scope, $window, $location, MessageService, LoginService) {
+      $scope.NAV_TOP = {
+        goToState: "newMessage",
+        displayName: "New message",
+        icon: "fa-plus",
+        showEdit: true
+      };
 
       $scope.allMessages = [];
       $scope.currentMessage = {};
@@ -23,8 +30,12 @@ define([
         $scope.filterProp = value;
       };
 
-      $scope.setCurrentMessage = function(message){
-        $scope.currentMessage = message;
+      $scope.goToMessage = function(message){
+        if($window.innerWidth >= 992){
+          $scope.currentMessage = message;
+        }else{
+          $location.path("/messages/" + message.id);
+        }
       };
 
       LoginService.getProfile().then(
@@ -42,7 +53,7 @@ define([
             });
         });
         // Setting default active message
-        $scope.setCurrentMessage(messages[0]);
+        $scope.currentMessage = messages[0];
       }
 
       MessageService.getAllMessages().then(

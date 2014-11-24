@@ -6,7 +6,17 @@ define([
     return {
       restrict: "E",
       replace: true,
-      templateUrl: "partials/singleMessage.html"
+      templateUrl: "partials/singleMessage.html",
+      scope: {
+        message: "=message",
+        setFollowUp: "@"
+      },
+      link: function(scope, elem, attrs){
+        scope.setFollowUp = function(message){
+          scope.$parent.setFollowUp(message);
+        }
+
+      }
     };
   });
 });

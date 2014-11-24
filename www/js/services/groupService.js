@@ -12,7 +12,7 @@ define([
   app.service("GroupService", [
     "$q", "ServerConfig", "$http",
     function ($q, ServerConfig, $http) {
-      var GROUP_URL = "/api/userGroups.json";
+      var GROUP_URL = "/api/userGroups.json?paging=false";
       var CACHE_KEY = "no.uio.inf5750-11.userGroups";
       var CACHE_TIMESTAMP_KEY = "no.uio.inf5750-11.userGroups.timestamp";
 
