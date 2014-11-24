@@ -69,6 +69,33 @@ define([
           }
         );
       };
+
+      $scope.setFollowUp = function(message){
+
+        message.followUp = !message.followUp;
+        MessageService.setFollowUp(message);
+      }
+
+      $scope.followUpStatus = function(message) {
+
+        if (message.followUp === true) {
+
+          return "follow-up";
+        } else {
+
+          return "";
+        }
+      }
+
+      function updateObj(data){
+        angular.forEach(data.userMessages, function(value){
+          if(value.user.id === $scope.userProfile.id){
+            data.isRead = value.read;
+            data.isStarred = value.followUp;
+          }
+        });
+        return data;
+      }
     }
 
   ]);

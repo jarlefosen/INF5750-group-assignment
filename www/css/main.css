@@ -2,13 +2,13 @@
 /* Mozilla Firefox 4 to 18 */
 /* Mozilla Firefox 19+ */
 /* Internet Explorer 10+ */
-/* line 4, sass/partials/_login.scss */
+/* line 5, sass/partials/_login.scss */
 .login-container {
   padding-top: 150px;
   min-width: 300px;
   margin: 0 auto;
 }
-/* line 9, sass/partials/_login.scss */
+/* line 10, sass/partials/_login.scss */
 .login-container img {
   max-width: 260px;
   height: auto;
@@ -16,7 +16,7 @@
   display: block;
   margin-bottom: 50px;
 }
-/* line 17, sass/partials/_login.scss */
+/* line 18, sass/partials/_login.scss */
 .login-container form input {
   border: none;
   border: 2px solid #fcfcfc;
@@ -33,7 +33,7 @@
   font-size: 20px;
   color: #fcfcfc;
 }
-/* line 35, sass/partials/_login.scss */
+/* line 36, sass/partials/_login.scss */
 .login-container form input[type="submit"] {
   background-color: #fcfcfc;
   color: #1d5288;
@@ -120,8 +120,9 @@
   margin-left: 5px;
   float: left;
   line-height: 20px;
+  background-color: yellow;
 }
-/* line 70, sass/partials/_inbox.scss */
+/* line 71, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .unread {
   margin-bottom: 0;
   margin-left: 5px;
@@ -131,7 +132,7 @@
   line-height: 20px;
   font-size: 12px;
 }
-/* line 80, sass/partials/_inbox.scss */
+/* line 81, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .date {
   font-size: 10px;
   display: inline-block;
@@ -139,7 +140,7 @@
   margin-bottom: 0;
   color: #9B9B9B;
 }
-/* line 89, sass/partials/_inbox.scss */
+/* line 90, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .subject {
   font-size: 12px;
   font-weight: 400;
@@ -149,7 +150,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 97, sass/partials/_inbox.scss */
+/* line 98, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .content {
   color: #9B9B9B;
   max-height: 40px;
@@ -158,24 +159,24 @@
   font-size: 12px;
   margin-bottom: 0;
 }
-/* line 106, sass/partials/_inbox.scss */
+/* line 107, sass/partials/_inbox.scss */
 .inbox-message .arrow {
   text-align: center;
   padding: 0;
 }
-/* line 110, sass/partials/_inbox.scss */
+/* line 111, sass/partials/_inbox.scss */
 .inbox-message .arrow .fa {
   line-height: 100px;
   font-size: 40px;
 }
-/* line 116, sass/partials/_inbox.scss */
+/* line 117, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element {
   width: 200px;
   height: 100px;
   position: absolute;
   left: -200px;
 }
-/* line 121, sass/partials/_inbox.scss */
+/* line 122, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .del-btn {
   position: absolute;
   right: 0;
@@ -184,7 +185,7 @@
   background-color: red;
   border-bottom: 2px solid #ff6666;
 }
-/* line 130, sass/partials/_inbox.scss */
+/* line 131, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .follow-up-btn {
   position: absolute;
   left: 0;
@@ -194,7 +195,7 @@
   border-bottom: 2px solid #ffc966;
 }
 
-/* line 142, sass/partials/_inbox.scss */
+/* line 143, sass/partials/_inbox.scss */
 .inbox-message {
   transform: translateX(0);
   -webkit-transition: transform .2s ease-in-out;
@@ -202,7 +203,7 @@
   -o-transition: transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
 }
-/* line 148, sass/partials/_inbox.scss */
+/* line 149, sass/partials/_inbox.scss */
 .inbox-message.delOpen {
   -webkit-transition: transform .2s ease-in-out;
   -moz-transition: transform .2s ease-in-out;
@@ -212,11 +213,11 @@
 }
 
 @media (max-width: 992px) {
-  /* line 158, sass/partials/_inbox.scss */
+  /* line 159, sass/partials/_inbox.scss */
   .inbox-message {
     padding-right: 0;
   }
-  /* line 161, sass/partials/_inbox.scss */
+  /* line 162, sass/partials/_inbox.scss */
   .inbox-message.active {
     border-right: none;
     padding-right: 0;
@@ -513,43 +514,43 @@
   -moz-transform:translate3d(100px, 0, 0);
   transform:translate3d(100px, 0, 0);
 }*/
-/* line 9, sass/main.scss */
+/* line 11, sass/main.scss */
 .body {
   background-color: #1d5288;
 }
 
-/* line 14, sass/main.scss */
+/* line 15, sass/main.scss */
 body, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 18, sass/main.scss */
+/* line 19, sass/main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-/* line 22, sass/main.scss */
+/* line 23, sass/main.scss */
 body, p {
   font-weight: 300;
   font-size: 12px;
 }
 
-/* line 29, sass/main.scss */
+/* line 30, sass/main.scss */
 h3 {
   font-size: 20px;
 }
 
-/* line 33, sass/main.scss */
+/* line 34, sass/main.scss */
 h4 {
   font-size: 18px;
 }
 
-/* line 37, sass/main.scss */
+/* line 38, sass/main.scss */
 h5 {
   font-size: 16px;
 }
 
-/* line 41, sass/main.scss */
+/* line 42, sass/main.scss */
 h6 {
   font-size: 14px;
 }
