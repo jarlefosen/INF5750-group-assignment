@@ -23,7 +23,7 @@ define([
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
 
-      var DEFAULT_MESSAGE_FIELDS = ["lastUpdated,id,name,subject,lastMessage,lastSender,messages[id,name,sender,created],userMessages[user[id,name]]"];
+      var DEFAULT_MESSAGE_FIELDS = "lastUpdated,id,name,subject,lastMessage,lastSender,messages[id,name,sender,created],userMessages[user[id,name]]";
 
       function clearCache() {
         try {
