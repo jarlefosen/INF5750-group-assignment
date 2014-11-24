@@ -19,6 +19,7 @@ define([
 
       var MESSAGES_BASE_URL = "/api/messageConversations";
       var MY_INBOX_URL = "/api/me/inbox";
+      var MESSAGE_READ = "/api/messageConversations/read";
 
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
@@ -287,13 +288,41 @@ define([
         return deferred.promise;
       }
 
+
+      function markAsRead(messageid) {
+
+        var deferred = $q.defer();
+
+        $http({
+          method: "POST",
+          url: ServerConfig.host + MESSAGE_READ,
+          data: $.param(messageid),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        })
+          .success(function (data, status, headers) {
+            deferred.resolve(data)
+            console.log("success!!");
+            console.log(message);
+          })
+
+          .error(function (error) {
+            deferred.reject(error);
+            console.log("Error");
+          });
+
+        return deferred.promise;
+      }
+
       return {
         getAllMessages: getInbox,
         getMessage: getConversation,
         deleteMessage: deleteConversation,
         clearCache: clearCache(),
         newMessage: newMessage,
-        setFollowUp: setFollowUp
+        setFollowUp: setFollowUp,
+        markAsRead: markAsRead
       };
     }
   ]);

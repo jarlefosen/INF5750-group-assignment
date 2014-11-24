@@ -70,6 +70,11 @@ define([
         );
       };
 
+      $scope.isRead = function(message) {
+
+        MessageService.markAsRead(message.id);
+      }
+
       $scope.setFollowUp = function(message){
 
         message.followUp = !message.followUp;
