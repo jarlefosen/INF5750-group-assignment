@@ -243,17 +243,19 @@ define([
         var message = {
           subject: subject,
           text: text,
-          users: userList,
-          userGroups: groupList,
-          organisationUnits: orgList
+          users: userList || [],
+          userGroups: groupList || [],
+          organisationUnits: orgList || []
         };
 
-        $http.post(ServerConfig.host + MESSAGES_BASE_URL, message)
-          .success(function (data) {
-            console.log("Message POSTed!");
+        $http.post(ServerConfig.host + MESSAGES_BASE_URL + ".json", message)
+          .success(function () {
+            deferred.resolve();
           })
           .error(function () {
-            console.log("Error POSTing message!" + message.toString());
+            deferred.reject();
+            console.log("Could not send message!");
+            console.log(message);
           });
         return deferred.promise;
       }
