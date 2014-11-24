@@ -1,4 +1,4 @@
-<div class="message-container col-lg-9 col-md-9">
+<div class="message-container singleView col-lg-12 col-md-12 col-xs-12">
   <div class="to-and-from-container">
     <p class="from-tag">From: <span>{{message.lastSenderFirstname}} {{message.lastSenderSurname}}</span></p>
     <p class="to-tag">To: <span data-ng-repeat="obj in message.userMessages">{{obj.user.name}}</span></p>
@@ -21,11 +21,10 @@
 
   <div class="reply-container col-lg-12 col-md-12">
     <h5>Reply:</h5>
-
-    <form action="#" method="POST" id="reply-form">
-      <textarea name="reply-message" id="reply-box" cols="30" rows="10"></textarea>
+    <form ng-submit="replyFunction()" id="reply-form" class="col-xs-12">
+      <textarea name="reply-message" ng-model="content"  class="col-xs-12" id="reply-box" rows="5"></textarea>
       <button class="reply-btn btn btn-primary">Reply</button>
     </form>
-
   </div>
+
 </div>
