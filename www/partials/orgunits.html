@@ -1,0 +1,12 @@
+<div class="message-container ">
+
+  <h1>Organization Units</h1>
+
+  <input type="text" ng-model="query">
+  <input type="submit" value="Søk (Navn)" ng-click="search()">
+  <input type="submit" value="Finn (ID)" ng-click="byId()">
+
+  <div ng-repeat="orgUnit in orgUnits">
+    <pre>{{ orgUnit.name }}<br/>({{ orgUnit.id }})</pre>
+  </div>
+</div>

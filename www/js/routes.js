@@ -1,10 +1,12 @@
 define([
   "app",
-  "controllers/indexCtrl",
-  "controllers/navbarCtrl",
   "controllers/loginCtrl",
   "controllers/InboxCtrl",
-  "controllers/messageDetailCtrl"
+  "controllers/userCtrl",
+  "controllers/userGroupCtrl",
+  "controllers/orgUnitCtrl",
+  "controllers/messageDetailCtrl",
+  "controllers/newMessageCtrl"
 ], function (app) {
   "use strict";
 
@@ -22,9 +24,28 @@ define([
           controller: "InboxCtrl"
         })
 
+        .when("/messages/new", {
+          templateUrl: "partials/newMessage.html",
+          controller: "NewMessageCtrl"
+        })
+
         .when("/messages/:messageId", {
           templateUrl: "partials/messageDetail.html",
           controller: "MessageDetailCtrl"
+        })
+        .when("/users", {
+          templateUrl: "partials/users.html",
+          controller: "UserCtrl"
+        })
+
+        .when("/groups", {
+          templateUrl: "partials/groups.html",
+          controller: "UserGroupCtrl"
+        })
+
+        .when("/orgUnits", {
+          templateUrl: "partials/orgUnits.html",
+          controller: "OrgUnitCtrl"
         })
 
         .otherwise({
