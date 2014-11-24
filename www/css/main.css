@@ -2,138 +2,81 @@
 /* Mozilla Firefox 4 to 18 */
 /* Mozilla Firefox 19+ */
 /* Internet Explorer 10+ */
+/* line 5, sass/partials/_login.scss */
 .login-container {
   padding-top: 150px;
   min-width: 300px;
-  margin: 0 auto; }
-  .login-container img {
-    max-width: 260px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 50px; }
-  .login-container form input {
-    border: none;
-    border: 2px solid #FCFCFC;
-    border-radius: 2px;
-    background-color: #1D5288;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 300px;
-    height: 50px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    color: #FCFCFC; }
-  .login-container form input[type="submit"] {
-    background-color: #FCFCFC;
-    color: #1D5288;
-    font-weight: 300; }
-  .login-container form ::-webkit-input-placeholder {
-    color: #FCFCFC;
-    font-weight: 300; }
-  .login-container form :-moz-placeholder {
-    color: #FCFCFC;
-    opacity: 1; }
-  .login-container form ::-moz-placeholder {
-    color: #FCFCFC;
-    opacity: 1; }
-  .login-container form :-ms-input-placeholder {
-    color: #FCFCFC; }
+  margin: 0 auto;
+}
+/* line 10, sass/partials/_login.scss */
+.login-container img {
+  max-width: 260px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 50px;
+}
+/* line 18, sass/partials/_login.scss */
+.login-container form input {
+  border: none;
+  border: 2px solid #fcfcfc;
+  border-radius: 2px;
+  background-color: #1d5288;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #fcfcfc;
+}
+/* line 36, sass/partials/_login.scss */
+.login-container form input[type="submit"] {
+  background-color: #fcfcfc;
+  color: #1d5288;
+  font-weight: 300;
+}
+/* line 3, sass/partials/_mixins.scss */
+.login-container form ::-webkit-input-placeholder {
+  color: #fcfcfc;
+  font-weight: 300;
+}
+/* line 11, sass/partials/_mixins.scss */
+.login-container form :-moz-placeholder {
+  color: #fcfcfc;
+  opacity: 1;
+}
+/* line 19, sass/partials/_mixins.scss */
+.login-container form ::-moz-placeholder {
+  color: #fcfcfc;
+  opacity: 1;
+}
+/* line 27, sass/partials/_mixins.scss */
+.login-container form :-ms-input-placeholder {
+  color: #fcfcfc;
+}
 
+/* line 13, sass/partials/_inbox.scss */
 .inbox-container {
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   height: 84vh;
   margin: 8vh 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-right: 2px solid #979797;
-<<<<<<< HEAD
-  overflow: auto; }
-
-=======
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 /* line 25, sass/partials/_inbox.scss */
->>>>>>> master
 .inbox-message {
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   border-bottom: 2px solid #979797;
   padding: 0 20px;
   margin: 0 !important;
-<<<<<<< HEAD
-  height: 100px; }
-  .inbox-message:last-of-type {
-    border-bottom: none; }
-  .inbox-message.active {
-    border-right: 5px solid #1D5288;
-    padding-right: 15px; }
-  .inbox-message .inbox-message-container {
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 9px; }
-    .inbox-message .inbox-message-container .heading {
-      margin: 0 0 2px 0; }
-      .inbox-message .inbox-message-container .heading .sender {
-        font-size: 14px;
-        font-weight: 300;
-        margin: 0;
-        display: inline-block;
-        max-width: 40%;
-        line-height: 20px;
-        float: left;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden; }
-      .inbox-message .inbox-message-container .heading .follow-up {
-        margin-left: 5px;
-        float: left;
-        line-height: 20px;
-        background-color: yellow; }
-      .inbox-message .inbox-message-container .heading .unread {
-        margin-bottom: 0;
-        margin-left: 5px;
-        display: inline-block;
-        color: red;
-        float: left;
-        line-height: 20px;
-        font-size: 12px; }
-      .inbox-message .inbox-message-container .heading .date {
-        font-size: 10px;
-        display: inline-block;
-        float: right;
-        margin-bottom: 0;
-        color: #9B9B9B; }
-    .inbox-message .inbox-message-container .subject {
-      font-size: 12px;
-      font-weight: 400;
-      margin-bottom: 3px;
-      max-width: 250px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden; }
-    .inbox-message .inbox-message-container .content {
-      color: #9B9B9B;
-      max-height: 40px;
-      overflow-y: hidden;
-      line-height: 20px;
-      font-size: 12px;
-      margin-bottom: 0; }
-  .inbox-message .arrow {
-    text-align: center;
-    padding: 0; }
-    .inbox-message .arrow .fa {
-      line-height: 100px;
-      font-size: 40px; }
-
-@media (max-width: 992px) {
-  .inbox-message {
-    padding-right: 0; } }
-=======
   height: 100px;
 }
 /* line 32, sass/partials/_inbox.scss */
@@ -177,8 +120,9 @@
   margin-left: 5px;
   float: left;
   line-height: 20px;
+  background-color: yellow;
 }
-/* line 70, sass/partials/_inbox.scss */
+/* line 71, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .unread {
   margin-bottom: 0;
   margin-left: 5px;
@@ -188,7 +132,7 @@
   line-height: 20px;
   font-size: 12px;
 }
-/* line 80, sass/partials/_inbox.scss */
+/* line 81, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .date {
   font-size: 10px;
   display: inline-block;
@@ -196,7 +140,7 @@
   margin-bottom: 0;
   color: #9B9B9B;
 }
-/* line 89, sass/partials/_inbox.scss */
+/* line 90, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .subject {
   font-size: 12px;
   font-weight: 400;
@@ -206,7 +150,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 97, sass/partials/_inbox.scss */
+/* line 98, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .content {
   color: #9B9B9B;
   max-height: 40px;
@@ -215,24 +159,24 @@
   font-size: 12px;
   margin-bottom: 0;
 }
-/* line 106, sass/partials/_inbox.scss */
+/* line 107, sass/partials/_inbox.scss */
 .inbox-message .arrow {
   text-align: center;
   padding: 0;
 }
-/* line 110, sass/partials/_inbox.scss */
+/* line 111, sass/partials/_inbox.scss */
 .inbox-message .arrow .fa {
   line-height: 100px;
   font-size: 40px;
 }
-/* line 116, sass/partials/_inbox.scss */
+/* line 117, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element {
   width: 200px;
   height: 100px;
   position: absolute;
   left: -200px;
 }
-/* line 121, sass/partials/_inbox.scss */
+/* line 122, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .del-btn {
   position: absolute;
   right: 0;
@@ -241,7 +185,7 @@
   background-color: red;
   border-bottom: 2px solid #ff6666;
 }
-/* line 130, sass/partials/_inbox.scss */
+/* line 131, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .follow-up-btn {
   position: absolute;
   left: 0;
@@ -251,7 +195,7 @@
   border-bottom: 2px solid #ffc966;
 }
 
-/* line 142, sass/partials/_inbox.scss */
+/* line 143, sass/partials/_inbox.scss */
 .inbox-message {
   transform: translateX(0);
   -webkit-transition: transform .2s ease-in-out;
@@ -259,7 +203,7 @@
   -o-transition: transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
 }
-/* line 148, sass/partials/_inbox.scss */
+/* line 149, sass/partials/_inbox.scss */
 .inbox-message.delOpen {
   -webkit-transition: transform .2s ease-in-out;
   -moz-transition: transform .2s ease-in-out;
@@ -269,130 +213,123 @@
 }
 
 @media (max-width: 992px) {
-  /* line 158, sass/partials/_inbox.scss */
+  /* line 159, sass/partials/_inbox.scss */
   .inbox-message {
     padding-right: 0;
   }
-  /* line 161, sass/partials/_inbox.scss */
+  /* line 162, sass/partials/_inbox.scss */
   .inbox-message.active {
     border-right: none;
     padding-right: 0;
   }
 }
 /* line 1, sass/partials/_navbar.scss */
->>>>>>> master
 .navigation-top {
   height: 8vh;
-  background-color: #1D5288;
+  background-color: #1d5288;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0; }
-  .navigation-top ul {
-    margin-bottom: 0;
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    zoom: 1; }
-    .navigation-top ul .menu-element {
-      width: auto;
-      display: inline-block;
-      line-height: 8vh; }
-      .navigation-top ul .menu-element.new-message-btn {
-        float: left;
-        margin-left: 20px; }
-      .navigation-top ul .menu-element.edit-btn {
-        float: right;
-        margin-right: 20px; }
-      .navigation-top ul .menu-element.logo-container {
-        float: right;
-        margin-right: 20px; }
-        .navigation-top ul .menu-element.logo-container .dhis-logo {
-          height: 8vh; }
-      .navigation-top ul .menu-element a {
-        text-decoration: none;
-        font-size: 18px;
-        color: #FCFCFC; }
-        .navigation-top ul .menu-element a .fa {
-          margin-right: 5px; }
+  margin-bottom: 0;
+}
+/* line 9, sass/partials/_navbar.scss */
+.navigation-top ul {
+  margin-bottom: 0;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  zoom: 1;
+}
+/* line 16, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element {
+  width: auto;
+  display: inline-block;
+  line-height: 8vh;
+}
+/* line 21, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.new-message-btn {
+  float: left;
+  margin-left: 20px;
+}
+/* line 25, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.edit-btn {
+  float: right;
+  margin-right: 20px;
+}
+/* line 30, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container {
+  float: right;
+  margin-right: 20px;
+}
+/* line 33, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container .dhis-logo {
+  height: 8vh;
+}
+/* line 37, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fcfcfc;
+}
+/* line 38, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a .fa {
+  margin-right: 5px;
+}
 
+/* line 49, sass/partials/_navbar.scss */
 .navigation-bottom {
   height: 8vh;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-top: 1px solid #979797;
   width: 100%;
   margin-left: auto;
-  margin-right: auto; }
-  .navigation-bottom ul {
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    zoom: 1;
-    display: inline-block; }
-    .navigation-bottom ul .menu-element {
-      width: 140px;
-      display: inline-block;
-      line-height: 6vh; }
-      .navigation-bottom ul .menu-element a {
-        text-decoration: none;
-        font-size: 24px;
-        color: #9B9B9B; }
-      .navigation-bottom ul .menu-element.active {
-        border-top: 1vh solid #1D5288; }
-        .navigation-bottom ul .menu-element.active a {
-          color: #4A4A4A; }
+  margin-right: auto;
+}
+/* line 57, sass/partials/_navbar.scss */
+.navigation-bottom ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  zoom: 1;
+  display: inline-block;
+}
+/* line 64, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element {
+  width: 140px;
+  display: inline-block;
+  line-height: 6vh;
+}
+/* line 68, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #9b9b9b;
+}
+/* line 73, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active {
+  border-top: 1vh solid #1d5288;
+}
+/* line 75, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active a {
+  color: #4a4a4a;
+}
 
 @media (max-width: 992px) {
+  /* line 85, sass/partials/_navbar.scss */
   .navigation-bottom ul {
-    display: block; }
-    .navigation-bottom ul .menu-element {
-      width: 30%; } }
+    display: block;
+  }
+  /* line 87, sass/partials/_navbar.scss */
+  .navigation-bottom ul .menu-element {
+    width: 30%;
+  }
+}
+/* line 1, sass/partials/_message.scss */
 .message-container {
   margin: 8vh 0;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   height: 84vh;
   overflow: auto;
-<<<<<<< HEAD
-  padding-top: 20px; }
-  .message-container .to-and-from-container {
-    display: inline-block; }
-    .message-container .to-and-from-container .from-tag {
-      font-weight: 600; }
-      .message-container .to-and-from-container .from-tag span {
-        font-weight: 300; }
-    .message-container .to-and-from-container .to-tag {
-      font-weight: 600; }
-      .message-container .to-and-from-container .to-tag span {
-        font-weight: 300; }
-        .message-container .to-and-from-container .to-tag span:after {
-          content: ', '; }
-        .message-container .to-and-from-container .to-tag span:last-child:after {
-          content: ''; }
-  .message-container .single-message-container {
-    border-bottom: 2px solid #9B9B9B;
-    margin: 20px 0 0 0; }
-    .message-container .single-message-container:last-child {
-      border-bottom: none; }
-    .message-container .single-message-container .header .sender {
-      display: inline-block;
-      font-weight: 600;
-      color: #9B9B9B; }
-      .message-container .single-message-container .header .sender:after {
-        content: ' '; }
-    .message-container .single-message-container .header .timestamp {
-      display: inline-block;
-      font-weight: 600;
-      color: #9B9B9B; }
-      .message-container .single-message-container .header .timestamp:before {
-        content: '('; }
-      .message-container .single-message-container .header .timestamp:after {
-        content: ')'; }
-    .message-container .single-message-container .message {
-      padding-left: 10px;
-      word-wrap: break-word;
-      margin-bottom: 20px; }
-
-=======
   padding-top: 20px;
 }
 /* line 8, sass/partials/_message.scss */
@@ -577,59 +514,43 @@
   -moz-transform:translate3d(100px, 0, 0);
   transform:translate3d(100px, 0, 0);
 }*/
-/* line 9, sass/main.scss */
->>>>>>> master
+/* line 11, sass/main.scss */
 .body {
-  background-color: #1D5288; }
+  background-color: #1d5288;
+}
 
-<<<<<<< HEAD
-=======
-/* line 14, sass/main.scss */
->>>>>>> master
+/* line 15, sass/main.scss */
 body, p, h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
-<<<<<<< HEAD
-=======
-/* line 18, sass/main.scss */
->>>>>>> master
+/* line 19, sass/main.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400; }
+  font-weight: 400;
+}
 
-<<<<<<< HEAD
-=======
-/* line 22, sass/main.scss */
->>>>>>> master
+/* line 23, sass/main.scss */
 body, p {
   font-weight: 300;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
-<<<<<<< HEAD
-=======
-/* line 29, sass/main.scss */
->>>>>>> master
+/* line 30, sass/main.scss */
 h3 {
-  font-size: 20px; }
+  font-size: 20px;
+}
 
-<<<<<<< HEAD
-=======
-/* line 33, sass/main.scss */
->>>>>>> master
+/* line 34, sass/main.scss */
 h4 {
-  font-size: 18px; }
+  font-size: 18px;
+}
 
-<<<<<<< HEAD
-=======
-/* line 37, sass/main.scss */
->>>>>>> master
+/* line 38, sass/main.scss */
 h5 {
-  font-size: 16px; }
+  font-size: 16px;
+}
 
-<<<<<<< HEAD
-=======
-/* line 41, sass/main.scss */
->>>>>>> master
+/* line 42, sass/main.scss */
 h6 {
-  font-size: 14px; }
-
-/*# sourceMappingURL=main.css.map */
+  font-size: 14px;
+}
