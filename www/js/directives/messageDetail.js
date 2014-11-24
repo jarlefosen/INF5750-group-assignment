@@ -26,6 +26,10 @@ define([
           scope.$parent.setFollowUp(message);
         };
 
+        scope.delMessage = function(message){
+          scope.$parent.delMessage(message);
+        };
+
       }
     };
   });

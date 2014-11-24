@@ -13,7 +13,6 @@ define([
         element.bind("click", function(){
           angular.element(attrs.options).toggleClass("delOpen");
         });
-
       }
     };
   });

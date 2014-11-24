@@ -260,6 +260,33 @@ define([
         return deferred.promise;
       }
 
+      function setFollowUp(message) {
+
+        var deferred = $q.defer();
+        //$http.post(ServerConfig.host + MESSAGES_BASE_URL + "/" + message.id, message)
+
+        $http({
+          method: "POST",
+          url: ServerConfig.host + MESSAGES_BASE_URL + "/" + message.id,
+          data: $.param(message),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        })
+          .success(function (data, status, headers) {
+            deferred.resolve(data)
+            console.log("success!!");
+            console.log(message);
+            })
+
+          .error(function (error) {
+            deferred.reject(error);
+            console.log("Error");
+          });
+
+        return deferred.promise;
+      }
+
       function reply(id, body) {
         var deferred = $q.defer();
 
@@ -293,6 +320,7 @@ define([
         deleteMessage: deleteConversation,
         clearCache: clearCache(),
         newMessage: newMessage,
+        setFollowUp: setFollowUp,
         reply: reply
       };
     }

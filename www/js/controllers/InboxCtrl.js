@@ -64,12 +64,35 @@ define([
           getMessageContent($scope.allMessages);
         });
 
-      $scope.delMessage = function(messageId){
-        MessageService.delMessage(messageId).then(
+      $scope.delMessage = function(message){
+        MessageService.deleteMessage(message.id).then(
           function(){
-            // Should update list of messages in inbox.
+            $scope.allMessages = $scope.allMessages.filter(function(el){
+              return el.id !== message.id;
+            });
+            var delIndex = $scope.allMessages.indexOf(message);
+            var newIndex = delIndex > 0 ? delIndex - 1 : delIndex + 1;
+            $scope.currentMessage = $scope.allMessages[newIndex];
           }
         );
+
+      };
+
+      $scope.setFollowUp = function(message){
+
+        message.followUp = !message.followUp;
+        MessageService.setFollowUp(message);
+      };
+
+      $scope.followUpStatus = function(message) {
+
+        if (message.followUp === true) {
+
+          return "follow-up";
+        } else {
+
+          return "";
+        }
       };
     }
 
