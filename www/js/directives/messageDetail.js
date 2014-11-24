@@ -13,19 +13,18 @@ define([
         setFollowUp: "@",
         replyFn: "&"
       },
-      link: function(scope, elem, attrs){
-        console.log("Message Detail Directive loads");
+      link: function(scope){
         scope.content = "";
         /* Evaluate scope reply function */
         var reply = scope.replyFn();
 
         scope.replyFunction = function() {
-          reply(scope.messageid, scope.content)
+          reply(scope.messageid, scope.content);
         };
 
         scope.setFollowUp = function(message){
           scope.$parent.setFollowUp(message);
-        }
+        };
 
       }
     };

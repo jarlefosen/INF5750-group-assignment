@@ -26,7 +26,7 @@ define([
           function() {
             $state.reload();
           },
-          function(error) {
+          function() {
           }
         );
       };

@@ -244,8 +244,8 @@ define([
           subject: subject,
           text: text,
           users: userList || [],
-          userGroups: groupList || [],
-          organisationUnits: orgList || []
+          userGroups: groupList || [],
+          organisationUnits: orgList || []
         };
 
         $http.post(ServerConfig.host + MESSAGES_BASE_URL + ".json", message)
@@ -260,11 +260,11 @@ define([
         return deferred.promise;
       }
 
-      function reply(id, body) {
+      function reply(id, body) {
         var deferred = $q.defer();
 
 
-        if (!body) {
+        if (!body) {
           deferred.reject({message: "Body must be a string."});
           return deferred.promise;
         }

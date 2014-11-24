@@ -26,7 +26,7 @@ define([
         .state("messages", {
           url: "/messages",
           views: {
-            '': {
+            "": {
               templateUrl: "partials/messages.html",
               controller: "InboxCtrl"
             }
