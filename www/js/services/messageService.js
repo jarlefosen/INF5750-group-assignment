@@ -17,13 +17,13 @@ define([
       /* Stores an object with all conversations (unsorted) */
       var MESSAGE_CACHE_KEY = "no.uio.inf5750-11.messages";
 
-      var MESSAGES_BASE_URL = "/api/messageConversations.json";
+      var MESSAGES_BASE_URL = "/api/messageConversations";
       var MY_INBOX_URL = "/api/me/inbox";
 
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
 
-      var DEFAULT_MESSAGE_FIELDS = ["lastUpdated,id,name,subject,lastMessage,lastSender,messages[id,name,sender,created],userMessages[user[id,name]]"];
+      var DEFAULT_MESSAGE_FIELDS = "lastUpdated,id,name,subject,lastMessage,lastSender,messages[id,name,sender,created],userMessages[user[id,name]]";
 
       function clearCache() {
         try {
