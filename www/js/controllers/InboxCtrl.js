@@ -62,12 +62,18 @@ define([
           getMessageContent($scope.allMessages);
         });
 
-      $scope.delMessage = function(messageId){
-        MessageService.delMessage(messageId).then(
+      $scope.delMessage = function(message){
+        MessageService.deleteMessage(message.id).then(
           function(){
-            // Should update list of messages in inbox.
+            $scope.allMessages = $scope.allMessages.filter(function(el){
+              return el.id !== message.id;
+            });
+            var delIndex = $scope.allMessages.indexOf(message);
+            var newIndex = delIndex > 0 ? delIndex-1: delIndex+1;
+            $scope.currentMessage = $scope.allMessages[newIndex];
           }
         );
+
       };
 
       $scope.setFollowUp = function(message){
@@ -85,16 +91,6 @@ define([
 
           return "";
         }
-      }
-
-      function updateObj(data){
-        angular.forEach(data.userMessages, function(value){
-          if(value.user.id === $scope.userProfile.id){
-            data.isRead = value.read;
-            data.isStarred = value.followUp;
-          }
-        });
-        return data;
       }
     }
 
