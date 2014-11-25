@@ -1,6 +1,6 @@
 <div class="row inbox-message" ng-click="goToMessage(message)" ng-class="{active: currentMessage.id == message.id}">
   <div class="off-canvas-element">
-    <div class="del-btn" ng-click="delMessage(message)">
+    <div class="del-btn" ng-click="delMessage(message); $event.stopPropagation();">
       Del
     </div>
     <div class="follow-up-btn">FollowUp</div>
