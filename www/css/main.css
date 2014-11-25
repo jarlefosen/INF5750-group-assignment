@@ -84,31 +84,44 @@
   padding: 0 20px;
   margin: 0 !important;
   height: 100px;
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  -o-transition: -o-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
-/* line 39, sass/partials/_inbox.scss */
+/* line 42, sass/partials/_inbox.scss */
+.inbox-message.delOpen {
+  transform: translateX(200px);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  -o-transition: -o-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+/* line 47, sass/partials/_inbox.scss */
 .inbox-message:hover {
   cursor: pointer;
 }
-/* line 43, sass/partials/_inbox.scss */
+/* line 51, sass/partials/_inbox.scss */
 .inbox-message:last-of-type {
   border-bottom: none;
 }
-/* line 47, sass/partials/_inbox.scss */
+/* line 55, sass/partials/_inbox.scss */
 .inbox-message.active {
   border-right: 5px solid #1d5288;
   padding-right: 15px;
 }
-/* line 52, sass/partials/_inbox.scss */
+/* line 60, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container {
   padding-left: 0;
   padding-right: 0;
   margin-top: 9px;
 }
-/* line 57, sass/partials/_inbox.scss */
+/* line 65, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading {
   margin: 0 0 2px 0;
 }
-/* line 60, sass/partials/_inbox.scss */
+/* line 68, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .sender {
   font-size: 14px;
   font-weight: 300;
@@ -121,13 +134,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 71, sass/partials/_inbox.scss */
+/* line 79, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .follow-up {
   margin-left: 5px;
   float: left;
   line-height: 20px;
 }
-/* line 77, sass/partials/_inbox.scss */
+/* line 85, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .unread {
   margin-bottom: 0;
   margin-left: 5px;
@@ -137,7 +150,7 @@
   line-height: 20px;
   font-size: 12px;
 }
-/* line 87, sass/partials/_inbox.scss */
+/* line 95, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .heading .date {
   font-size: 10px;
   display: inline-block;
@@ -145,7 +158,7 @@
   margin-bottom: 0;
   color: #9B9B9B;
 }
-/* line 96, sass/partials/_inbox.scss */
+/* line 104, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .subject {
   font-size: 12px;
   font-weight: 400;
@@ -155,7 +168,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* line 104, sass/partials/_inbox.scss */
+/* line 112, sass/partials/_inbox.scss */
 .inbox-message .inbox-message-container .content {
   color: #9B9B9B;
   max-height: 40px;
@@ -164,24 +177,24 @@
   font-size: 12px;
   margin-bottom: 0;
 }
-/* line 113, sass/partials/_inbox.scss */
+/* line 121, sass/partials/_inbox.scss */
 .inbox-message .arrow {
   text-align: center;
   padding: 0;
 }
-/* line 117, sass/partials/_inbox.scss */
+/* line 125, sass/partials/_inbox.scss */
 .inbox-message .arrow .fa {
   line-height: 100px;
   font-size: 40px;
 }
-/* line 123, sass/partials/_inbox.scss */
+/* line 131, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element {
   width: 200px;
   height: 100px;
   position: absolute;
   left: -200px;
 }
-/* line 128, sass/partials/_inbox.scss */
+/* line 136, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .del-btn {
   position: absolute;
   right: 0;
@@ -194,11 +207,11 @@
   line-height: 100px;
   font-size: 30px;
 }
-/* line 137, sass/partials/_inbox.scss */
+/* line 145, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .del-btn .fa {
   color: #fcfcfc;
 }
-/* line 141, sass/partials/_inbox.scss */
+/* line 149, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .follow-up-btn {
   position: absolute;
   left: 0;
@@ -211,34 +224,17 @@
   line-height: 100px;
   font-size: 30px;
 }
-/* line 150, sass/partials/_inbox.scss */
+/* line 158, sass/partials/_inbox.scss */
 .inbox-message .off-canvas-element .follow-up-btn .fa {
   color: #fcfcfc;
 }
 
-/* line 159, sass/partials/_inbox.scss */
-.inbox-message {
-  transform: translateX(0);
-  -webkit-transition: transform .2s ease-in-out;
-  -moz-transition: transform .2s ease-in-out;
-  -o-transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
-}
-/* line 165, sass/partials/_inbox.scss */
-.inbox-message.delOpen {
-  -webkit-transition: transform .2s ease-in-out;
-  -moz-transition: transform .2s ease-in-out;
-  -o-transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
-  transform: translateX(200px);
-}
-
 @media (max-width: 992px) {
-  /* line 175, sass/partials/_inbox.scss */
+  /* line 167, sass/partials/_inbox.scss */
   .inbox-message {
     padding-right: 0;
   }
-  /* line 178, sass/partials/_inbox.scss */
+  /* line 170, sass/partials/_inbox.scss */
   .inbox-message.active {
     border-right: none;
     padding-right: 0;
@@ -515,6 +511,15 @@
 [ui-view].ng-enter.ng-enter-active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+}
+
+/* line 1, sass/partials/_newmessage.scss */
+.new-message-view {
+  margin-top: 8vh;
+  margin-bottom: 0;
+  height: 92vh;
+  background-color: #fcfcfc;
+  overflow: auto;
 }
 
 /* line 12, sass/main.scss */

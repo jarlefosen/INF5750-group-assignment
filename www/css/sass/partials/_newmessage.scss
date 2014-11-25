@@ -1,0 +1,8 @@
+.new-message-view{
+  margin-top: $navbar-height;
+  margin-bottom: 0;
+  height: $content-height + $navbar-height;
+  background-color: $off-white;
+  overflow: auto;
+
+}
