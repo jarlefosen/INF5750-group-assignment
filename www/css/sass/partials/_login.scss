@@ -17,7 +17,7 @@ $fg: $off-white;
     input {
       border: none;
       border: 2px solid $fg;
-      border-radius: 2px;
+      @include border-radius(2px);
       background-color: $bg;
       margin: 0 auto;
       display: block;
