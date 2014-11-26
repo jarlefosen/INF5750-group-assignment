@@ -9,11 +9,9 @@ define([
       replace: false,
       transclude: false,
       link: function(scope, element, attrs){
-
         element.bind("click", function(){
           angular.element(attrs.options).toggleClass("delOpen");
         });
-
       }
     };
   });

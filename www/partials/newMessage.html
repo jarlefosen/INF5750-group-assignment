@@ -1,58 +1,62 @@
 <navbar-top settings="NAV_TOP"></navbar-top>
 
-<div class="new-message-view container col-lg-12 col-md-12 col-xs-12">
-  <h1>New Message</h1>
+<div ui-view class="new-message-view container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <h3>New Message</h3>
 
-  <div>
-    <label>Message subject</label>
-    <input type="text" ng-model="subject"/>
+  <div class="input-group">
+    <span class="input-group-addon">Subject</span>
+    <input type="text" ng-model="newMessage.subject" class="form-control" placeholder="Insert subject..."/>
   </div>
-  <div>
+  <div class="recipients-container">
+    <h4>Recipients</h4>
+    <ul>
+      <li ng-repeat="user in userRecipients">
+        {{user.name}}
+        <span>(user)</span>
+        <i class="fa fa-times" ng-click="removeRecipient(user, 'user')"></i>
+      </li>
+      <li ng-repeat="group in groupRecipients">
+        {{group.name}}
+        <span>(group)</span>
+        <i class="fa fa-times" ng-click="removeRecipient(group, 'group')"></i>
+      </li>
+      <li ng-repeat="orgUnit in orgUnitRecipients">
+        {{orgUnit.name}}
+        <span>(orgUnit)</span>
+        <i class="fa fa-times" ng-click="removeRecipient(orgUnit, 'orgUnit')"></i>
+      </li>
+    </ul>
+  </div>
+  <div class="recipient-selection-container">
+    <h4>Select recipients</h4>
+
+  </div>
+  <div class="message-text-container">
     <label>Text</label>
-    <input type="text" ng-model="text"/>
+    <textarea ng-model="newMessage.text" class="form-control" name="messagecontent" cols="30" rows="10"></textarea>
   </div>
   <button ng-click="sendMessage()">Send message</button>
-
-  <h5>User Receivers</h5>
-
-  <ul>
-    <li ng-repeat="user in userRecipients">{{ user }}</li>
-  </ul>
-
-  <h5>Group Receivers</h5>
-
-  <ul>
-    <li ng-repeat="group in groupRecipients">{{ group }}</li>
-  </ul>
-
-  <h5>Organization Unit Receivers</h5>
-
-  <ul>
-    <li ng-repeat="orgUnit in orgUnitRecipients">{{ orgUnit }}</li>
-  </ul>
 
   <hr/>
   <div>
     <h3>Users</h3>
     <ul>
-      <li ng-repeat="user in allUsers" ng-click="userRecipients.push(user.id)">{{ user.name }}</li>
+      <li ng-repeat="user in allUsers" ng-click="addRecipient(user, 'user')">{{ user.name }}</li>
     </ul>
   </div>
 
   <div>
     <h3>Groups</h3>
     <ul>
-      <li ng-repeat="group in allGroups" ng-click="groupRecipients.push(group.id)">{{ group.name }}</li>
+      <li ng-repeat="group in allGroups" ng-click="addRecipient(group, 'group')">{{ group.name }}</li>
     </ul>
   </div>
 
   <div>
     <h3>Organization Units</h3>
     <ul>
-      <li ng-repeat="orgUnit in allOrgUnits" ng-click="orgUnitRecipients.push(orgUnit.id)">{{ orgUnit.name }}</li>
+      <li ng-repeat="orgUnit in allOrgUnits" ng-click="addRecipient(orgUnit, 'orgUnit')">{{ orgUnit.name }}</li>
     </ul>
   </div>
 
 </div>
-
-<navbar-bottom setfilter="setFilter()"></navbar-bottom>

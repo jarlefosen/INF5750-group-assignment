@@ -1,3 +1,5 @@
+// @import "compass/css3";
+
 @import "partials/config";
 @import "partials/mixins";
 @import "partials/login";
@@ -5,8 +7,7 @@
 @import "partials/navbar";
 @import "partials/message";
 @import "partials/animate";
-
-//Main file yo!
+@import "partials/newmessage";
 
 .body {
   background-color: $main-color;

@@ -98,7 +98,7 @@
       }
       .reply-btn{
         border: 2px solid $main-color;
-        border-radius: 2px;
+        @include border-radius(2px);
         background-color: $main-color;
         display: block;
         text-align: center;

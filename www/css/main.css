@@ -2,19 +2,28 @@
 /* Mozilla Firefox 4 to 18 */
 /* Mozilla Firefox 19+ */
 /* Internet Explorer 10+ */
+/* line 4, sass/partials/_login.scss */
 .login-container {
-  padding-top: 150px;
-  min-width: 300px;
-  margin: 0 auto; }
-  .login-container img {
+    padding-top: 150px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+/* line 9, sass/partials/_login.scss */
+.login-container img {
     max-width: 260px;
     height: auto;
     margin: 0 auto;
     display: block;
-    margin-bottom: 50px; }
-  .login-container form input {
+    margin-bottom: 50px;
+}
+/* line 17, sass/partials/_login.scss */
+.login-container form input {
     border: none;
     border: 2px solid #fcfcfc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
     border-radius: 2px;
     background-color: #1d5288;
     margin: 0 auto;
@@ -26,362 +35,530 @@
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     font-size: 20px;
-    color: #fcfcfc; }
-  .login-container form input[type="submit"] {
+    color: #fcfcfc;
+}
+/* line 35, sass/partials/_login.scss */
+.login-container form input[type="submit"] {
     background-color: #fcfcfc;
     color: #1d5288;
-    font-weight: 300; }
-  .login-container form ::-webkit-input-placeholder {
+    font-weight: 300;
+}
+/* line 3, sass/partials/_mixins.scss */
+.login-container form ::-webkit-input-placeholder {
     color: #fcfcfc;
-    font-weight: 300; }
-  .login-container form :-moz-placeholder {
+    font-weight: 300;
+}
+/* line 11, sass/partials/_mixins.scss */
+.login-container form :-moz-placeholder {
     color: #fcfcfc;
-    opacity: 1; }
-  .login-container form ::-moz-placeholder {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+/* line 19, sass/partials/_mixins.scss */
+.login-container form ::-moz-placeholder {
     color: #fcfcfc;
-    opacity: 1; }
-  .login-container form :-ms-input-placeholder {
-    color: #fcfcfc; }
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+/* line 27, sass/partials/_mixins.scss */
+.login-container form :-ms-input-placeholder {
+    color: #fcfcfc;
+}
 
+/* line 20, sass/partials/_inbox.scss */
 .inbox-container {
-  background-color: #fcfcfc;
-  height: 84vh;
-  margin: 8vh 0;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  border-right: 2px solid #979797;
-  overflow-y: auto;
-  overflow-x: hidden; }
+    background-color: #fcfcfc;
+    height: 84vh;
+    margin: 8vh 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-right: 2px solid #979797;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
+/* line 32, sass/partials/_inbox.scss */
 .inbox-message {
-  background-color: #fcfcfc;
-  border-bottom: 2px solid #979797;
-  padding: 0 20px;
-  margin: 0 !important;
-  height: 100px; }
-  .inbox-message:hover {
-    cursor: pointer; }
-  .inbox-message:last-of-type {
-    border-bottom: none; }
-  .inbox-message.active {
+    background-color: #fcfcfc;
+    border-bottom: 2px solid #979797;
+    padding: 0 20px;
+    margin: 0 !important;
+    height: 100px;
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    -moz-transition: -moz-transform 0.2s ease-in-out;
+    -o-transition: -o-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+/* line 42, sass/partials/_inbox.scss */
+.inbox-message.delOpen {
+    transform: translateX(200px);
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    -moz-transition: -moz-transform 0.2s ease-in-out;
+    -o-transition: -o-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+/* line 47, sass/partials/_inbox.scss */
+.inbox-message:hover {
+    cursor: pointer;
+}
+/* line 51, sass/partials/_inbox.scss */
+.inbox-message:last-of-type {
+    border-bottom: none;
+}
+/* line 55, sass/partials/_inbox.scss */
+.inbox-message.active {
     border-right: 5px solid #1d5288;
-    padding-right: 15px; }
-  .inbox-message .inbox-message-container {
+    padding-right: 15px;
+}
+/* line 60, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container {
     padding-left: 0;
     padding-right: 0;
-    margin-top: 9px; }
-    .inbox-message .inbox-message-container .heading {
-      margin: 0 0 2px 0; }
-      .inbox-message .inbox-message-container .heading .sender {
-        font-size: 14px;
-        font-weight: 300;
-        margin: 0;
-        display: inline-block;
-        max-width: 40%;
-        line-height: 20px;
-        float: left;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden; }
-      .inbox-message .inbox-message-container .heading .follow-up {
-        margin-left: 5px;
-        float: left;
-        line-height: 20px; }
-      .inbox-message .inbox-message-container .heading .unread {
-        margin-bottom: 0;
-        margin-left: 5px;
-        display: inline-block;
-        color: red;
-        float: left;
-        line-height: 20px;
-        font-size: 12px; }
-      .inbox-message .inbox-message-container .heading .date {
-        font-size: 10px;
-        display: inline-block;
-        float: right;
-        margin-bottom: 0;
-        color: #9B9B9B; }
-    .inbox-message .inbox-message-container .subject {
-      font-size: 12px;
-      font-weight: 400;
-      margin-bottom: 3px;
-      max-width: 250px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden; }
-    .inbox-message .inbox-message-container .content {
-      color: #9B9B9B;
-      max-height: 40px;
-      overflow-y: hidden;
-      line-height: 20px;
-      font-size: 12px;
-      margin-bottom: 0; }
-  .inbox-message .arrow {
+    margin-top: 9px;
+}
+/* line 65, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading {
+    margin: 0 0 2px 0;
+}
+/* line 68, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .sender {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    display: inline-block;
+    max-width: 40%;
+    line-height: 20px;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* line 79, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .follow-up {
+    margin-left: 5px;
+    float: left;
+    line-height: 20px;
+}
+/* line 85, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .unread {
+    margin-bottom: 0;
+    margin-left: 5px;
+    display: inline-block;
+    color: red;
+    float: left;
+    line-height: 20px;
+    font-size: 12px;
+}
+/* line 95, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .heading .date {
+    font-size: 10px;
+    display: inline-block;
+    float: right;
+    margin-bottom: 0;
+    color: #9B9B9B;
+}
+/* line 104, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .subject {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 3px;
+    max-width: 250px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* line 112, sass/partials/_inbox.scss */
+.inbox-message .inbox-message-container .content {
+    color: #9B9B9B;
+    max-height: 40px;
+    overflow-y: hidden;
+    line-height: 20px;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+/* line 121, sass/partials/_inbox.scss */
+.inbox-message .arrow {
     text-align: center;
-    padding: 0; }
-    .inbox-message .arrow .fa {
-      line-height: 100px;
-      font-size: 40px; }
-  .inbox-message .off-canvas-element {
+    padding: 0;
+}
+/* line 125, sass/partials/_inbox.scss */
+.inbox-message .arrow .fa {
+    line-height: 100px;
+    font-size: 40px;
+}
+/* line 131, sass/partials/_inbox.scss */
+.inbox-message .off-canvas-element {
     width: 200px;
     height: 100px;
     position: absolute;
-    left: -200px; }
-    .inbox-message .off-canvas-element .del-btn {
-      position: absolute;
-      right: 0;
-      height: inherit;
-      width: 50%;
-      background-color: red;
-      border-bottom: 2px solid #ff6666; }
-    .inbox-message .off-canvas-element .follow-up-btn {
-      position: absolute;
-      left: 0;
-      height: inherit;
-      width: 50%;
-      background-color: orange;
-      border-bottom: 2px solid #ffc966; }
-
-.inbox-message {
-  transform: translateX(0);
-  -webkit-transition: transform .2s ease-in-out;
-  -moz-transition: transform .2s ease-in-out;
-  -o-transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out; }
-  .inbox-message.delOpen {
-    -webkit-transition: transform .2s ease-in-out;
-    -moz-transition: transform .2s ease-in-out;
-    -o-transition: transform .2s ease-in-out;
-    transition: transform .2s ease-in-out;
-    transform: translateX(200px); }
+    left: -200px;
+}
+/* line 136, sass/partials/_inbox.scss */
+.inbox-message .off-canvas-element .del-btn {
+    position: absolute;
+    right: 0;
+    height: inherit;
+    width: 50%;
+    background-color: red;
+    border-bottom: 2px solid #ff6666;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    font-size: 30px;
+}
+/* line 145, sass/partials/_inbox.scss */
+.inbox-message .off-canvas-element .del-btn .fa {
+    color: #fcfcfc;
+}
+/* line 149, sass/partials/_inbox.scss */
+.inbox-message .off-canvas-element .follow-up-btn {
+    position: absolute;
+    left: 0;
+    height: inherit;
+    width: 50%;
+    background-color: orange;
+    border-bottom: 2px solid #ffc966;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    font-size: 30px;
+}
+/* line 158, sass/partials/_inbox.scss */
+.inbox-message .off-canvas-element .follow-up-btn .fa {
+    color: #fcfcfc;
+}
 
 @media (max-width: 992px) {
-  .inbox-message {
-    padding-right: 0; }
+    /* line 167, sass/partials/_inbox.scss */
+    .inbox-message {
+        padding-right: 0;
+    }
+    /* line 170, sass/partials/_inbox.scss */
     .inbox-message.active {
-      border-right: none;
-      padding-right: 0; } }
+        border-right: none;
+        padding-right: 0;
+    }
+}
+/* line 1, sass/partials/_navbar.scss */
 .navigation-top {
-  height: 8vh;
-  background-color: #1d5288;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0; }
-  .navigation-top ul {
+    height: 8vh;
+    background-color: #1d5288;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 0;
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    zoom: 1; }
-    .navigation-top ul .menu-element {
-      width: auto;
-      display: inline-block;
-      line-height: 8vh; }
-      .navigation-top ul .menu-element.new-message-btn {
-        float: left;
-        margin-left: 20px; }
-      .navigation-top ul .menu-element.edit-btn {
-        float: right;
-        margin-right: 20px; }
-      .navigation-top ul .menu-element.logo-container {
-        float: right;
-        margin-right: 20px; }
-        .navigation-top ul .menu-element.logo-container .dhis-logo {
-          height: 8vh; }
-      .navigation-top ul .menu-element a {
-        text-decoration: none;
-        font-size: 18px;
-        color: #fcfcfc; }
-        .navigation-top ul .menu-element a .fa {
-          margin-right: 5px; }
-
-.navigation-bottom {
-  height: 8vh;
-  background-color: #f4f4f4;
-  border-top: 1px solid #979797;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto; }
-  .navigation-bottom ul {
+}
+/* line 9, sass/partials/_navbar.scss */
+.navigation-top ul {
+    margin-bottom: 0;
     list-style-type: none;
     text-align: center;
     padding: 0;
     zoom: 1;
-    display: inline-block; }
-    .navigation-bottom ul .menu-element {
-      width: 140px;
-      display: inline-block;
-      line-height: 6vh; }
-      .navigation-bottom ul .menu-element a {
-        text-decoration: none;
-        font-size: 24px;
-        color: #9b9b9b; }
-      .navigation-bottom ul .menu-element.active {
-        border-top: 1vh solid #1d5288; }
-        .navigation-bottom ul .menu-element.active a {
-          color: #4a4a4a; }
+}
+/* line 16, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element {
+    width: auto;
+    display: inline-block;
+    line-height: 8vh;
+}
+/* line 21, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.new-message-btn {
+    float: left;
+    margin-left: 20px;
+}
+/* line 25, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.edit-btn {
+    float: right;
+    margin-right: 20px;
+}
+/* line 30, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container {
+    float: right;
+    margin-right: 20px;
+}
+/* line 33, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.logo-container .dhis-logo {
+    height: 8vh;
+}
+/* line 37, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fcfcfc;
+}
+/* line 38, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element a .fa {
+    margin-right: 5px;
+}
+
+/* line 49, sass/partials/_navbar.scss */
+.navigation-bottom {
+    height: 8vh;
+    background-color: #f4f4f4;
+    border-top: 1px solid #979797;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* line 57, sass/partials/_navbar.scss */
+.navigation-bottom ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    zoom: 1;
+    display: inline-block;
+}
+/* line 64, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element {
+    width: 140px;
+    display: inline-block;
+    line-height: 6vh;
+}
+/* line 68, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #9b9b9b;
+}
+/* line 73, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active {
+    border-top: 1vh solid #1d5288;
+}
+/* line 75, sass/partials/_navbar.scss */
+.navigation-bottom ul .menu-element.active a {
+    color: #4a4a4a;
+}
 
 @media (max-width: 992px) {
-  .navigation-bottom ul {
-    display: block; }
+    /* line 85, sass/partials/_navbar.scss */
+    .navigation-bottom ul {
+        display: block;
+    }
+    /* line 87, sass/partials/_navbar.scss */
     .navigation-bottom ul .menu-element {
-      width: 30%; } }
+        width: 30%;
+    }
+}
+/* line 1, sass/partials/_message.scss */
 .message-container {
-  margin: 8vh 0;
-  background-color: #fcfcfc;
-  height: 84vh;
-  overflow: auto;
-  padding-top: 20px; }
-  .message-container.singleView {
+    margin: 8vh 0;
+    background-color: #fcfcfc;
+    height: 84vh;
+    overflow: auto;
+    padding-top: 20px;
+}
+/* line 8, sass/partials/_message.scss */
+.message-container.singleView {
     margin-top: 8vh;
     margin-bottom: 0;
-    height: 92vh; }
-    .message-container.singleView .reply-btn {
-      margin: 20px auto; }
-  .message-container .to-and-from-container {
+    height: 92vh;
+}
+/* line 13, sass/partials/_message.scss */
+.message-container.singleView .reply-btn {
+    margin: 20px auto;
+}
+/* line 18, sass/partials/_message.scss */
+.message-container .to-and-from-container {
     display: inline-block;
     float: left;
-    margin-bottom: 20px; }
-    .message-container .to-and-from-container .from-tag {
-      font-weight: 600; }
-      .message-container .to-and-from-container .from-tag span {
-        font-weight: 300; }
-    .message-container .to-and-from-container .to-tag {
-      font-weight: 600; }
-      .message-container .to-and-from-container .to-tag span {
-        font-weight: 300; }
-        .message-container .to-and-from-container .to-tag span:after {
-          content: ', '; }
-        .message-container .to-and-from-container .to-tag span:last-child:after {
-          content: ''; }
-  .message-container .message-subject {
-    clear: both; }
-  .message-container .single-message-container {
+    margin-bottom: 20px;
+}
+/* line 22, sass/partials/_message.scss */
+.message-container .to-and-from-container .from-tag {
+    font-weight: 600;
+}
+/* line 24, sass/partials/_message.scss */
+.message-container .to-and-from-container .from-tag span {
+    font-weight: 300;
+}
+/* line 28, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag {
+    font-weight: 600;
+}
+/* line 30, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span {
+    font-weight: 300;
+}
+/* line 32, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span:after {
+    content: ', ';
+}
+/* line 36, sass/partials/_message.scss */
+.message-container .to-and-from-container .to-tag span:last-child:after {
+    content: '';
+}
+/* line 44, sass/partials/_message.scss */
+.message-container .message-subject {
+    clear: both;
+}
+/* line 48, sass/partials/_message.scss */
+.message-container .single-message-container {
     border-bottom: 2px solid #9b9b9b;
-    margin: 20px 0 0 0; }
-    .message-container .single-message-container.last {
-      border-bottom: none; }
-    .message-container .single-message-container .header .sender {
-      display: inline-block;
-      font-weight: 600;
-      color: #9b9b9b; }
-      .message-container .single-message-container .header .sender:after {
-        content: ' '; }
-    .message-container .single-message-container .header .timestamp {
-      display: inline-block;
-      font-weight: 600;
-      color: #9b9b9b; }
-      .message-container .single-message-container .header .timestamp:before {
-        content: '('; }
-      .message-container .single-message-container .header .timestamp:after {
-        content: ')'; }
-    .message-container .single-message-container .message {
-      padding-left: 10px;
-      word-wrap: break-word;
-      margin-bottom: 20px; }
-  .message-container .reply-container {
-    padding: 0; }
-    .message-container .reply-container #reply-form {
-      margin-bottom: 20px; }
-      .message-container .reply-container #reply-form #reply-box {
-        width: 100%; }
-      .message-container .reply-container #reply-form .reply-btn {
-        border: 2px solid #1d5288;
-        border-radius: 2px;
-        background-color: #1d5288;
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        color: #fcfcfc;
-        width: 300px;
-        height: 50px; }
+    margin: 20px 0 0 0;
+}
+/* line 50, sass/partials/_message.scss */
+.message-container .single-message-container.last {
+    border-bottom: none;
+}
+/* line 57, sass/partials/_message.scss */
+.message-container .single-message-container .header .sender {
+    display: inline-block;
+    font-weight: 600;
+    color: #9b9b9b;
+}
+/* line 62, sass/partials/_message.scss */
+.message-container .single-message-container .header .sender:after {
+    content: ' ';
+}
+/* line 66, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp {
+    display: inline-block;
+    font-weight: 600;
+    color: #9b9b9b;
+}
+/* line 71, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp:before {
+    content: '(';
+}
+/* line 74, sass/partials/_message.scss */
+.message-container .single-message-container .header .timestamp:after {
+    content: ')';
+}
+/* line 79, sass/partials/_message.scss */
+.message-container .single-message-container .message {
+    padding-left: 10px;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+/* line 86, sass/partials/_message.scss */
+.message-container .reply-container {
+    padding: 0;
+}
+/* line 94, sass/partials/_message.scss */
+.message-container .reply-container #reply-form {
+    margin-bottom: 20px;
+}
+/* line 96, sass/partials/_message.scss */
+.message-container .reply-container #reply-form #reply-box {
+    width: 100%;
+}
+/* line 99, sass/partials/_message.scss */
+.message-container .reply-container #reply-form .reply-btn {
+    border: 2px solid #1d5288;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #1d5288;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fcfcfc;
+    width: 300px;
+    height: 50px;
+}
 
+/* line 3, sass/partials/_animate.scss */
 .inbox-message.ng-leave,
 .inbox-message.ng-enter {
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  position: relative;
-  display: block; }
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    display: block;
+}
 
+/* line 10, sass/partials/_animate.scss */
 .inbox-message.ng-enter,
 .inbox-message.ng-leave.ng-leave-active {
-  opacity: 0; }
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+}
 
+/* line 14, sass/partials/_animate.scss */
 .inbox-message.ng-leave,
 .inbox-message.ng-enter.ng-enter-active {
-  opacity: 1; }
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
 
+/* line 19, sass/partials/_animate.scss */
 [ui-view].ng-leave,
 [ui-view].ng-enter {
-  position: absolute;
-  left: 0;
-  right: 0;
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out; }
+    position: absolute;
+    left: 0;
+    right: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
 
+/* line 27, sass/partials/_animate.scss */
 [ui-view].ng-enter,
 [ui-view].ng-leave.ng-leave-active {
-  opacity: 0; }
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+}
 
+/* line 32, sass/partials/_animate.scss */
 [ui-view].ng-leave,
 [ui-view].ng-enter.ng-enter-active {
-  opacity: 1; }
-
-/*
-[ui-view].ng-enter-active {
-  -webkit-transform:scale3d(1, 1, 1);
-  -moz-transform:scale3d(1, 1, 1);
-  transform:scale3d(1, 1, 1);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
 }
 
-[ui-view].ng-leave {
-  */
-/*padding-left: 0px;*/
-                      /*
-
-  -webkit-transform:translate3d(0, 0, 0);
-  -moz-transform:translate3d(0, 0, 0);
-  transform:translate3d(0, 0, 0);
+/* line 1, sass/partials/_newmessage.scss */
+.new-message-view {
+    margin-top: 8vh;
+    margin-bottom: 0;
+    height: 92vh;
+    background-color: #fcfcfc;
+    overflow: auto;
 }
 
-[ui-view].ng-leave-active {
-  */
-/*padding-left: 100px;*/
-                        /*
-
-  -webkit-transform:translate3d(100px, 0, 0);
-  -moz-transform:translate3d(100px, 0, 0);
-  transform:translate3d(100px, 0, 0);
-}*/
+/* line 12, sass/main.scss */
 .body {
-  background-color: #1d5288; }
+    background-color: #1d5288;
+}
 
+/* line 16, sass/main.scss */
 body, p, h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+}
 
+/* line 20, sass/main.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400; }
+    font-weight: 400;
+}
 
+/* line 24, sass/main.scss */
 body, p {
-  font-weight: 300;
-  font-size: 12px; }
+    font-weight: 300;
+    font-size: 12px;
+}
 
+/* line 31, sass/main.scss */
 h3 {
-  font-size: 20px; }
+    font-size: 20px;
+}
 
+/* line 35, sass/main.scss */
 h4 {
-  font-size: 18px; }
+    font-size: 18px;
+}
 
+/* line 39, sass/main.scss */
 h5 {
-  font-size: 16px; }
+    font-size: 16px;
+}
 
+/* line 43, sass/main.scss */
 h6 {
-  font-size: 14px; }
-
-/*# sourceMappingURL=main.css.map */
+    font-size: 14px;
+}

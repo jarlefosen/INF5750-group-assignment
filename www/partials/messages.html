@@ -2,7 +2,7 @@
 
 
 <div ui-view class="inbox-container container col-lg-3 col-md-3 col-xs-12">
-  <inbox-message data-ng-repeat="message in allMessages|filter:filterProp|orderBy:orderProp:reverse=true"></inbox-message>
+  <inbox-message data-ng-repeat="message in filteredMessages = (allMessages|filter:filterProp) |orderBy:orderProp:reverse=true"></inbox-message>
 </div>
 
 
