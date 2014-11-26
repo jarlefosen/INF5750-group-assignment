@@ -136,7 +136,7 @@ define([
 
       }
 
-      function convertConverstion(conversation) {
+      function convertConversation(conversation) {
         var conv = getInboxEntryFromCache(conversation.id);
         conv.messages = conversation.messages;
         conv.lastSender = conversation.lastSender;
@@ -164,7 +164,7 @@ define([
             if (headers["Login-Page"]) {
               deferred.resolve(cached);
             } else {
-              var converted = convertConverstion(data);
+              var converted = convertConversation(data);
               saveConversation(converted);
               deferred.resolve(converted);
             }
@@ -175,7 +175,6 @@ define([
 
         return deferred.promise;
       }
-
 
       /* messageUpdateCallback will be called when there are updated messages */
       function getInbox() {
@@ -203,8 +202,6 @@ define([
 
         return deferred.promise;
       }
-
-
 
       function deleteConversation(messageId) {
         var deferred = $q.defer();
