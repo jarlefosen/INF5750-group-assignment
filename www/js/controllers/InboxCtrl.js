@@ -75,7 +75,6 @@ define([
             $scope.currentMessage = $scope.allMessages[newIndex];
           }
         );
-
       };
 
       $scope.setFollowUp = function(message){

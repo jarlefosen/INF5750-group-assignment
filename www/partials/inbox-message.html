@@ -1,9 +1,11 @@
 <div class="row inbox-message" ng-click="goToMessage(message)" ng-class="{active: currentMessage.id == message.id}">
   <div class="off-canvas-element">
-    <div class="del-btn" ng-click="delMessage(message)">
-      Del
+    <div class="del-btn" ng-click="delMessage(message); $event.stopPropagation();">
+      <i class="fa fa-trash"></i>
     </div>
-    <div class="follow-up-btn">FollowUp</div>
+    <div class="follow-up-btn">
+      <i class="fa" ng-class="{true:'fa-star', false:'fa-star-o'}[message.followUp]"></i>
+    </div>
   </div>
 
   <div class="inbox-message-container col-lg-12 col-md-12 col-sm-11 col-xs-11">

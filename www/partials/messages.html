@@ -1,17 +1,15 @@
 <navbar-top settings="NAV_TOP"></navbar-top>
 
-<div class="inbox-container container"
-     ng:class="{true: 'col-lg-3 col-md-4 hidden-sm hidden-xs', false: 'col-lg-12 col-md-12 col-sm-12 col-xs-12'}[state.name === 'messages.view']">
-  <inbox-message data-ng-repeat="message in allMessages|filter:filterProp|orderBy:orderProp:reverse=true"></inbox-message>
+<div ui-view class="inbox-container container col-lg-3 col-md-3 col-xs-12">
+  <inbox-message data-ng-repeat="message in filteredMessages = (allMessages|filter:filterProp) |orderBy:orderProp:reverse=true"></inbox-message>
 </div>
 
 <div style="padding:0;"
      ng:class="{true: 'col-lg-9 col-md-8 col-sm-12 col-xs-12', false: 'hidden-lg hidden-md hidden-sm hidden-xs'}[state.name === 'messages.view']">
-  <div ui-view="detail">
-  </div>
+  <div ui-view="detail"></div>
 </div>
 
 
-<navbar-bottom
-    ng:class="{true: 'hidden-sm hidden-xs', false: ''}[state.name === 'messages.view']"
-    setfilter="setFilter()"></navbar-bottom>
+<navbar-bottom ng:class="{true: 'hidden-sm hidden-xs', false: ''}[state.name === 'messages.view']"
+               setfilter="setFilter()">
+</navbar-bottom>
