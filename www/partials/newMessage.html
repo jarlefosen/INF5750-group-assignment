@@ -7,33 +7,78 @@
     <span class="input-group-addon">Subject</span>
     <input type="text" ng-model="newMessage.subject" class="form-control" placeholder="Insert subject..."/>
   </div>
-  <div class="recipients-container">
+  <div class="recipients-container col-lg-12">
     <h4>Recipients</h4>
     <ul>
-      <li ng-repeat="user in userRecipients">
-        {{user.name}}
-        <span>(user)</span>
+      <li class="user-recipients" ng-repeat="user in userRecipients">{{user.name}}
         <i class="fa fa-times" ng-click="removeRecipient(user, 'user')"></i>
       </li>
-      <li ng-repeat="group in groupRecipients">
-        {{group.name}}
-        <span>(group)</span>
+      <li class="group-recipients" ng-repeat="group in groupRecipients">{{group.name}}
         <i class="fa fa-times" ng-click="removeRecipient(group, 'group')"></i>
       </li>
-      <li ng-repeat="orgUnit in orgUnitRecipients">
-        {{orgUnit.name}}
-        <span>(orgUnit)</span>
+      <li class="org-unit-recipients" ng-repeat="orgUnit in orgUnitRecipients">{{orgUnit.name}}
         <i class="fa fa-times" ng-click="removeRecipient(orgUnit, 'orgUnit')"></i>
       </li>
     </ul>
   </div>
-  <div class="recipient-selection-container">
-    <h4>Select recipients</h4>
 
+
+  <div id="carousel-recipient-selection" class="carousel slide" data-ride="carousel" data-pause="false" data-wrap="false">
+    <!-- Indicators -->
+    <!-- <ol class="carousel-indicators">
+      <li data-target="#carousel-recipient-selection" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-recipient-selection" data-slide-to="1"></li>
+      <li data-target="#carousel-recipient-selection" data-slide-to="2"></li>
+    </ol> -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active type-selector">
+        <a class="carousel-control" href="#carousel-recipient-selection" role="button" data-slide="next" ng-click="updateSelector('user')">
+          Add user
+        </a>
+        <a class="carousel-control" href="#carousel-recipient-selection" role="button" data-slide="next" ng-click="updateSelector('group')">
+          Add group
+        </a>
+        <a class="carousel-control orgUnitSelector" href="#carousel-recipient-selection" role="button" data-slide="next" ng-click="updateSelector('orgUnit')">
+          Add orgUnit
+        </a>
+
+      </div>
+      <div class="item recipient-selector">
+        <h4>Add {{selectorOptions.type}}</h4>
+        <div class="input-group">
+          <span class="input-group-addon">{{selectorOptions.type}}</span>
+          <input type="text" class="form-control" placeholder="Start typing ..." list="recipientlist"/>
+          <datalist id="recipientlist" ng-switch="selectorOptions.type">
+            <span ng-switch-when="user">
+              <option ng-repeat="user in allUsers" value="{{user.name}}"></option>
+            </span>
+            <span ng-switch-when="group">
+              <option ng-repeat="group in allGroups" value="{{group.name}}">{{group.name}}</option>
+            </span>
+            <span ng-switch-when="orgUnit">
+              <option ng-repeat="orgUnit in allOrgUnits" value="{{orgUnit.name}}">{{orgUnit.name}}</option>
+            </span>
+          </datalist>
+        </div>
+
+        <p>Hei</p>
+      </div>
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-recipient-selection" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-recipient-selection" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+
   <div class="message-text-container">
-    <label>Text</label>
-    <textarea ng-model="newMessage.text" class="form-control" name="messagecontent" cols="30" rows="10"></textarea>
+    <textarea ng-model="newMessage.text" placeholder="Message content goes here ..." class="form-control" name="messagecontent" cols="30" rows="10"></textarea>
   </div>
   <button ng-click="sendMessage()">Send message</button>
 

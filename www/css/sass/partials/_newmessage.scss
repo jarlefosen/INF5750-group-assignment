@@ -1,3 +1,19 @@
+%recipient-base{
+  display: inline-block;
+  color: $off-white;
+  @include border-radius(2px);
+  margin: 2px;
+  line-height: 25px;
+  padding: 0 10px;
+
+  .fa{
+    font-size: 12px;
+    margin-left: 5px;
+    line-height: 25px;
+  }
+}
+
+
 .new-message-view{
   margin-top: $navbar-height;
   margin-bottom: 0;
@@ -5,4 +21,66 @@
   background-color: $off-white;
   overflow: auto;
 
+  .recipients-container{
+    ul{
+      padding: 0;
+      list-style-type: none;
+      .user-recipients{
+        @extend %recipient-base;
+        border: 1px solid $main-color;
+        background-color: lighten($main-color, 30%);
+      }
+      .group-recipients{
+        @extend %recipient-base;
+        border: 1px solid orangered;
+        background-color: lighten(orangered, 20%);
+
+      }
+      .org-unit-recipients{
+        @extend %recipient-base;
+        border: 1px solid darkgreen;
+        background-color: lighten(darkgreen, 20%);
+
+      }
+    }
+
+  }
+
+  #carousel-recipient-selection{
+    clear: both;
+    border: 1px solid $grayish;
+    height: 92px;
+    @include border-radius(4px);
+    padding: 0;
+    margin-bottom: 20px;
+
+    .item{
+      text-align: center;
+      .carousel-control{
+        position: relative;
+        display: block;
+        margin-bottom: 0;
+        width: 100%;
+        opacity: 1;
+        text-shadow: none;
+        line-height: 30px;
+        border-bottom: 1px solid $grayish;
+        cursor: pointer;
+        font-family: $font-default;
+        font-size: 12px;
+        color: $black;
+
+        &.orgUnitSelector{
+          border-bottom: none;
+        }
+      }
+
+      &.recipient-selector{
+        h4{
+          text-align: center;
+        }
+
+      }
+    }
+  }
 }
