@@ -289,22 +289,12 @@ define([
 
         var deferred = $q.defer();
 
-        /*var options = {
-          headers: {
-            "Content-Type": "application(json"
-          }
-        };*/
-
-        console.log("Er i markAsRead");
-
         $http.post(ServerConfig.host + MESSAGE_READ, [messageid])
       .success(function() {
-            console.log("SUCCESS");
             deferred.resolve();
           })
           .error(function () {
             deferred.reject();
-            console.log("ERROR");
           });
         return deferred.promise;
       }
