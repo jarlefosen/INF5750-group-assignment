@@ -31,8 +31,17 @@ define([
       };
 
       $scope.goToMessage = function(message){
+
+        console.log("dette er meldingsID: " + message.id);
+
+        MessageService.markAsRead(message.id)
+          .then(function() {
+            message.read = true;
+          })
+
         if($window.innerWidth >= 992){
           $scope.currentMessage = message;
+
         }else{
           $location.path("/messages/" + message.id);
         }
@@ -75,11 +84,6 @@ define([
         );
 
       };
-
-      $scope.isRead = function(message) {
-
-        MessageService.markAsRead(message.id);
-      }
 
       $scope.setFollowUp = function(message){
 

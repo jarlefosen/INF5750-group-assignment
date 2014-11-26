@@ -293,23 +293,22 @@ define([
 
         var deferred = $q.defer();
 
-        $http({
-          method: "POST",
-          url: ServerConfig.host + MESSAGE_READ,
-          data: $.param(messageid),
+        /*var options = {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application(json"
           }
-        })
-          .success(function (data, status, headers) {
-            deferred.resolve(data)
-            console.log("success!!");
-            console.log(message);
-          })
+        };*/
 
-          .error(function (error) {
-            deferred.reject(error);
-            console.log("Error");
+        console.log("Er i markAsRead");
+
+        $http.post(ServerConfig.host + MESSAGE_READ, [messageid])
+      .success(function() {
+            console.log("SUCCESS");
+            deferred.resolve();
+          })
+          .error(function () {
+            deferred.reject();
+            console.log("ERROR");
           });
 
         return deferred.promise;
