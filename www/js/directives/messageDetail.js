@@ -14,7 +14,11 @@ define([
       link: function(scope, elem, attrs){
         scope.setFollowUp = function(message){
           scope.$parent.setFollowUp(message);
-        }
+        };
+
+        scope.delMessage = function(message){
+          scope.$parent.delMessage(message);
+        };
 
       }
     };

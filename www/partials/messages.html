@@ -5,6 +5,7 @@
   <inbox-message data-ng-repeat="message in allMessages|filter:filterProp|orderBy:orderProp:reverse=true"></inbox-message>
 </div>
 
+
 <message-detail message="currentMessage" setFollowUp="setFollowUp" class="hidden-xs hidden-sm"></message-detail>
 
 <navbar-bottom setfilter="setFilter()"></navbar-bottom>
