@@ -26,9 +26,15 @@ define([
       $scope.orgUnitRecipients = [];
 
       $scope.selectorOptions = {};
+      $scope.carouselRunning = false;
+
+      $scope.setCarouselState = function(){
+        $scope.carouselRunning = !$scope.carouselRunning;
+      };
 
       $scope.updateSelector = function(type) {
         $scope.selectorOptions.type = type;
+        $scope.setCarouselState();
       };
 
       $scope.sendMessage = function () {
