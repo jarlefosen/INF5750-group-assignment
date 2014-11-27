@@ -6,10 +6,13 @@
         {{settings.displayName}}
       </a>
     </li>
-    <li class="menu-element edit-btn hidden-lg hidden-md" ng-class="setClass()">
-      <a edit-btn-click-handler options=".inbox-message">
+    <li edit-btn-click-handler options=".inbox-message" class="menu-element edit-btn hidden-lg hidden-md" ng-class="setClass()">
+      <a class="normal-state">
         <i class="fa fa-cogs fa-lg"></i>
         Edit
+      </a>
+      <a class="active-state">
+        Done
       </a>
     </li>
     <li class="menu-element logo-container visible-lg visible-md">

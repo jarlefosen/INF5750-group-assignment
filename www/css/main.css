@@ -273,27 +273,39 @@
   float: right;
   margin-right: 20px;
 }
-/* line 30, sass/partials/_navbar.scss */
+/* line 28, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.edit-btn .active-state {
+  display: none;
+}
+/* line 33, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.edit-btn.edit-mode .active-state {
+  display: inline-block;
+}
+/* line 36, sass/partials/_navbar.scss */
+.navigation-top ul .menu-element.edit-btn.edit-mode .normal-state {
+  display: none;
+}
+/* line 42, sass/partials/_navbar.scss */
 .navigation-top ul .menu-element.logo-container {
   float: right;
   margin-right: 20px;
 }
-/* line 33, sass/partials/_navbar.scss */
+/* line 45, sass/partials/_navbar.scss */
 .navigation-top ul .menu-element.logo-container .dhis-logo {
   height: 8vh;
 }
-/* line 37, sass/partials/_navbar.scss */
+/* line 49, sass/partials/_navbar.scss */
 .navigation-top ul .menu-element a {
   text-decoration: none;
   font-size: 18px;
   color: #fcfcfc;
 }
-/* line 38, sass/partials/_navbar.scss */
+/* line 50, sass/partials/_navbar.scss */
 .navigation-top ul .menu-element a .fa {
   margin-right: 5px;
 }
 
-/* line 49, sass/partials/_navbar.scss */
+/* line 61, sass/partials/_navbar.scss */
 .navigation-bottom {
   height: 8vh;
   background-color: #f4f4f4;
@@ -302,7 +314,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* line 57, sass/partials/_navbar.scss */
+/* line 69, sass/partials/_navbar.scss */
 .navigation-bottom ul {
   list-style-type: none;
   text-align: center;
@@ -310,33 +322,33 @@
   zoom: 1;
   display: inline-block;
 }
-/* line 64, sass/partials/_navbar.scss */
+/* line 76, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element {
   width: 140px;
   display: inline-block;
   line-height: 6vh;
 }
-/* line 68, sass/partials/_navbar.scss */
+/* line 80, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element a {
   text-decoration: none;
   font-size: 24px;
   color: #9b9b9b;
 }
-/* line 73, sass/partials/_navbar.scss */
+/* line 85, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element.active {
   border-top: 1vh solid #1d5288;
 }
-/* line 75, sass/partials/_navbar.scss */
+/* line 87, sass/partials/_navbar.scss */
 .navigation-bottom ul .menu-element.active a {
   color: #4a4a4a;
 }
 
 @media (max-width: 992px) {
-  /* line 85, sass/partials/_navbar.scss */
+  /* line 97, sass/partials/_navbar.scss */
   .navigation-bottom ul {
     display: block;
   }
-  /* line 87, sass/partials/_navbar.scss */
+  /* line 99, sass/partials/_navbar.scss */
   .navigation-bottom ul .menu-element {
     width: 30%;
   }
@@ -465,10 +477,10 @@
 /* line 3, sass/partials/_animate.scss */
 .inbox-message.ng-leave,
 .inbox-message.ng-enter {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   position: relative;
   display: block;
 }

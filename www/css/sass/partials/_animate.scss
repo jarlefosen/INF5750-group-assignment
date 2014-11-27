@@ -1,7 +1,7 @@
 
 .inbox-message.ng-leave,
 .inbox-message.ng-enter{
-  @include single-transition(all, .5s, ease-in-out);
+  @include single-transition(opacity, .5s, ease-in-out);
   position: relative;
   display: block;
 }
