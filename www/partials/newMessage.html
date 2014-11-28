@@ -1,12 +1,7 @@
 <navbar-top settings="NAV_TOP"></navbar-top>
 
 <div ui-view class="new-message-view container col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <h3>New Message</h3>
 
-  <div class="input-group">
-    <span class="input-group-addon">Subject</span>
-    <input type="text" ng-model="newMessage.subject" class="form-control" placeholder="Insert subject..."/>
-  </div>
   <div class="recipients-container col-lg-12">
     <h4>Recipients</h4>
     <ul>
@@ -78,6 +73,10 @@
   </div>
 
   <div class="message-text-container">
+    <div class="input-group">
+      <span class="input-group-addon">Subject</span>
+      <input type="text" ng-model="newMessage.subject" class="form-control" placeholder="Insert subject..."/>
+    </div>
     <textarea ng-model="newMessage.text" placeholder="Message content goes here ..." class="form-control" name="messagecontent" cols="30" rows="10"></textarea>
   </div>
 
