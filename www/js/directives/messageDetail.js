@@ -22,6 +22,10 @@ define([
           reply(scope.messageid, scope.content);
         };
 
+        scope.setUnread = function(message) {
+          scope.$parent.setUnread(message);
+        };
+
         scope.setFollowUp = function(message){
           scope.$parent.setFollowUp(message);
         };

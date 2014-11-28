@@ -4,6 +4,7 @@
     <p class="to-tag">To: <span data-ng-repeat="obj in message.userMessages">{{obj.user.name}}</span></p>
   </div>
   <div class="button-container">
+    <button ng-click="setUnread(message)">Mark Unread</button>
     <button ng-click="setFollowUp(message)">Follow up</button>
     <button ng-click="delMessage(message)">Delete</button>
   </div>

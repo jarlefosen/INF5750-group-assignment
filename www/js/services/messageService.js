@@ -136,7 +136,7 @@ define([
 
       }
 
-      function convertConverstion(conversation) {
+      function convertConversation(conversation) {
         var conv = getInboxEntryFromCache(conversation.id);
         conv.messages = conversation.messages;
         conv.lastSender = conversation.lastSender;
@@ -164,7 +164,7 @@ define([
             if (headers["Login-Page"]) {
               deferred.resolve(cached);
             } else {
-              var converted = convertConverstion(data);
+              var converted = convertConversation(data);
               saveConversation(converted);
               deferred.resolve(converted);
             }
@@ -175,7 +175,6 @@ define([
 
         return deferred.promise;
       }
-
 
       /* messageUpdateCallback will be called when there are updated messages */
       function getInbox() {
@@ -287,6 +286,26 @@ define([
         return deferred.promise;
       }
 
+      function setMessageUnread(id) {
+        var deferred = $q.defer();
+
+        var options = {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        };
+
+        $http.post(ServerConfig.host + MESSAGES_BASE_URL + "/unread", [id], options)
+          .success(function(data) {
+            deferred.resolve(data.markedUnread);
+          })
+          .error(function() {
+            deferred.reject();
+          });
+
+        return deferred.promise;
+      }
+
       function reply(id, body) {
         var deferred = $q.defer();
 
@@ -321,6 +340,7 @@ define([
         clearCache: clearCache(),
         newMessage: newMessage,
         setFollowUp: setFollowUp,
+        setUnread: setMessageUnread,
         reply: reply
       };
     }

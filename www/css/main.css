@@ -513,13 +513,213 @@
   opacity: 1;
 }
 
-/* line 1, sass/partials/_newmessage.scss */
+/* line 10, sass/partials/_newmessage.scss */
+.new-message-view .recipients-container ul .user-recipients, .new-message-view .recipients-container ul .group-recipients, .new-message-view .recipients-container ul .org-unit-recipients, .new-message-view #carousel-recipient-selection .item.recipient-selector .user-recipients, .new-message-view #carousel-recipient-selection .item.recipient-selector .group-recipients, .new-message-view #carousel-recipient-selection .item.recipient-selector .org-unit-recipients {
+  display: inline-block;
+  color: #fcfcfc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  margin: 2px;
+  line-height: 25px;
+  padding: 0 10px;
+  font-weight: 400;
+}
+/* line 19, sass/partials/_newmessage.scss */
+.new-message-view .recipients-container ul .user-recipients .fa, .new-message-view .recipients-container ul .group-recipients .fa, .new-message-view .recipients-container ul .org-unit-recipients .fa, .new-message-view #carousel-recipient-selection .item.recipient-selector .user-recipients .fa, .new-message-view #carousel-recipient-selection .item.recipient-selector .group-recipients .fa, .new-message-view #carousel-recipient-selection .item.recipient-selector .org-unit-recipients .fa {
+  font-size: 12px;
+  margin-left: 5px;
+  line-height: 25px;
+}
+
+/* line 26, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.type-selector .user-selector, .new-message-view #carousel-recipient-selection .item.type-selector .group-selector, .new-message-view #carousel-recipient-selection .item.type-selector .org-unit-selector {
+  display: inline-block;
+  color: #fcfcfc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  width: 180px;
+  height: 180px;
+  margin: 0 10px;
+}
+/* line 33, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.type-selector .user-selector .fa, .new-message-view #carousel-recipient-selection .item.type-selector .group-selector .fa, .new-message-view #carousel-recipient-selection .item.type-selector .org-unit-selector .fa {
+  font-size: 5em;
+  margin-top: 40px;
+  vertical-align: middle;
+}
+/* line 38, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.type-selector .user-selector p, .new-message-view #carousel-recipient-selection .item.type-selector .group-selector p, .new-message-view #carousel-recipient-selection .item.type-selector .org-unit-selector p {
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* line 47, sass/partials/_newmessage.scss */
 .new-message-view {
   margin-top: 8vh;
   margin-bottom: 0;
   height: 92vh;
   background-color: #fcfcfc;
   overflow: auto;
+}
+/* line 54, sass/partials/_newmessage.scss */
+.new-message-view .recipients-container {
+  border-bottom: 2px solid #9b9b9b;
+}
+/* line 55, sass/partials/_newmessage.scss */
+.new-message-view .recipients-container ul {
+  padding: 0;
+  list-style-type: none;
+}
+/* line 58, sass/partials/_newmessage.scss */
+.new-message-view .recipients-container ul .user-recipients {
+  border: 2px solid #1d5288;
+  background-color: #2a78c7;
+}
+/* line 63, sass/partials/_newmessage.scss */
+.new-message-view .recipients-container ul .group-recipients {
+  border: 2px solid #a56d18;
+  background-color: #e3a240;
+}
+/* line 69, sass/partials/_newmessage.scss */
+.new-message-view .recipients-container ul .org-unit-recipients {
+  border: 2px solid #0f640f;
+  background-color: #19a719;
+}
+/* line 80, sass/partials/_newmessage.scss */
+.new-message-view .recipient-selector-container {
+  border-bottom: 2px solid #9b9b9b;
+  margin-bottom: 20px;
+}
+/* line 84, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection {
+  margin-top: 20px;
+  clear: both;
+  padding: 0;
+  margin-bottom: 20px;
+}
+/* line 91, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item {
+  text-align: center;
+}
+/* line 95, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.type-selector .user-selector {
+  border: 2px solid #1d5288;
+  background-color: #2a78c7;
+}
+/* line 100, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.type-selector .group-selector {
+  border: 2px solid #a56d18;
+  background-color: #e3a240;
+}
+/* line 105, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.type-selector .org-unit-selector {
+  border: 2px solid #0f640f;
+  background-color: #19a719;
+}
+/* line 112, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item .carousel-control {
+  position: relative;
+  display: block;
+  margin-bottom: 0;
+  width: 100%;
+  opacity: 1;
+  text-shadow: none;
+  line-height: 30px;
+  border-bottom: 1px solid #9b9b9b;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  color: black;
+}
+/* line 128, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .input-group-addon {
+  text-transform: capitalize;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -webkit-border-top-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+/* line 135, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .form-control {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -webkit-border-top-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+/* line 140, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+/* line 145, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .user-recipients {
+  border: 2px solid #1d5288;
+  background-color: #2a78c7;
+  margin: 4px;
+}
+/* line 150, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .user-recipients .fa {
+  margin-left: 0;
+  margin-right: 5px;
+}
+/* line 155, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .group-recipients {
+  border: 2px solid #a56d18;
+  background-color: #e3a240;
+  margin: 4px;
+}
+/* line 160, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .group-recipients .fa {
+  margin-left: 0;
+  margin-right: 5px;
+}
+/* line 165, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .org-unit-recipients {
+  border: 2px solid #0f640f;
+  background-color: #19a719;
+  margin: 4px;
+}
+/* line 170, sass/partials/_newmessage.scss */
+.new-message-view #carousel-recipient-selection .item.recipient-selector .org-unit-recipients .fa {
+  margin-left: 0;
+  margin-right: 5px;
+}
+/* line 181, sass/partials/_newmessage.scss */
+.new-message-view .message-text-container {
+  clear: both;
+}
+/* line 185, sass/partials/_newmessage.scss */
+.new-message-view .send-btn {
+  margin: 20px 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #1d5288;
+  color: #fcfcfc;
 }
 
 /* line 12, sass/main.scss */
