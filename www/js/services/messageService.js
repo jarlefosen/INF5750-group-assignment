@@ -206,10 +206,12 @@ define([
 
       function deleteConversation(messageId) {
         var deferred = $q.defer();
+        console.log(messageId);
 
         $http.delete(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
           .success(function(data){
             deleteConversationFromCache(messageId);
+            notifyDelete(messageId);
             deferred.resolve(data);
           })
           .error(function () {
@@ -349,6 +351,10 @@ define([
 
       function notifyRead(id, status) {
         $rootScope.$broadcast("message:read", id, status);
+      }
+
+      function notifyDelete(id) {
+        $rootScope.$broadcast("message:delete", id);
       }
 
       return {
