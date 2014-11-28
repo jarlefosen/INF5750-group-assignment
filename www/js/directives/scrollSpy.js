@@ -8,7 +8,6 @@ define([
       replace: false,
       link: function(scope, element, attrs){
         var el = element[0];
-        console.log(el);
         element.bind("scroll", function(e){
           if(el.scrollTop > 100){
             element.addClass("fix-buttons");
