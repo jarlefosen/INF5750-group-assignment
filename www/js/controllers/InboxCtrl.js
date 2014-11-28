@@ -14,6 +14,16 @@ define([
   app.controller("InboxCtrl", [
     "$scope", "$window", "$location", "MessageService", "LoginService", "$state", "$rootScope",
     function ($scope, $window, $location, MessageService, LoginService, $state, $rootScope) {
+
+      var registeredListeners = [];
+
+      $scope.$on("$destroy", function() {
+        registeredListeners.forEach(function (listener) {
+          /* Call listeners will unbind it */
+          listener();
+        })
+      });
+
       $scope.NAV_TOP = {
         goToState: "newMessage",
         displayName: "New message",
@@ -22,9 +32,21 @@ define([
       };
 
       $scope.state = $state.$current.self;
-      $rootScope.$on("$stateChangeSuccess", function(event, toState) {
+
+      var stateListener = $rootScope.$on("$stateChangeSuccess", function(event, toState) {
         $scope.state = toState;
       });
+
+      registeredListeners.push(stateListener);
+
+      var messageListener = $rootScope.$on("message:read", function(event, id, status) {
+        for(var i = 0; i < $scope.allMessages.length; i++) {
+          if ($scope.allMessages[i].id == id) {
+            $scope.allMessages[i].read = status;
+          }
+        }
+      });
+      registeredListeners.push(messageListener);
 
       $scope.allMessages = [];
       $scope.currentMessage = {};
@@ -37,9 +59,9 @@ define([
 
       $scope.goToMessage = function(message){
 
-        MessageService.markAsRead(message.id).then(function() {
-          message.read = true;
-        });
+        if(message.read == false) {
+          MessageService.markAsRead(message.id);
+        }
 
         $scope.currentMessage = message;
         $state.go("messages.view", {messageId: message.id});
