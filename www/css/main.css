@@ -354,6 +354,43 @@
   }
 }
 /* line 1, sass/partials/_message.scss */
+#button-container {
+  clear: both;
+}
+/* line 4, sass/partials/_message.scss */
+#button-container button {
+  border: 2px solid #1d5288;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #1d5288;
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fcfcfc;
+}
+
+/* line 17, sass/partials/_message.scss */
+.fix-buttons #button-container {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  z-index: 1;
+}
+/* line 23, sass/partials/_message.scss */
+.fix-buttons #button-container button {
+  clear: right;
+  width: 120px;
+  float: right;
+  margin-bottom: 10px;
+  margin-top: 0;
+  display: block;
+}
+
+/* line 34, sass/partials/_message.scss */
 .message-container {
     margin: 8vh 0;
     background-color: #fcfcfc;
@@ -361,102 +398,102 @@
     overflow: auto;
     padding-top: 20px;
 }
-/* line 8, sass/partials/_message.scss */
+/* line 41, sass/partials/_message.scss */
 .message-container.singleView {
     margin-top: 8vh;
     margin-bottom: 0;
     height: 92vh;
 }
-/* line 13, sass/partials/_message.scss */
+/* line 46, sass/partials/_message.scss */
 .message-container.singleView .reply-btn {
     margin: 20px auto;
 }
-/* line 18, sass/partials/_message.scss */
+/* line 51, sass/partials/_message.scss */
 .message-container .to-and-from-container {
     display: inline-block;
     float: left;
     margin-bottom: 20px;
 }
-/* line 22, sass/partials/_message.scss */
+/* line 55, sass/partials/_message.scss */
 .message-container .to-and-from-container .from-tag {
     font-weight: 600;
 }
-/* line 24, sass/partials/_message.scss */
+/* line 57, sass/partials/_message.scss */
 .message-container .to-and-from-container .from-tag span {
     font-weight: 300;
 }
-/* line 28, sass/partials/_message.scss */
+/* line 61, sass/partials/_message.scss */
 .message-container .to-and-from-container .to-tag {
     font-weight: 600;
 }
-/* line 30, sass/partials/_message.scss */
+/* line 63, sass/partials/_message.scss */
 .message-container .to-and-from-container .to-tag span {
     font-weight: 300;
 }
-/* line 32, sass/partials/_message.scss */
+/* line 65, sass/partials/_message.scss */
 .message-container .to-and-from-container .to-tag span:after {
     content: ', ';
 }
-/* line 36, sass/partials/_message.scss */
+/* line 69, sass/partials/_message.scss */
 .message-container .to-and-from-container .to-tag span:last-child:after {
     content: '';
 }
-/* line 44, sass/partials/_message.scss */
+/* line 77, sass/partials/_message.scss */
 .message-container .message-subject {
     clear: both;
 }
-/* line 48, sass/partials/_message.scss */
+/* line 81, sass/partials/_message.scss */
 .message-container .single-message-container {
     border-bottom: 2px solid #9b9b9b;
     margin: 20px 0 0 0;
 }
-/* line 50, sass/partials/_message.scss */
+/* line 83, sass/partials/_message.scss */
 .message-container .single-message-container.last {
     border-bottom: none;
 }
-/* line 57, sass/partials/_message.scss */
+/* line 90, sass/partials/_message.scss */
 .message-container .single-message-container .header .sender {
     display: inline-block;
     font-weight: 600;
     color: #9b9b9b;
 }
-/* line 62, sass/partials/_message.scss */
+/* line 95, sass/partials/_message.scss */
 .message-container .single-message-container .header .sender:after {
     content: ' ';
 }
-/* line 66, sass/partials/_message.scss */
+/* line 99, sass/partials/_message.scss */
 .message-container .single-message-container .header .timestamp {
     display: inline-block;
     font-weight: 600;
     color: #9b9b9b;
 }
-/* line 71, sass/partials/_message.scss */
+/* line 104, sass/partials/_message.scss */
 .message-container .single-message-container .header .timestamp:before {
     content: '(';
 }
-/* line 74, sass/partials/_message.scss */
+/* line 107, sass/partials/_message.scss */
 .message-container .single-message-container .header .timestamp:after {
     content: ')';
 }
-/* line 79, sass/partials/_message.scss */
+/* line 112, sass/partials/_message.scss */
 .message-container .single-message-container .message {
     padding-left: 10px;
     word-wrap: break-word;
     margin-bottom: 20px;
 }
-/* line 86, sass/partials/_message.scss */
+/* line 119, sass/partials/_message.scss */
 .message-container .reply-container {
     padding: 0;
 }
-/* line 94, sass/partials/_message.scss */
+/* line 127, sass/partials/_message.scss */
 .message-container .reply-container #reply-form {
     margin-bottom: 20px;
 }
-/* line 96, sass/partials/_message.scss */
+/* line 129, sass/partials/_message.scss */
 .message-container .reply-container #reply-form #reply-box {
     width: 100%;
 }
-/* line 99, sass/partials/_message.scss */
+/* line 132, sass/partials/_message.scss */
 .message-container .reply-container #reply-form .reply-btn {
     border: 2px solid #1d5288;
     -webkit-border-radius: 2px;

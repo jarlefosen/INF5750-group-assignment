@@ -4,7 +4,8 @@
 define([
   "app",
   "services/messageService",
-  "directives/navbarTop"
+  "directives/navbarTop",
+  "directives/scrollSpy"
 ], function (app) {
   "use strict";
   app.controller("MessageDetailCtrl", [
