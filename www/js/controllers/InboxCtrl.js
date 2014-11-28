@@ -36,6 +36,11 @@ define([
       };
 
       $scope.goToMessage = function(message){
+
+        MessageService.markAsRead(message.id).then(function() {
+          message.read = true;
+        });
+
         $scope.currentMessage = message;
         $state.go("messages.view", {messageId: message.id});
       };
@@ -75,6 +80,7 @@ define([
             $scope.currentMessage = $scope.allMessages[newIndex];
           }
         );
+
       };
 
       $scope.setUnread = function(message) {
