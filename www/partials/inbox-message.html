@@ -17,7 +17,7 @@
       <p class="date">{{message.lastMessage | dateFilter}}</p>
     </div>
     <p class="subject">{{message.subject}}</p>
-    <p class="content">{{message.messages[0].name}}</p>
+    <p class="content">{{message.messages[message.messages.length-1].name}}</p>
   </div>
   <div class="arrow hidden-lg hidden-md col-sm-1 col-xs-1">
     <i class="fa fa-angle-right"></i>

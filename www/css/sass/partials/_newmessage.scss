@@ -1,3 +1,61 @@
+$color-orgUnit: #19A719;
+$color-orgUnit-border: darken($color-orgUnit, 15%);
+
+$color-group: lighten(#D18A1F, 10%);
+$color-group-border: darken($color-group, 20%);
+
+$color-user: lighten($main-color, 15%);
+$color-user-border: $main-color;
+
+%recipient-base{
+  display: inline-block;
+  color: $off-white;
+  @include border-radius(2px);
+  margin: 2px;
+  line-height: 25px;
+  padding: 0 10px;
+  font-weight: 400;
+
+  .fa{
+    font-size: 12px;
+    margin-left: 5px;
+    line-height: 25px;
+  }
+}
+
+%recipient-selector-base{
+  display: inline-block;
+  color: $off-white;
+  @include border-radius(2px);
+  width: 180px;
+  height: 180px;
+  margin: 0 10px;
+  .fa{
+    font-size: 5em;
+    margin-top: 40px;
+    vertical-align: middle;
+  }
+  p{
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.input-group-addon{
+  text-transform: capitalize;
+
+  @include border-radius(2px);
+  @include border-bottom-right-radius(0px);
+  @include border-top-right-radius(0px);
+}
+.form-control{
+  @include border-radius(2px);
+  @include border-bottom-left-radius(0px);
+  @include border-top-left-radius(0px);
+}
+
 .new-message-view{
   margin-top: $navbar-height;
   margin-bottom: 0;
@@ -5,4 +63,134 @@
   background-color: $off-white;
   overflow: auto;
 
+  .recipients-container{
+    ul{
+      padding: 0;
+      list-style-type: none;
+      .user-recipients{
+        @extend %recipient-base;
+        border: 2px solid $color-user-border;
+        background-color: $color-user;
+      }
+      .group-recipients{
+        @extend %recipient-base;
+        border: 2px solid $color-group-border;
+        background-color: $color-group;
+
+      }
+      .org-unit-recipients{
+        @extend %recipient-base;
+        border: 2px solid $color-orgUnit-border;
+        background-color: $color-orgUnit;
+
+      }
+    }
+
+    border-bottom: 2px solid $grayish;
+  }
+
+  .recipient-selector-container{
+    border-bottom: 2px solid $grayish;
+    margin-bottom: 20px;
+  }
+  #carousel-recipient-selection{
+    margin-top: 20px;
+    clear: both;
+
+    padding: 0;
+    margin-bottom: 20px;
+
+    .item{
+      text-align: center;
+
+      &.type-selector{
+        .user-selector{
+          @extend %recipient-selector-base;
+          border: 2px solid $color-user-border;
+          background-color: $color-user;
+        }
+        .group-selector{
+          @extend  %recipient-selector-base;
+          border: 2px solid $color-group-border;
+          background-color: $color-group;
+        }
+        .org-unit-selector{
+          @extend  %recipient-selector-base;
+          border: 2px solid $color-orgUnit-border;
+          background-color: $color-orgUnit;
+        }
+      }
+
+      .carousel-control{
+        position: relative;
+        display: block;
+        margin-bottom: 0;
+        width: 100%;
+        opacity: 1;
+        text-shadow: none;
+        line-height: 30px;
+        border-bottom: 1px solid $grayish;
+        cursor: pointer;
+        font-family: $font-default;
+        font-size: 12px;
+        color: $black;
+      }
+
+      &.recipient-selector{
+        ul{
+          padding: 0;
+          margin-bottom: 0;
+        }
+
+        .user-recipients{
+          @extend %recipient-base;
+          border: 2px solid $color-user-border;
+          background-color: $color-user;
+          margin: 4px;
+          .fa{
+            margin-left: 0;
+            margin-right: 5px;
+          }
+        }
+        .group-recipients{
+          @extend %recipient-base;
+          border: 2px solid $color-group-border;
+          background-color: $color-group;
+          margin: 4px;
+          .fa{
+            margin-left: 0;
+            margin-right: 5px;
+          }
+        }
+        .org-unit-recipients{
+          @extend %recipient-base;
+          border: 2px solid $color-orgUnit-border;
+          background-color: $color-orgUnit;
+          margin: 4px;
+          .fa{
+            margin-left: 0;
+            margin-right: 5px;
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .message-text-container{
+    clear: both;
+  }
+
+  .input-group{
+    margin-bottom: 20px;
+
+  }
+
+  .send-btn{
+    margin: 20px 0;
+    @include border-radius(2px);
+    background-color: $main-color;
+    color: $off-white;
+  }
 }

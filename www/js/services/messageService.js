@@ -204,8 +204,10 @@ define([
         return deferred.promise;
       }
 
+
       function deleteConversation(messageId) {
         var deferred = $q.defer();
+
         $http.delete(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
           .success(function(data){
             deleteConversationFromCache(messageId);
@@ -242,8 +244,8 @@ define([
           subject: subject,
           text: text,
           users: userList || [],
-          userGroups: groupList || [],
-          organisationUnits: orgList || []
+          userGroups: groupList || [],
+          organisationUnits: orgList || []
         };
 
         $http.post(ServerConfig.host + MESSAGES_BASE_URL + ".json", message)
@@ -285,7 +287,7 @@ define([
         return deferred.promise;
       }
 
-      function markAsRead(messageid) {
+      function setMessageRead(messageid) {
 
         var deferred = $q.defer();
 
@@ -320,15 +322,43 @@ define([
         return deferred.promise;
       }
 
+      function reply(id, body) {
+        var deferred = $q.defer();
+
+
+        if (!body) {
+          deferred.reject({message: "Body must be a string."});
+          return deferred.promise;
+        }
+
+        var options = {
+          headers: {
+            "Content-Type": "text/plain"
+          }
+        };
+
+        $http.post(MESSAGES_BASE_URL + "/" + id + ".json", body, options)
+          .success(function() {
+            deferred.resolve();
+          })
+          .error(function() {
+            deferred.reject();
+          });
+
+        return deferred.promise;
+      }
+
       return {
         getAllMessages: getInbox,
         getMessage: getConversation,
+        getMessageFromCache: getConversationFromCache,
         deleteMessage: deleteConversation,
         clearCache: clearCache(),
         newMessage: newMessage,
         setFollowUp: setFollowUp,
-        markAsRead: markAsRead,
-        setUnread: setMessageUnread
+        markAsRead: setMessageRead,
+        setUnread: setMessageUnread,
+        reply: reply
       };
     }
   ]);

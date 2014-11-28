@@ -10,8 +10,8 @@ define([
 ], function (app) {
   "use strict";
   app.controller("NewMessageCtrl", [
-    "$scope", "$routeParams", "MessageService", "UserService", "GroupService", "OrgUnitService",
-    function ($scope, $routeParams, MessageService, UserService, GroupService, OrgUnitService) {
+    "$scope", "$routeParams", "MessageService", "UserService", "GroupService", "OrgUnitService", "$location",
+    function ($scope, $routeParams, MessageService, UserService, GroupService, OrgUnitService, $location) {
       $scope.NAV_TOP = {
         goToState: "messages",
         displayName: "Back",
@@ -25,8 +25,28 @@ define([
       $scope.groupRecipients = [];
       $scope.orgUnitRecipients = [];
 
+      $scope.selectorOptions = {};
+      $scope.carouselRunning = false;
+
+      $scope.setCarouselState = function(){
+        $scope.carouselRunning = !$scope.carouselRunning;
+      };
+
+      $scope.updateSelector = function(type) {
+        $scope.selectorOptions.type = type;
+        $scope.setCarouselState();
+      };
+
       $scope.sendMessage = function () {
-        MessageService.newMessage($scope.newMessage.subject, $scope.newMessage.text, getIds($scope.userRecipients), getIds($scope.groupRecipients), getIds($scope.orgUnitRecipients));
+        MessageService.newMessage(
+          $scope.newMessage.subject,
+          $scope.newMessage.text,
+          getIds($scope.userRecipients),
+          getIds($scope.groupRecipients),
+          getIds($scope.orgUnitRecipients))
+          .then(function(){
+            $location.path("/messages");
+          });
       };
 
       UserService.getUsers()

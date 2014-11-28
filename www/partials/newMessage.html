@@ -1,62 +1,85 @@
 <navbar-top settings="NAV_TOP"></navbar-top>
 
 <div ui-view class="new-message-view container col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <h3>New Message</h3>
 
-  <div class="input-group">
-    <span class="input-group-addon">Subject</span>
-    <input type="text" ng-model="newMessage.subject" class="form-control" placeholder="Insert subject..."/>
-  </div>
-  <div class="recipients-container">
+  <div class="recipients-container col-lg-12">
     <h4>Recipients</h4>
     <ul>
-      <li ng-repeat="user in userRecipients">
-        {{user.name}}
-        <span>(user)</span>
-        <i class="fa fa-times" ng-click="removeRecipient(user, 'user')"></i>
+      <li class="user-recipients" ng-repeat="user in userRecipients" ng-click="removeRecipient(user, 'user')">{{user.name}}
+        <i class="fa fa-times"></i>
       </li>
-      <li ng-repeat="group in groupRecipients">
-        {{group.name}}
-        <span>(group)</span>
-        <i class="fa fa-times" ng-click="removeRecipient(group, 'group')"></i>
+      <li class="group-recipients" ng-repeat="group in groupRecipients" ng-click="removeRecipient(group, 'group')">{{group.name}}
+        <i class="fa fa-times"></i>
       </li>
-      <li ng-repeat="orgUnit in orgUnitRecipients">
-        {{orgUnit.name}}
-        <span>(orgUnit)</span>
-        <i class="fa fa-times" ng-click="removeRecipient(orgUnit, 'orgUnit')"></i>
+      <li class="org-unit-recipients" ng-repeat="orgUnit in orgUnitRecipients" ng-click="removeRecipient(orgUnit, 'orgUnit')">{{orgUnit.name}}
+        <i class="fa fa-times"></i>
       </li>
     </ul>
   </div>
-  <div class="recipient-selection-container">
-    <h4>Select recipients</h4>
 
+  <div class="recipient-selector-container col-lg-12">
+
+    <h4 ng-hide="carouselRunning"><i class="fa fa-plus"></i> Add recipient</h4>
+    <h4 ng-show="carouselRunning" ng-click="setCarouselState(); query = ''" href="#carousel-recipient-selection" role="button" data-slide-to="0"><i class="fa fa-chevron-left"></i> Back</h4>
+
+    <div id="carousel-recipient-selection" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active type-selector">
+          <a class="carousel-control user-selector" href="#carousel-recipient-selection" role="button" data-slide="next" ng-click="updateSelector('user')">
+            <i class="fa fa-user"></i>
+            <p>User</p>
+          </a>
+          <a class="carousel-control group-selector" href="#carousel-recipient-selection" role="button" data-slide="next" ng-click="updateSelector('group')">
+            <i class="fa fa-users"></i>
+            <p>Group</p>
+          </a>
+          <a class="carousel-control org-unit-selector" href="#carousel-recipient-selection" role="button" data-slide="next" ng-click="updateSelector('orgUnit')">
+            <i class="fa fa-hospital-o"></i>
+            <p>OrgUnit</p>
+          </a>
+
+        </div>
+        <div class="item recipient-selector">
+          <div class="input-group">
+            <span class="input-group-addon">{{selectorOptions.type}}</span>
+            <input type="text" class="form-control" placeholder="Start typing ..." ng-model="query"/>
+          </div>
+          <ul ng-switch="selectorOptions.type">
+            <span ng-switch-when="user">
+              <li class="user-recipients" ng-show="query" ng-repeat="user in allUsers | filter:query | limitTo: 10" ng-click="addRecipient(user, 'user')">
+                <i class="fa fa-plus"></i>
+                {{user.name}}
+              </li>
+            </span>
+            <span ng-switch-when="group">
+              <li class="group-recipients" ng-show="query" ng-repeat="group in allGroups | filter:query | limitTo: 10" ng-click="addRecipient(group, 'group')">
+                <i class="fa fa-plus"></i>
+                {{group.name}}
+              </li>
+            </span>
+            <span ng-switch-when="orgUnit">
+              <li class="org-unit-recipients" ng-show="query" ng-repeat="orgUnit in allOrgUnits | filter:query | limitTo: 10" ng-click="addRecipient(orgUnit, 'orgUnit')">
+                <i class="fa fa-plus"></i>
+                {{orgUnit.name}}
+              </li>
+            </span>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </div>
+
   <div class="message-text-container">
-    <label>Text</label>
-    <textarea ng-model="newMessage.text" class="form-control" name="messagecontent" cols="30" rows="10"></textarea>
-  </div>
-  <button ng-click="sendMessage()">Send message</button>
-
-  <hr/>
-  <div>
-    <h3>Users</h3>
-    <ul>
-      <li ng-repeat="user in allUsers" ng-click="addRecipient(user, 'user')">{{ user.name }}</li>
-    </ul>
+    <div class="input-group">
+      <span class="input-group-addon">Subject</span>
+      <input type="text" ng-model="newMessage.subject" class="form-control" placeholder="Insert subject..."/>
+    </div>
+    <textarea ng-model="newMessage.text" placeholder="Message content goes here ..." class="form-control" name="messagecontent" cols="30" rows="10"></textarea>
   </div>
 
-  <div>
-    <h3>Groups</h3>
-    <ul>
-      <li ng-repeat="group in allGroups" ng-click="addRecipient(group, 'group')">{{ group.name }}</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>Organization Units</h3>
-    <ul>
-      <li ng-repeat="orgUnit in allOrgUnits" ng-click="addRecipient(orgUnit, 'orgUnit')">{{ orgUnit.name }}</li>
-    </ul>
-  </div>
+  <button class="btn-block send-btn btn btn-primary" ng-click="sendMessage()">Send message</button>
 
 </div>
