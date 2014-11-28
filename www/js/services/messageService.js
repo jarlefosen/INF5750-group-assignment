@@ -19,6 +19,7 @@ define([
 
       var MESSAGES_BASE_URL = "/api/messageConversations";
       var MY_INBOX_URL = "/api/me/inbox";
+      var MESSAGE_READ = "/api/messageConversations/read";
 
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
@@ -286,6 +287,21 @@ define([
         return deferred.promise;
       }
 
+      function setMessageRead(messageid) {
+
+        var deferred = $q.defer();
+
+        $http.post(ServerConfig.host + MESSAGE_READ, [messageid])
+      .success(function() {
+            deferred.resolve();
+          })
+          .error(function () {
+            deferred.reject();
+          });
+        return deferred.promise;
+      }
+
+
       function setMessageUnread(id) {
         var deferred = $q.defer();
 
@@ -340,6 +356,7 @@ define([
         clearCache: clearCache(),
         newMessage: newMessage,
         setFollowUp: setFollowUp,
+        markAsRead: setMessageRead,
         setUnread: setMessageUnread,
         reply: reply
       };
