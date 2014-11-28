@@ -39,14 +39,21 @@ define([
 
       registeredListeners.push(stateListener);
 
-      var messageListener = $rootScope.$on("message:read", function(event, id, status) {
+      var messageReadListener = $rootScope.$on("message:read", function(event, id, status) {
         for(var i = 0; i < $scope.allMessages.length; i++) {
           if ($scope.allMessages[i].id == id) {
             $scope.allMessages[i].read = status;
           }
         }
       });
-      registeredListeners.push(messageListener);
+      registeredListeners.push(messageReadListener);
+
+      var messageDeleteListener = $rootScope.$on("message:delete", function(event, id) {
+        $scope.allMessages = $scope.allMessages.filter(function(element) {
+          return element.id !== id;
+        });
+      });
+      registeredListeners.push(messageDeleteListener);
 
       $scope.allMessages = [];
       $scope.currentMessage = {};
