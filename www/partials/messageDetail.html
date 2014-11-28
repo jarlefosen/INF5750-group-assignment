@@ -1,2 +1,4 @@
-<navbar-top settings="NAV_TOP"></navbar-top>
-<message-detail message="message" class="singleView"></message-detail>
+<navbar-top settings="NAV_TOP"
+            ng:class="{true: 'hidden-lg hidden-md', false: 'visible-sm visible-xs'}[state.name === 'messages.view']"></navbar-top>
+<message-detail message="message" messageid="messageId" reply-fn="reply">
+</message-detail>

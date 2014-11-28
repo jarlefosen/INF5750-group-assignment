@@ -9,9 +9,18 @@ define([
       templateUrl: "partials/singleMessage.html",
       scope: {
         message: "=message",
-        setFollowUp: "@"
+        messageid: "=messageid",
+        setFollowUp: "@",
+        replyFn: "&"
       },
-      link: function(scope, elem, attrs){
+      link: function(scope){
+        scope.content = "";
+        /* Evaluate scope reply function */
+        var reply = scope.replyFn();
+
+        scope.replyFunction = function() {
+          reply(scope.messageid, scope.content);
+        };
 
         scope.setUnread = function(message) {
           scope.$parent.setUnread(message);

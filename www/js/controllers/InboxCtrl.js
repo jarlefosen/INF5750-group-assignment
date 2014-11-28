@@ -12,14 +12,19 @@ define([
   "use strict";
 
   app.controller("InboxCtrl", [
-    "$scope", "$window", "$location", "MessageService", "LoginService",
-    function ($scope, $window, $location, MessageService, LoginService) {
+    "$scope", "$window", "$location", "MessageService", "LoginService", "$state", "$rootScope",
+    function ($scope, $window, $location, MessageService, LoginService, $state, $rootScope) {
       $scope.NAV_TOP = {
         goToState: "newMessage",
         displayName: "New message",
         icon: "fa-plus",
         showEdit: true
       };
+
+      $scope.state = $state.$current.self;
+      $rootScope.$on("$stateChangeSuccess", function(event, toState) {
+        $scope.state = toState;
+      });
 
       $scope.allMessages = [];
       $scope.currentMessage = {};
@@ -31,11 +36,8 @@ define([
       };
 
       $scope.goToMessage = function(message){
-        if($window.innerWidth >= 992){
-          $scope.currentMessage = message;
-        }else{
-          $location.path("/messages/" + message.id);
-        }
+        $scope.currentMessage = message;
+        $state.go("messages.view", {messageId: message.id});
       };
 
       LoginService.getProfile().then(
