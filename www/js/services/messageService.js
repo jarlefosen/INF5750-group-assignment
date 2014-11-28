@@ -8,9 +8,8 @@ define([
   "use strict";
 
   app.service("MessageService", [
-    "ServerConfig", "$q", "$http",
-
-    function (ServerConfig, $q, $http) {
+    "ServerConfig", "$q", "$http", "$rootScope",
+    function (ServerConfig, $q, $http, $rootScope) {
 
       /* Stores a sorted list with all the conversation IDs */
       var INBOX_LIST_CACHE_KEY = "no.uio.inf5750-11.inbox-list";
@@ -207,10 +206,12 @@ define([
 
       function deleteConversation(messageId) {
         var deferred = $q.defer();
+        console.log(messageId);
 
         $http.delete(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
           .success(function(data){
             deleteConversationFromCache(messageId);
+            notifyDelete(messageId);
             deferred.resolve(data);
           })
           .error(function () {
@@ -274,14 +275,12 @@ define([
           }
         })
           .success(function (data, status, headers) {
-            deferred.resolve(data)
-            console.log("success!!");
-            console.log(message);
-            })
+            deferred.resolve(data);
+          })
 
           .error(function (error) {
             deferred.reject(error);
-            console.log("Error");
+            console.log("Error setting followup");
           });
 
         return deferred.promise;
@@ -293,6 +292,7 @@ define([
 
         $http.post(ServerConfig.host + MESSAGE_READ, [messageid])
       .success(function() {
+            notifyRead(messageid, true);
             deferred.resolve();
           })
           .error(function () {
@@ -313,6 +313,7 @@ define([
 
         $http.post(ServerConfig.host + MESSAGES_BASE_URL + "/unread", [id], options)
           .success(function(data) {
+            notifyRead(id, false);
             deferred.resolve(data.markedUnread);
           })
           .error(function() {
@@ -346,6 +347,14 @@ define([
           });
 
         return deferred.promise;
+      }
+
+      function notifyRead(id, status) {
+        $rootScope.$broadcast("message:read", id, status);
+      }
+
+      function notifyDelete(id) {
+        $rootScope.$broadcast("message:delete", id);
       }
 
       return {
