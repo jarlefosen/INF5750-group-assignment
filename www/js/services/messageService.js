@@ -8,9 +8,8 @@ define([
   "use strict";
 
   app.service("MessageService", [
-    "ServerConfig", "$q", "$http",
-
-    function (ServerConfig, $q, $http) {
+    "ServerConfig", "$q", "$http", "$rootScope",
+    function (ServerConfig, $q, $http, $rootScope) {
 
       /* Stores a sorted list with all the conversation IDs */
       var INBOX_LIST_CACHE_KEY = "no.uio.inf5750-11.inbox-list";
@@ -19,6 +18,7 @@ define([
 
       var MESSAGES_BASE_URL = "/api/messageConversations";
       var MY_INBOX_URL = "/api/me/inbox";
+      var MESSAGE_READ = "/api/messageConversations/read";
 
       var cacheDays = 30;
       var cacheTTL = cacheDays * 24 * 60 * 60 * 1000; // milliseconds
@@ -136,7 +136,7 @@ define([
 
       }
 
-      function convertConverstion(conversation) {
+      function convertConversation(conversation) {
         var conv = getInboxEntryFromCache(conversation.id);
         conv.messages = conversation.messages;
         conv.lastSender = conversation.lastSender;
@@ -164,7 +164,7 @@ define([
             if (headers["Login-Page"]) {
               deferred.resolve(cached);
             } else {
-              var converted = convertConverstion(data);
+              var converted = convertConversation(data);
               saveConversation(converted);
               deferred.resolve(converted);
             }
@@ -175,7 +175,6 @@ define([
 
         return deferred.promise;
       }
-
 
       /* messageUpdateCallback will be called when there are updated messages */
       function getInbox() {
@@ -207,10 +206,12 @@ define([
 
       function deleteConversation(messageId) {
         var deferred = $q.defer();
+        console.log(messageId);
 
         $http.delete(ServerConfig.host + MESSAGES_BASE_URL + "/" + messageId)
           .success(function(data){
             deleteConversationFromCache(messageId);
+            notifyDelete(messageId);
             deferred.resolve(data);
           })
           .error(function () {
@@ -243,27 +244,130 @@ define([
         var message = {
           subject: subject,
           text: text,
-          users: userList,
-          userGroups: groupList,
-          organisationUnits: orgList
+          users: userList || [],
+          userGroups: groupList || [],
+          organisationUnits: orgList || []
         };
 
-        $http.post(ServerConfig.host + MESSAGES_BASE_URL, message)
-          .success(function (data) {
-            console.log("Message POSTed!");
+        $http.post(ServerConfig.host + MESSAGES_BASE_URL + ".json", message)
+          .success(function () {
+            deferred.resolve();
           })
           .error(function () {
-            console.log("Error POSTing message!" + message.toString());
+            deferred.reject();
+            console.log("Could not send message!");
+            console.log(message);
           });
         return deferred.promise;
+      }
+
+      function setFollowUp(message) {
+
+        var deferred = $q.defer();
+        //$http.post(ServerConfig.host + MESSAGES_BASE_URL + "/" + message.id, message)
+
+        $http({
+          method: "POST",
+          url: ServerConfig.host + MESSAGES_BASE_URL + "/" + message.id,
+          data: $.param(message),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        })
+          .success(function (data, status, headers) {
+            deferred.resolve(data);
+          })
+
+          .error(function (error) {
+            deferred.reject(error);
+            console.log("Error setting followup");
+          });
+
+        return deferred.promise;
+      }
+
+      function setMessageRead(messageid) {
+
+        var deferred = $q.defer();
+
+        $http.post(ServerConfig.host + MESSAGE_READ, [messageid])
+      .success(function() {
+            notifyRead(messageid, true);
+            deferred.resolve();
+          })
+          .error(function () {
+            deferred.reject();
+          });
+        return deferred.promise;
+      }
+
+
+      function setMessageUnread(id) {
+        var deferred = $q.defer();
+
+        var options = {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        };
+
+        $http.post(ServerConfig.host + MESSAGES_BASE_URL + "/unread", [id], options)
+          .success(function(data) {
+            notifyRead(id, false);
+            deferred.resolve(data.markedUnread);
+          })
+          .error(function() {
+            deferred.reject();
+          });
+
+        return deferred.promise;
+      }
+
+      function reply(id, body) {
+        var deferred = $q.defer();
+
+
+        if (!body) {
+          deferred.reject({message: "Body must be a string."});
+          return deferred.promise;
+        }
+
+        var options = {
+          headers: {
+            "Content-Type": "text/plain"
+          }
+        };
+
+        $http.post(MESSAGES_BASE_URL + "/" + id + ".json", body, options)
+          .success(function() {
+            deferred.resolve();
+          })
+          .error(function() {
+            deferred.reject();
+          });
+
+        return deferred.promise;
+      }
+
+      function notifyRead(id, status) {
+        $rootScope.$broadcast("message:read", id, status);
+      }
+
+      function notifyDelete(id) {
+        $rootScope.$broadcast("message:delete", id);
       }
 
       return {
         getAllMessages: getInbox,
         getMessage: getConversation,
+        getMessageFromCache: getConversationFromCache,
         deleteMessage: deleteConversation,
         clearCache: clearCache(),
-        newMessage: newMessage
+        newMessage: newMessage,
+        setFollowUp: setFollowUp,
+        markAsRead: setMessageRead,
+        setUnread: setMessageUnread,
+        reply: reply
       };
     }
   ]);

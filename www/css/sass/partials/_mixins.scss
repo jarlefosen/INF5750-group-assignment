@@ -10,7 +10,7 @@
 @mixin mozPlaceholder1($color) {
   :-moz-placeholder {
     color: $color;
-    opacity: 1;
+    @include opacity(1);
   }
 }
 
@@ -18,7 +18,7 @@
 @mixin mozPlaceholder2($color) {
   ::-moz-placeholder {
     color: $color;
-    opacity: 1;
+    @include opacity(1);
   }
 }
 

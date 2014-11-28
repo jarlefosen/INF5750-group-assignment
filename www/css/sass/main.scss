@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 @import "partials/config";
 @import "partials/mixins";
 @import "partials/login";
@@ -5,11 +7,11 @@
 @import "partials/navbar";
 @import "partials/message";
 @import "partials/animate";
+@import "partials/newmessage";
 
 .body {
   background-color: $main-color;
 }
-
 
 body, p, h1, h2, h3, h4, h5, h6{
   font-family: $font-default;
