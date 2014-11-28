@@ -43,6 +43,18 @@ $color-user-border: $main-color;
   }
 }
 
+.input-group-addon{
+  text-transform: capitalize;
+
+  @include border-radius(2px);
+  @include border-bottom-right-radius(0px);
+  @include border-top-right-radius(0px);
+}
+.form-control{
+  @include border-radius(2px);
+  @include border-bottom-left-radius(0px);
+  @include border-top-left-radius(0px);
+}
 
 .new-message-view{
   margin-top: $navbar-height;
@@ -125,18 +137,6 @@ $color-user-border: $main-color;
       }
 
       &.recipient-selector{
-        .input-group-addon{
-          text-transform: capitalize;
-
-          @include border-radius(2px);
-          @include border-bottom-right-radius(0px);
-          @include border-top-right-radius(0px);
-        }
-        .form-control{
-          @include border-radius(2px);
-          @include border-bottom-left-radius(0px);
-          @include border-top-left-radius(0px);
-        }
         ul{
           padding: 0;
           margin-bottom: 0;
@@ -180,6 +180,11 @@ $color-user-border: $main-color;
 
   .message-text-container{
     clear: both;
+  }
+
+  .input-group{
+    margin-bottom: 20px;
+
   }
 
   .send-btn{

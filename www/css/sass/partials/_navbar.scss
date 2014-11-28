@@ -25,6 +25,18 @@
       &.edit-btn{
         float: right;
         margin-right: 20px;
+        .active-state{
+          display: none;
+        }
+
+        &.edit-mode{
+          .active-state{
+            display: inline-block;
+          }
+          .normal-state{
+            display: none;
+          }
+        }
       }
 
       &.logo-container{
