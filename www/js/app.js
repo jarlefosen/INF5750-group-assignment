@@ -3,14 +3,16 @@ define([
     "angular-route",
     "angular-resource",
     "angular-animate",
-    "angular-ui-router"
+    "angular-ui-router",
+    "scrollglue"
   ],function (angular) {
     "use strict";
     return angular.module("app", [
       "ngRoute",
       "ngResource",
       "ngAnimate",
-      "ui.router"
+      "ui.router",
+      "luegg.directives"
     ]);
   }
 );

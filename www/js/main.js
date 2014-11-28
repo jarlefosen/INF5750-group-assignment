@@ -4,7 +4,8 @@ require.config({
     "angular-resource": "../bower_components/angular-resource/angular-resource",
     "angular-route": "../bower_components/angular-route/angular-route",
     "angular-animate": "../bower_components/angular-animate/angular-animate",
-    "angular-ui-router": "../bower_components/angular-ui-router/release/angular-ui-router"
+    "angular-ui-router": "../bower_components/angular-ui-router/release/angular-ui-router",
+    "scrollglue": "../bower_components/angularjs-scroll-glue/src/scrollglue"
   },
   shim: {
     "angular": {exports: "angular"},
@@ -12,6 +13,9 @@ require.config({
     "angular-resource": ["angular"],
     "angular-animate": ["angular"],
     "angular-ui-router": {
+      deps: ["angular"]
+    },
+    "scrollglue": {
       deps: ["angular"]
     }
   }
