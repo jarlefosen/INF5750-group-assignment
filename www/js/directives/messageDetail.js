@@ -21,7 +21,7 @@ define([
             var reply = scope.replyFn();
 
             scope.replyFunction = function() {
-A              reply(scope.messageid, scope.content);
+              reply(scope.messageid, scope.content);
             };
 
             scope.setUnread = function(message) {
