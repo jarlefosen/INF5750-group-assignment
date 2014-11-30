@@ -43,7 +43,10 @@ And then run the following code in root folder.
 
 ```
 $ npm install
+
+$ npm install -g grunt-cli
 ```
+
 
 This will install all tools that the project depends on. Including Bower.
 There exists a script in package.json that installs all bower dependencies
@@ -71,11 +74,8 @@ You should run it with Grunt.
 ## Linting
 
 The project includes Javascript Linting (eslinting).
-To run it you have to set up the project first (see below).
 
-Then run `$ grunt eslint`
-
-This might fail if grunt is not installed globally. `$ npm install -g grunt grunt-cli` will fix this.
+`$ grunt eslint`
 
 If you only want to see linting for the files you were working on, try
 setting up the commit hook below.
