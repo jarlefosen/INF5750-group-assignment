@@ -41,12 +41,11 @@ NPM will automatically be installed with [Node JS](http://nodejs.org/)
 
 And then run the following code in root folder.
 
-```
-$ npm install
+`$ npm install` Installs all dependencies defined in `package.json`
 
-$ npm install -g grunt-cli
-```
+`$ bower install` is not required since it will automatically be run when `$ npm install` is done.
 
+`$ npm install -g grunt-cli` This may require root access (sudo). This is used for running **grunt** commands in the terminal.
 
 This will install all tools that the project depends on. Including Bower.
 There exists a script in package.json that installs all bower dependencies
