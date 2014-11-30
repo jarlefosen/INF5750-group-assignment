@@ -1,4 +1,4 @@
-<div scroll-spy class="message-container singleView col-lg-12 col-md-12 col-xs-12">
+<div scroll-glue scroll-spy class="message-container singleView col-lg-12 col-md-12 col-xs-12">
   <div class="to-and-from-container">
     <p class="from-tag">From: <span>{{message.lastSenderFirstname}} {{message.lastSenderSurname}}</span></p>
     <p class="to-tag">To: <span data-ng-repeat="obj in message.userMessages">{{obj.user.name}}</span></p>
@@ -20,7 +20,7 @@
     <p class="message col-lg-12 col-md-12">{{msg.name}}</p>
   </div>
 
-  <div class="reply-container col-lg-12 col-md-12">
+  <div id="reply-hook" class="reply-container col-lg-12 col-md-12">
     <h5>Reply:</h5>
     <form ng-submit="replyFunction()" id="reply-form" class="col-xs-12">
       <textarea name="reply-message" ng-model="content"  class="col-xs-12" id="reply-box" rows="5"></textarea>
