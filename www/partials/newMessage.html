@@ -19,7 +19,7 @@
 
   <div class="recipient-selector-container col-lg-12">
 
-    <h4 ng-hide="carouselRunning"><i class="fa fa-plus"></i> Add recipient</h4>
+    <h4 ng-hide="carouselRunning" ng-class="{'input-error': error.recipients}"><i class="fa fa-plus"></i> Add recipient</h4>
     <h4 ng-show="carouselRunning" ng-click="setCarouselState(); query = ''" href="#carousel-recipient-selection" role="button" data-slide-to="0"><i class="fa fa-chevron-left"></i> Back</h4>
 
     <div id="carousel-recipient-selection" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
@@ -73,7 +73,7 @@
   </div>
 
   <div class="message-text-container">
-    <div class="input-group">
+    <div class="input-group" ng-class="{'input-error': error.subject}">
       <span class="input-group-addon">Subject</span>
       <input type="text" ng-model="newMessage.subject" class="form-control" placeholder="Insert subject..."/>
     </div>

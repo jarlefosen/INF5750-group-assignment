@@ -194,3 +194,28 @@ $color-user-border: $main-color;
     color: $off-white;
   }
 }
+
+@mixin errorStyle(){
+  border-color: red;
+  border-width: 2px;
+}
+
+
+h4{
+  &.input-error{
+    display: inline-block;
+    border-style: solid;
+    @include errorStyle;
+  }
+}
+
+.input-error{
+
+  span{
+    @include errorStyle;
+  }
+
+  input{
+    @include errorStyle;
+  }
+}

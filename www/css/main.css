@@ -777,6 +777,25 @@
   color: #fcfcfc;
 }
 
+/* line 205, sass/partials/_newmessage.scss */
+h4.input-error {
+  display: inline-block;
+  border-style: solid;
+  border-color: red;
+  border-width: 2px;
+}
+
+/* line 214, sass/partials/_newmessage.scss */
+.input-error span {
+  border-color: red;
+  border-width: 2px;
+}
+/* line 218, sass/partials/_newmessage.scss */
+.input-error input {
+  border-color: red;
+  border-width: 2px;
+}
+
 /* line 12, sass/main.scss */
 .body {
   background-color: #1d5288;

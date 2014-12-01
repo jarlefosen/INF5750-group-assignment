@@ -27,6 +27,10 @@ define([
 
       $scope.selectorOptions = {};
       $scope.carouselRunning = false;
+      $scope.error = {
+        subject: false,
+        recipients: false
+      };
 
       $scope.setCarouselState = function(){
         $scope.carouselRunning = !$scope.carouselRunning;
@@ -38,6 +42,16 @@ define([
       };
 
       $scope.sendMessage = function () {
+        var subj = $scope.newMessage.subject;
+        var recipientCount = $scope.userRecipients.length + $scope.groupRecipients.length + $scope.orgUnitRecipients.length;
+
+        if(subj === undefined || subj === ''){
+          $scope.error.subject = true;
+          return;
+        }else if(recipientCount === 0){
+          $scope.error.recipients = true;
+          return;
+        }
         MessageService.newMessage(
           $scope.newMessage.subject,
           $scope.newMessage.text,
