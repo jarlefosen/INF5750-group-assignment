@@ -274,7 +274,7 @@ define([
             "Content-Type": "application/x-www-form-urlencoded"
           }
         })
-          .success(function (data, status, headers) {
+          .success(function (data) {
             deferred.resolve(data);
           })
 
@@ -301,8 +301,7 @@ define([
         return deferred.promise;
       }
 
-
-      function setMessageUnread(id) {
+      function setMessageUnread(id){
         var deferred = $q.defer();
 
         var options = {

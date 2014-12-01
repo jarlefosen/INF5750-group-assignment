@@ -21,7 +21,7 @@ define([
         registeredListeners.forEach(function (listener) {
           /* Call listeners will unbind it */
           listener();
-        })
+        });
       });
 
       $scope.NAV_TOP = {
@@ -41,7 +41,7 @@ define([
 
       var messageReadListener = $rootScope.$on("message:read", function(event, id, status) {
         for(var i = 0; i < $scope.allMessages.length; i++) {
-          if ($scope.allMessages[i].id == id) {
+          if ($scope.allMessages[i].id === id) {
             $scope.allMessages[i].read = status;
           }
         }
@@ -66,7 +66,7 @@ define([
 
       $scope.goToMessage = function(message){
 
-        if(message.read == false) {
+        if(message.read === false) {
           MessageService.markAsRead(message.id);
         }
 
