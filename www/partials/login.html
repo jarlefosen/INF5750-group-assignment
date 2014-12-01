@@ -9,6 +9,7 @@
 
   <form ng-show="currentUser">
     <input type="text" ng-model="currentUser" disabled>
+    <input type="submit" ng-click="goToMessages()" value="Messages">
     <input type="submit" ng-click="logout()" value="Log out">
   </form>
 </div>
