@@ -41,6 +41,21 @@ $color-user-border: $main-color;
     font-size: 20px;
     font-weight: 400;
   }
+
+  @media (max-width: $screen-xs){
+    width: 80px;
+    height: 80px;
+
+    .fa{
+      font-size: 3em;
+      margin-top: 10px;
+    }
+    p{
+      margin-top: 0;
+      font-size: 14px;
+    }
+
+  }
 }
 
 .input-group-addon{
