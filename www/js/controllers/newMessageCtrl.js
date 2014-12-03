@@ -27,6 +27,26 @@ define([
 
       $scope.selectorOptions = {};
       $scope.carouselRunning = false;
+      $scope.error = {
+        subject: false,
+        recipients: false
+      };
+
+      function alreadyAdded(array, obj){
+        if(array.indexOf(obj) > -1){
+          return true;
+        }else{
+          return false;
+        }
+      }
+
+      function getIds(objects){
+        var IDs = [];
+        for(var index in objects){
+          IDs.push(objects[index].id);
+        }
+        return IDs;
+      }
 
       $scope.setCarouselState = function(){
         $scope.carouselRunning = !$scope.carouselRunning;
@@ -38,6 +58,16 @@ define([
       };
 
       $scope.sendMessage = function () {
+        var subj = $scope.newMessage.subject;
+        var recipientCount = $scope.userRecipients.length + $scope.groupRecipients.length + $scope.orgUnitRecipients.length;
+
+        if(subj === undefined || subj === ""){
+          $scope.error.subject = true;
+          return;
+        }else if(recipientCount === 0){
+          $scope.error.recipients = true;
+          return;
+        }
         MessageService.newMessage(
           $scope.newMessage.subject,
           $scope.newMessage.text,
@@ -66,67 +96,50 @@ define([
 
       $scope.addRecipient = function(recipient, type){
         switch (type){
-          case  'user':
+          case  "user":
             if(!alreadyAdded($scope.userRecipients, recipient)){
               $scope.userRecipients.push(recipient);
             }
             break;
-          case 'group':
+          case "group":
             if(!alreadyAdded($scope.groupRecipients, recipient)){
               $scope.groupRecipients.push(recipient);
             }
             break;
-          case 'orgUnit':
+          case "orgUnit":
             if(!alreadyAdded($scope.orgUnitRecipients, recipient)){
               $scope.orgUnitRecipients.push(recipient);
             }
             break;
           default:
-            console.log('Invalid');
             break;
         }
       };
 
       $scope.removeRecipient = function(recipient, type){
         switch(type){
-          case  'user':
+          case  "user":
             if(alreadyAdded($scope.userRecipients, recipient)){
               var ui = $scope.userRecipients.indexOf(recipient);
               $scope.userRecipients.splice(ui, 1);
             }
             break;
-          case  'group':
+          case  "group":
             if(alreadyAdded($scope.groupRecipients, recipient)){
               var gi = $scope.groupRecipients.indexOf(recipient);
               $scope.groupRecipients.splice(gi, 1);
             }
             break;
-          case  'orgUnit':
+          case  "orgUnit":
             if(alreadyAdded($scope.orgUnitRecipients, recipient)){
               var oi = $scope.orgUnitRecipients.indexOf(recipient);
               $scope.orgUnitRecipients.splice(oi, 1);
             }
             break;
           default:
-            console.log("Invalid");
+            break;
         }
       };
-
-      function alreadyAdded(array, obj){
-        if(array.indexOf(obj) > -1){
-          return true;
-        }else{
-          return false;
-        }
-      }
-
-      function getIds(objects){
-        var IDs = [];
-        for(var index in objects){
-          IDs.push(objects[index].id);
-        }
-        return IDs;
-      }
     }
   ]);
 });

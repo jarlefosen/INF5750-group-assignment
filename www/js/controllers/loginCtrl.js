@@ -7,17 +7,21 @@ define([
   "use strict";
 
   app.controller("LoginCtrl", [
-    "$scope", "LoginService", "$location", "$route",
-    function ($scope, LoginService, $location, $route) {
+    "$scope", "LoginService", "$location", "$route", "$state",
+    function ($scope, LoginService, $location, $route, $state) {
 
       $scope.username = "";
       $scope.password = "";
 
       $scope.currentUser = "";
 
+      $scope.goToMessages = function() {
+        $state.go("messages");
+      };
+
       $scope.logout = function () {
         LoginService.logout();
-        $route.reload();
+        $state.reload();
       };
 
       LoginService.getProfile().then(
@@ -37,7 +41,7 @@ define([
           .then(
           function () {
             /* Login success - redirect to main page */
-            $location.url("/");
+            $state.go("messages");
           },
           function () {
             /* Login failed - Alert notification */

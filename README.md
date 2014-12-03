@@ -41,9 +41,11 @@ NPM will automatically be installed with [Node JS](http://nodejs.org/)
 
 And then run the following code in root folder.
 
-```
-$ npm install
-```
+`$ npm install` Installs all dependencies defined in `package.json`
+
+`$ bower install` is not required since it will automatically be run when `$ npm install` is done.
+
+`$ npm install -g grunt-cli` This may require root access (sudo). This is used for running **grunt** commands in the terminal.
 
 This will install all tools that the project depends on. Including Bower.
 There exists a script in package.json that installs all bower dependencies
@@ -71,11 +73,8 @@ You should run it with Grunt.
 ## Linting
 
 The project includes Javascript Linting (eslinting).
-To run it you have to set up the project first (see below).
 
-Then run `$ grunt eslint`
-
-This might fail if grunt is not installed globally. `$ npm install -g grunt grunt-cli` will fix this.
+`$ grunt eslint`
 
 If you only want to see linting for the files you were working on, try
 setting up the commit hook below.
