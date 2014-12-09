@@ -5,6 +5,9 @@ npm-debug.log
 # Ignore JavaScript libs
 www/js/libs/*
 
+# Ignore minified distribution files from project
+dist/
+
 # Bower packages
 www/bower_components
 
