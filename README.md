@@ -93,3 +93,43 @@ It will check javascript files that you have edited.
 The project runs with Jasmine on Karma-runner for unit-testing.
 
 You can test it continuously with `$ grunt test` or just once by `$ grunt test:fast`
+
+## Run in browser
+
+To run the project in the browser, just start `$ npm start` and all
+dependencies will be installed.
+
+**Note** That any calls from the browser to the server most likely will be blocked due to CORS security.
+
+## Run on Android
+
+The project can run on android. **If you are on a mac, please install XCode
+and agree to the terms before proceeding**
+
+[Download the Android SKD](http://developer.android.com/sdk/installing/index.html)
+
+Install the newest platform image available.
+
+Add ANDROID_HOME to path.
+
+```
+export ANDROID_HOME="/PATH/TO/ANDROID_SDK"
+```
+
+Use Grunt to set up project and deploy.
+
+`$ grunt cordova` Will install plugins and platforms
+
+`$ grunt android` Will deploy the application to your connected android phone.
+
+`$ grunt android-emulator` if you want to use an emulator
+
+## Run on IOS
+
+Use Grunt to set up project and deploy.
+
+`$ grunt cordova` Will install plugins and platforms
+
+`$ grunt ios` Will deploy the application to your connected android phone.
+
+`$ grunt ios-emulator` if you want to use an emulator
